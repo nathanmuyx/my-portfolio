@@ -35,7 +35,7 @@ export default function StrategicVisionzPage() {
             Design engineering for enterprise clients.
           </h1>
 
-          <p className="text-lg md:text-xl text-foreground/50 max-w-2xl leading-relaxed">
+          <p className="text-lg md:text-xl text-foreground/70 max-w-2xl leading-relaxed">
             I bridge design and development at Strategic Visionz, shipping production-ready interfaces across no-code and custom-coded platforms for enterprise clients.
           </p>
         </div>
@@ -60,15 +60,15 @@ export default function StrategicVisionzPage() {
         <div className="max-w-[1100px] mx-auto">
           <div className="grid md:grid-cols-3 gap-x-12 gap-y-10">
             <div>
-              <p className="text-[11px] uppercase tracking-wider text-foreground/40 mb-3">Role</p>
+              <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-3">Role</p>
               <p className="text-sm leading-relaxed">Design Engineer. I own the full design-to-code pipeline, from Figma concepts through production frontend across multiple client projects.</p>
             </div>
             <div>
-              <p className="text-[11px] uppercase tracking-wider text-foreground/40 mb-3">Platforms</p>
+              <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-3">Platforms</p>
               <p className="text-sm leading-relaxed">WeWeb for no-code builds. React, Next.js, and Expo for custom projects. Figma for all design work.</p>
             </div>
             <div>
-              <p className="text-[11px] uppercase tracking-wider text-foreground/40 mb-3">Scope</p>
+              <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-3">Scope</p>
               <p className="text-sm leading-relaxed">Enterprise clients across industries. Complex requirements, multiple stakeholders, strict technical constraints.</p>
             </div>
           </div>
@@ -80,7 +80,7 @@ export default function StrategicVisionzPage() {
       {/* What I Do */}
       <section id="responsibilities" className="px-6 md:px-12 py-24 md:py-32 scroll-mt-24">
         <div className="max-w-[1100px] mx-auto">
-          <p className="text-[11px] uppercase tracking-wider text-foreground/40 mb-6">Responsibilities</p>
+          <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-6">Responsibilities</p>
           <h2 className="text-3xl md:text-4xl font-medium leading-tight tracking-tight max-w-2xl mb-16">
             End-to-end, from concept to shipped product.
           </h2>
@@ -94,7 +94,7 @@ export default function StrategicVisionzPage() {
             ].map((item) => (
               <div key={item.title}>
                 <h3 className="text-base font-medium mb-2">{item.title}</h3>
-                <p className="text-sm text-foreground/50 leading-relaxed">{item.desc}</p>
+                <p className="text-sm text-foreground/70 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -106,7 +106,7 @@ export default function StrategicVisionzPage() {
       {/* Project Screenshots — Placeholder */}
       <section id="work-samples" className="px-6 md:px-12 py-24 md:py-32 scroll-mt-24">
         <div className="max-w-[1100px] mx-auto">
-          <p className="text-[11px] uppercase tracking-wider text-foreground/40 mb-6">Work Samples</p>
+          <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-6">Work Samples</p>
           <h2 className="text-3xl md:text-4xl font-medium leading-tight tracking-tight max-w-2xl mb-16">
             Selected screens
           </h2>
@@ -131,10 +131,10 @@ export default function StrategicVisionzPage() {
       {/* Stack */}
       <section id="stack" className="px-6 md:px-12 py-24 md:py-32 scroll-mt-24">
         <div className="max-w-[1100px] mx-auto">
-          <p className="text-[11px] uppercase tracking-wider text-foreground/40 mb-6">Stack</p>
+          <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-6">Stack</p>
           <div className="grid md:grid-cols-2 gap-16">
             <div>
-              <p className="text-[11px] uppercase tracking-wider text-foreground/40 mb-6">No-Code</p>
+              <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-6">No-Code</p>
               <div className="space-y-4">
                 {[
                   { name: "WeWeb", role: "Visual frontend builder" },
@@ -142,13 +142,13 @@ export default function StrategicVisionzPage() {
                 ].map((tech) => (
                   <div key={tech.name} className="flex items-center justify-between pb-4 border-b border-border">
                     <span className="text-sm font-medium flex items-center gap-2"><TechIcon name={tech.name} />{tech.name}</span>
-                    <span className="text-sm text-foreground/40">{tech.role}</span>
+                    <span className="text-sm text-foreground/60">{tech.role}</span>
                   </div>
                 ))}
               </div>
             </div>
             <div>
-              <p className="text-[11px] uppercase tracking-wider text-foreground/40 mb-6">Custom Code</p>
+              <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-6">Custom Code</p>
               <div className="space-y-4">
                 {[
                   { name: "React / Next.js", role: "Web applications" },
@@ -158,7 +158,7 @@ export default function StrategicVisionzPage() {
                 ].map((tech) => (
                   <div key={tech.name} className="flex items-center justify-between pb-4 border-b border-border">
                     <span className="text-sm font-medium flex items-center gap-2"><TechIcon name={tech.name} />{tech.name}</span>
-                    <span className="text-sm text-foreground/40">{tech.role}</span>
+                    <span className="text-sm text-foreground/60">{tech.role}</span>
                   </div>
                 ))}
               </div>

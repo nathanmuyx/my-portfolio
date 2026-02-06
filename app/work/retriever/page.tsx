@@ -33,7 +33,7 @@ export default function RetrieverPage() {
             Scrapped and rebuilt 54 screens to unblock development.
           </h1>
 
-          <p className="text-lg md:text-xl text-foreground/50 max-w-2xl leading-relaxed">
+          <p className="text-lg md:text-xl text-foreground/70 max-w-2xl leading-relaxed">
             The previous designer used wrong dimensions, had no design system, and created inconsistent spacing across every screen. Development was completely blocked. I rebuilt the entire mobile experience from scratch.
           </p>
         </div>
@@ -60,7 +60,7 @@ export default function RetrieverPage() {
         <div className="max-w-[1100px] mx-auto">
           <div className="grid md:grid-cols-2 gap-16">
             <div>
-              <p className="text-[11px] uppercase tracking-wider text-foreground/40 mb-6">What was broken</p>
+              <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-6">What was broken</p>
               <ul className="space-y-3">
                 {[
                   "Screens designed at 1080x1920 instead of proper iPhone dimensions (390x844)",
@@ -76,7 +76,7 @@ export default function RetrieverPage() {
               </ul>
             </div>
             <div>
-              <p className="text-[11px] uppercase tracking-wider text-foreground/40 mb-6">What I built</p>
+              <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-6">What I built</p>
               <ul className="space-y-3">
                 {[
                   "Correct iPhone 13 Pro device frames with safe areas",
@@ -110,7 +110,7 @@ export default function RetrieverPage() {
             ].map((metric) => (
               <div key={metric.label} className="p-6 rounded-2xl bg-cream/50">
                 <p className="text-2xl font-medium mb-1">{metric.value}</p>
-                <p className="text-sm text-foreground/40">{metric.label}</p>
+                <p className="text-sm text-foreground/60">{metric.label}</p>
               </div>
             ))}
           </div>

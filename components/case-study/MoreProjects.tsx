@@ -240,7 +240,7 @@ export function MoreProjects({ currentSlug }: MoreProjectsProps) {
         <div className="mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-sm text-white/30">&copy; {new Date().getFullYear()} Nathaniel Muyco</p>
           <div className="flex gap-8">
-            <a href="https://linkedin.com/in/nathanielmuyco" target="_blank" rel="noopener noreferrer" className="text-sm text-white/30 hover:text-white transition-colors">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/nathaniel-muyco-903422272/" target="_blank" rel="noopener noreferrer" className="text-sm text-white/30 hover:text-white transition-colors">LinkedIn</a>
             <a href="mailto:nathanmuyx@gmail.com" className="text-sm text-white/30 hover:text-white transition-colors">Email</a>
           </div>
         </div>

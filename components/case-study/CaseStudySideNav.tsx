@@ -86,7 +86,7 @@ export const CaseStudyNav = forwardRef<HTMLDivElement, CaseStudyNavProps>(
             style={{ maxWidth: "calc(100% - 16px)" }}
           >
             <div
-              className="h-full rounded-full transition-all duration-300 ease-out"
+              className="h-full rounded-full"
               style={{
                 width: `${scrollProgress * 100}%`,
                 backgroundColor: strokeColor,

@@ -34,7 +34,7 @@ export default function TactivStudiosPage() {
             Three years. Intern to lead. 6+ products shipped.
           </h1>
 
-          <p className="text-lg md:text-xl text-foreground/50 max-w-2xl leading-relaxed">
+          <p className="text-lg md:text-xl text-foreground/70 max-w-2xl leading-relaxed">
             At Tactiv Studios I wore every hat: design, project management, QA, and some frontend. Agency pace, enterprise clients, constant context-switching between industries.
           </p>
         </div>
@@ -65,7 +65,7 @@ export default function TactivStudiosPage() {
         <div className="max-w-[1100px] mx-auto">
           <div className="grid md:grid-cols-2 gap-16">
             <div>
-              <p className="text-[11px] uppercase tracking-wider text-foreground/40 mb-6">Growth</p>
+              <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-6">Growth</p>
               <div className="space-y-6">
                 {[
                   { year: "2020", role: "Intern", desc: "Design fundamentals, client communication, handoff processes." },
@@ -74,17 +74,17 @@ export default function TactivStudiosPage() {
                   { year: "2023", role: "Lead", desc: "Led design direction, mentored juniors, established processes." },
                 ].map((item) => (
                   <div key={item.year} className="flex gap-4">
-                    <span className="text-sm text-foreground/30 w-10 flex-shrink-0">{item.year}</span>
+                    <span className="text-sm text-foreground/50 w-10 flex-shrink-0">{item.year}</span>
                     <div>
                       <p className="text-sm font-medium">{item.role}</p>
-                      <p className="text-sm text-foreground/50">{item.desc}</p>
+                      <p className="text-sm text-foreground/70">{item.desc}</p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
             <div>
-              <p className="text-[11px] uppercase tracking-wider text-foreground/40 mb-6">Products shipped</p>
+              <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-6">Products shipped</p>
               <div className="space-y-4">
                 {[
                   { name: "Home Loan Application System", type: "Web App, Fintech" },
@@ -96,13 +96,13 @@ export default function TactivStudiosPage() {
                 ].map((project) => (
                   <div key={project.name} className="flex items-baseline justify-between pb-4 border-b border-border">
                     <span className="text-sm font-medium">{project.name}</span>
-                    <span className="text-[11px] text-foreground/40">{project.type}</span>
+                    <span className="text-[11px] text-foreground/60">{project.type}</span>
                   </div>
                 ))}
               </div>
 
               <div className="mt-10">
-                <p className="text-[11px] uppercase tracking-wider text-foreground/40 mb-4">Tools</p>
+                <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-4">Tools</p>
                 <div className="flex flex-wrap gap-2">
                   {["Figma", "Adobe XD", "Trello", "Jira", "Webflow", "Loom"].map((tool) => (
                     <span key={tool} className="text-[11px] px-3 py-1.5 rounded-full bg-cream text-foreground/60 inline-flex items-center gap-1.5"><TechIcon name={tool} className="w-3 h-3" />{tool}</span>
@@ -119,7 +119,7 @@ export default function TactivStudiosPage() {
       {/* Selected Work */}
       <section id="selected-work" className="px-6 md:px-12 py-20 md:py-24 scroll-mt-24">
         <div className="max-w-[1100px] mx-auto">
-          <p className="text-[11px] uppercase tracking-wider text-foreground/40 mb-6">Selected Work</p>
+          <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-6">Selected Work</p>
           <div className="grid md:grid-cols-3 gap-4">
             {[
               "HRMS dashboard",

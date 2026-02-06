@@ -33,7 +33,7 @@ export default function GoTrabahoPage() {
             Job matching app designed and built end-to-end.
           </h1>
 
-          <p className="text-lg md:text-xl text-foreground/50 max-w-2xl leading-relaxed">
+          <p className="text-lg md:text-xl text-foreground/70 max-w-2xl leading-relaxed">
             GoTrabaho connects blue-collar workers with clients in the Philippines. I designed the UI, built the Flutter app, and set up the Firebase backend. The full stack, solo.
           </p>
         </div>
@@ -62,7 +62,7 @@ export default function GoTrabahoPage() {
         <div className="max-w-[1100px] mx-auto">
           <div className="grid md:grid-cols-2 gap-16">
             <div>
-              <p className="text-[11px] uppercase tracking-wider text-foreground/40 mb-6">What I built</p>
+              <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-6">What I built</p>
               <ul className="space-y-3">
                 {[
                   "Identity verification onboarding, added friction intentionally to build trust",
@@ -79,7 +79,7 @@ export default function GoTrabahoPage() {
               </ul>
 
               <div className="mt-10">
-                <p className="text-[11px] uppercase tracking-wider text-foreground/40 mb-4">Stack</p>
+                <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-4">Stack</p>
                 <div className="space-y-4">
                   {[
                     { name: "Flutter", role: "Cross-platform app" },
@@ -88,14 +88,14 @@ export default function GoTrabahoPage() {
                   ].map((tech) => (
                     <div key={tech.name} className="flex items-center justify-between pb-4 border-b border-border">
                       <span className="text-sm font-medium flex items-center gap-2"><TechIcon name={tech.name} />{tech.name}</span>
-                      <span className="text-sm text-foreground/40">{tech.role}</span>
+                      <span className="text-sm text-foreground/60">{tech.role}</span>
                     </div>
                   ))}
                 </div>
               </div>
             </div>
             <div>
-              <p className="text-[11px] uppercase tracking-wider text-foreground/40 mb-6">Key decision</p>
+              <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-6">Key decision</p>
               <p className="text-base leading-relaxed mb-6">
                 I chose to add friction during onboarding (identity verification, skill validation) even though it increased initial drop-off. For a platform where strangers show up at your home, trust was the product.
               </p>

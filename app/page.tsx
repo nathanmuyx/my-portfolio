@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useRef } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import CardSwap from "@/components/ui/CardSwap";
@@ -286,7 +286,52 @@ function ExperienceColumn() {
   );
 }
 
+function isDarkBg(el: Element | null): boolean {
+  while (el && el !== document.documentElement) {
+    const bg = getComputedStyle(el).backgroundColor;
+    if (bg && bg !== "rgba(0, 0, 0, 0)" && bg !== "transparent") {
+      const match = bg.match(/\d+/g);
+      if (match) {
+        const [r, g, b] = match.map(Number);
+        return r * 0.299 + g * 0.587 + b * 0.114 < 80;
+      }
+    }
+    el = el.parentElement;
+  }
+  return false;
+}
+
 export default function Home() {
+  const [overDark, setOverDark] = useState(false);
+  const navRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const onScroll = () => {
+      if (!navRef.current) return;
+      const rect = navRef.current.getBoundingClientRect();
+      const x = rect.left + rect.width / 2;
+      const y = rect.top + rect.height / 2;
+      navRef.current.style.visibility = "hidden";
+      navRef.current.style.pointerEvents = "none";
+      const behind = document.elementFromPoint(x, y);
+      navRef.current.style.visibility = "";
+      navRef.current.style.pointerEvents = "";
+      setOverDark(isDarkBg(behind));
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const pillBg = overDark ? "#ffffff" : "#0a0a0a";
+  const logoFill = overDark ? "#0a0a0a" : "#ffffff";
+  const linkClass = overDark
+    ? "text-sm text-[#0a0a0a]/60 hover:text-[#0a0a0a] px-4 py-1.5 rounded-full hover:bg-black/10 transition-all"
+    : "text-sm text-white/60 hover:text-white px-4 py-1.5 rounded-full hover:bg-white/10 transition-all";
+  const ctaClass = overDark
+    ? "text-sm font-medium text-white bg-[#0a0a0a] hover:bg-[#0a0a0a]/90 px-5 py-1.5 rounded-full transition-colors"
+    : "text-sm font-medium text-[#0a0a0a] bg-white hover:bg-white/90 px-5 py-1.5 rounded-full transition-colors";
+
   return (
     <div className="min-h-screen bg-white relative">
       {/* Mobile BubbleMenu */}
@@ -336,20 +381,28 @@ export default function Home() {
       </div>
 
       {/* Desktop Capsule Nav */}
-      <nav className="hidden md:block fixed top-0 left-0 right-0 z-50 px-12 py-4 animate-fade-in">
+      <nav ref={navRef} className="hidden md:block fixed top-0 left-0 right-0 z-50 px-12 py-4 animate-fade-in">
         <div className="max-w-[1400px] mx-auto flex justify-end items-center">
-          <div className="flex items-center gap-1 bg-[#0a0a0a] rounded-full px-1.5 py-1.5">
+          <div
+            className="flex items-center gap-1 rounded-full px-1.5 py-1.5 transition-colors duration-300"
+            style={{ backgroundColor: pillBg }}
+          >
             <Link href="/" className="px-3 shrink-0">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo.svg" alt="Logo" className="h-5" />
+              <svg width="14" height="19" viewBox="0 0 23 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="4" height="31" rx="2" fill={logoFill} />
+                <rect x="18" y="7.82532" width="4.26835" height="18.4962" rx="2.13417" fill={logoFill} />
+                <rect x="6" y="5" width="2" height="16" rx="1" fill={logoFill} />
+                <rect x="10" y="9" width="2" height="14" rx="1" fill={logoFill} />
+                <rect x="14" y="14" width="2" height="8" rx="1" fill={logoFill} />
+              </svg>
             </Link>
-            <a href="#work" className="text-sm text-white/60 hover:text-white px-4 py-1.5 rounded-full hover:bg-white/10 transition-all">
+            <a href="#work" className={linkClass}>
               Work
             </a>
-            <a href="#about" className="text-sm text-white/60 hover:text-white px-4 py-1.5 rounded-full hover:bg-white/10 transition-all">
+            <a href="#about" className={linkClass}>
               About
             </a>
-            <a href="mailto:nathanmuyx@gmail.com" className="text-sm font-medium text-[#0a0a0a] bg-white hover:bg-white/90 px-5 py-1.5 rounded-full transition-colors">
+            <a href="mailto:nathanmuyx@gmail.com" className={ctaClass}>
               Contact
             </a>
           </div>
@@ -709,7 +762,7 @@ export default function Home() {
           <p className="text-xs text-white/30">&copy; {new Date().getFullYear()} Nathaniel Muyco</p>
           <div className="flex gap-6">
             <a href="mailto:nathanmuyx@gmail.com" className="text-xs text-white/30 hover:text-white/50 transition-colors">Email</a>
-            <a href="https://linkedin.com/in/nathanielmuyco" target="_blank" rel="noopener noreferrer" className="text-xs text-white/30 hover:text-white/50 transition-colors">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/nathaniel-muyco-903422272/" target="_blank" rel="noopener noreferrer" className="text-xs text-white/30 hover:text-white/50 transition-colors">LinkedIn</a>
           </div>
         </div>
       </footer>

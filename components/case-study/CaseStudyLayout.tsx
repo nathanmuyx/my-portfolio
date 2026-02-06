@@ -22,7 +22,6 @@ function isDarkBackground(el: Element | null): boolean {
       const match = bg.match(/\d+/g);
       if (match) {
         const [r, g, b] = match.map(Number);
-        // Luminance check — below 80 is dark
         return r * 0.299 + g * 0.587 + b * 0.114 < 80;
       }
     }
@@ -39,33 +38,46 @@ export function CaseStudyLayout({
   const [scrollProgress, setScrollProgress] = useState(0);
   const [overDark, setOverDark] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
+  const rafRef = useRef<number>(0);
 
   const handleScroll = useCallback(() => {
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    setScrollProgress(docHeight > 0 ? Math.min(scrollTop / docHeight, 1) : 0);
+    cancelAnimationFrame(rafRef.current);
+    rafRef.current = requestAnimationFrame(() => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      setScrollProgress(docHeight > 0 ? Math.min(scrollTop / docHeight, 1) : 0);
 
-    // Sample background behind the progress bar
-    if (navRef.current) {
-      const rect = navRef.current.getBoundingClientRect();
-      const sampleY = rect.top + rect.height / 2; // center of the pill
-      const sampleX = rect.left + rect.width / 2;
+      if (navRef.current) {
+        const rect = navRef.current.getBoundingClientRect();
+        const sampleY = rect.top + rect.height / 2;
 
-      // Temporarily hide nav so elementFromPoint hits the content behind
-      navRef.current.style.pointerEvents = "none";
-      navRef.current.style.visibility = "hidden";
-      const behind = document.elementFromPoint(sampleX, sampleY);
-      navRef.current.style.visibility = "";
-      navRef.current.style.pointerEvents = "";
+        navRef.current.style.pointerEvents = "none";
+        navRef.current.style.visibility = "hidden";
 
-      setOverDark(isDarkBackground(behind));
-    }
+        // Sample 5 points across the nav width for majority vote
+        let darkCount = 0;
+        const offsets = [0.2, 0.35, 0.5, 0.65, 0.8];
+        for (const pct of offsets) {
+          const x = rect.left + rect.width * pct;
+          const behind = document.elementFromPoint(x, sampleY);
+          if (isDarkBackground(behind)) darkCount++;
+        }
+
+        navRef.current.style.visibility = "";
+        navRef.current.style.pointerEvents = "";
+
+        setOverDark(darkCount >= 3);
+      }
+    });
   }, []);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      cancelAnimationFrame(rafRef.current);
+    };
   }, [handleScroll]);
 
   // Active section tracking

@@ -26,7 +26,7 @@ export function Footer() {
           <p className="text-sm text-muted-foreground mb-4">Links</p>
           <div className="space-y-2">
             <a
-              href="https://linkedin.com/in/nathanielmuyco"
+              href="https://www.linkedin.com/in/nathaniel-muyco-903422272/"
               target="_blank"
               rel="noopener noreferrer"
               className="block text-sm hover:text-muted-foreground transition-colors"
