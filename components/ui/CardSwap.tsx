@@ -128,6 +128,8 @@ export default function CardSwap({ images }: { images: CardImage[] }) {
             alt={img.alt}
             fill
             className="object-cover object-top"
+            priority
+            sizes="(max-width: 768px) 75vw, (max-width: 1024px) 40vw, 35vw"
           />
         </div>
       ))}

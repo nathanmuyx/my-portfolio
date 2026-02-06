@@ -46,12 +46,12 @@ export default function TactivStudiosPage() {
           <div className="grid md:grid-cols-2 gap-4">
             <div className="relative rounded-2xl overflow-hidden bg-[#0a0a0a]" style={{ aspectRatio: "4 / 3" }}>
               <div className="absolute left-[6%] top-[8%] w-[88%] rounded-lg overflow-hidden" style={{ aspectRatio: "214 / 133" }}>
-                <Image src="/images/tactiv-studios/screenshot-1.png" alt="Tactiv Studios dashboard" fill className="object-cover" />
+                <Image src="/images/tactiv-studios/screenshot-1.png" alt="Tactiv Studios dashboard" fill className="object-cover" priority sizes="(max-width: 768px) 90vw, 45vw" />
               </div>
             </div>
             <div className="relative rounded-2xl overflow-hidden bg-[#0a0a0a]" style={{ aspectRatio: "4 / 3" }}>
               <div className="absolute left-[6%] top-[8%] w-[88%] rounded-lg overflow-hidden" style={{ aspectRatio: "258 / 159" }}>
-                <Image src="/images/tactiv-studios/screenshot-2.png" alt="Tactiv Studios application" fill className="object-cover" />
+                <Image src="/images/tactiv-studios/screenshot-2.png" alt="Tactiv Studios application" fill className="object-cover" priority sizes="(max-width: 768px) 90vw, 45vw" />
               </div>
             </div>
           </div>
@@ -126,8 +126,7 @@ export default function TactivStudiosPage() {
               "Wealth management screens",
               "Emergency monitoring UI",
             ].map((label) => (
-              <div key={label} className="rounded-2xl bg-cream/50 border border-border flex items-center justify-center" style={{ aspectRatio: "4 / 3" }}>
-                <p className="text-sm text-foreground/30 px-6 text-center">{label}</p>
+              <div key={label} className="rounded-2xl bg-[#0a0a0a] flex items-center justify-center" style={{ aspectRatio: "4 / 3" }}>
               </div>
             ))}
           </div>

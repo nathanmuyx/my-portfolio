@@ -49,7 +49,7 @@ export default function StrategicVisionzPage() {
               <div className="bg-[#0a4299]/40 blur-[100px] rounded-full w-[500px] h-[500px]" />
             </div>
             <div className="absolute border-[6px] border-white/15 rounded-xl overflow-hidden left-[8%] top-[10%] w-[84%]" style={{ aspectRatio: "576 / 360" }}>
-              <Image src="/images/strategic-visionz/homepage.png" alt="Strategic Visionz platform" fill className="object-cover object-top" />
+              <Image src="/images/strategic-visionz/homepage.png" alt="Strategic Visionz platform" fill className="object-cover object-top" priority sizes="(max-width: 768px) 90vw, 84vw" />
             </div>
           </div>
         </div>
@@ -118,8 +118,7 @@ export default function StrategicVisionzPage() {
               "Mobile app screens (Expo)",
               "WeWeb build, enterprise client",
             ].map((label) => (
-              <div key={label} className="rounded-2xl bg-cream/50 border border-border flex items-center justify-center" style={{ aspectRatio: "4 / 3" }}>
-                <p className="text-sm text-foreground/30 px-8 text-center">{label}</p>
+              <div key={label} className="rounded-2xl bg-[#0a0a0a] flex items-center justify-center" style={{ aspectRatio: "4 / 3" }}>
               </div>
             ))}
           </div>

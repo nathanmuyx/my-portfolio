@@ -47,7 +47,7 @@ export default function RetrieverPage() {
               <div className="bg-[#ff5411]/30 blur-[80px] rounded-full w-[300px] h-[300px]" />
             </div>
             <div className="relative w-[60%] max-w-[500px]" style={{ aspectRatio: "236 / 175" }}>
-              <Image src="/images/retriever/mockup.png" alt="Retriever app screens" fill className="object-contain" />
+              <Image src="/images/retriever/mockup.png" alt="Retriever app screens" fill className="object-contain" priority sizes="(max-width: 768px) 90vw, 50vw" />
             </div>
           </div>
         </div>
@@ -108,9 +108,9 @@ export default function RetrieverPage() {
               { value: "3", label: "User personas (Buyer, Seller, Rider)" },
               { value: "0", label: "Design debt remaining" },
             ].map((metric) => (
-              <div key={metric.label} className="p-6 rounded-2xl bg-cream/50">
-                <p className="text-2xl font-medium mb-1">{metric.value}</p>
-                <p className="text-sm text-foreground/60">{metric.label}</p>
+              <div key={metric.label} className="p-6 rounded-2xl bg-[#0a0a0a]">
+                <p className="text-2xl font-medium mb-1 text-white">{metric.value}</p>
+                <p className="text-sm text-white/60">{metric.label}</p>
               </div>
             ))}
           </div>
@@ -120,8 +120,7 @@ export default function RetrieverPage() {
               "Before vs After comparison",
               "Component library & design tokens",
             ].map((label) => (
-              <div key={label} className="rounded-2xl bg-cream/50 border border-border flex items-center justify-center" style={{ aspectRatio: "16 / 10" }}>
-                <p className="text-sm text-foreground/30 px-8 text-center">{label}</p>
+              <div key={label} className="rounded-2xl bg-[#0a0a0a] flex items-center justify-center" style={{ aspectRatio: "16 / 10" }}>
               </div>
             ))}
           </div>

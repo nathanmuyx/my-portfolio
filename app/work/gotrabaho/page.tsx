@@ -49,7 +49,7 @@ export default function GoTrabahoPage() {
               <img src="/images/gotrabaho/swoosh.svg" alt="" className="w-full h-full" />
             </div>
             <div className="relative w-[40%] max-w-[300px]" style={{ aspectRatio: "201 / 233" }}>
-              <Image src="/images/gotrabaho/mockup.png" alt="GoTrabaho app screens" fill className="object-contain" />
+              <Image src="/images/gotrabaho/mockup.png" alt="GoTrabaho app screens" fill className="object-contain" priority sizes="(max-width: 768px) 80vw, 40vw" />
             </div>
           </div>
         </div>
@@ -107,8 +107,7 @@ export default function GoTrabahoPage() {
                   "Onboarding verification",
                   "Job posting & messaging",
                 ].map((label) => (
-                  <div key={label} className="rounded-xl bg-cream/50 border border-border flex items-center justify-center" style={{ aspectRatio: "3 / 4" }}>
-                    <p className="text-[11px] text-foreground/30 px-3 text-center">{label}</p>
+                  <div key={label} className="rounded-xl bg-[#0a0a0a] flex items-center justify-center" style={{ aspectRatio: "3 / 4" }}>
                   </div>
                 ))}
               </div>

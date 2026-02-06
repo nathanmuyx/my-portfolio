@@ -127,7 +127,7 @@ function ExpSvMockup() {
         <div className="flex-none rotate-[131deg]"><div className="bg-[#0a4299] blur-[30px] rounded-full w-[200px] h-[210px]" /></div>
       </div>
       <div className="absolute left-1/2 -translate-x-1/2 top-[26%] w-[85%] border-[3px] border-white/20 rounded-[10px] overflow-hidden shadow-[0_4px_4px_rgba(0,0,0,0.25)]" style={{ aspectRatio: "576/360" }}>
-        <Image src="/images/strategic-visionz/homepage.png" alt="" fill className="object-cover object-top" />
+        <Image src="/images/strategic-visionz/homepage.png" alt="" fill className="object-cover object-top" loading="lazy" sizes="280px" />
       </div>
     </>
   );
@@ -153,7 +153,7 @@ function ExpRetrieverMockup() {
         <div className="flex-none rotate-[131deg]"><div className="bg-[#ff5411] blur-[30px] rounded-full w-[80px] h-[85px]" /></div>
       </div>
       <div className="absolute left-1/2 -translate-x-1/2 top-[22%] w-[55%]" style={{ aspectRatio: "236/175" }}>
-        <Image src="/images/retriever/mockup.png" alt="" fill className="object-contain" />
+        <Image src="/images/retriever/mockup.png" alt="" fill className="object-contain" loading="lazy" sizes="280px" />
       </div>
     </>
   );
@@ -500,7 +500,7 @@ export default function Home() {
                   </div>
                   {/* Screenshot */}
                   <div className="absolute left-1/2 -translate-x-1/2 top-[26%] w-[89%] border-[3px] md:border-[4px] xl:border-[7px] border-white/20 rounded-[10px] md:rounded-[12px] xl:rounded-[19px] overflow-hidden shadow-[0px_4px_4px_rgba(0,0,0,0.25)] md:shadow-[0px_7px_7px_rgba(0,0,0,0.25)]" style={{ aspectRatio: '576 / 360' }}>
-                    <Image src="/images/strategic-visionz/homepage.png" alt="Strategic Visionz Homepage" fill className="object-cover object-top" />
+                    <Image src="/images/strategic-visionz/homepage.png" alt="Strategic Visionz Homepage" fill className="object-cover object-top" priority sizes="(max-width: 768px) 90vw, (max-width: 1024px) 50vw, 45vw" />
                   </div>
                   {/* Bottom dissolve into text area */}
                   <GradualBlur position="bottom" height="4rem" strength={2} divCount={5} curve="bezier" exponential opacity={1} zIndex={1} className="md:hidden" />
@@ -549,7 +549,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="absolute left-1/2 -translate-x-1/2 top-[22%] w-[73%]" style={{ aspectRatio: '236 / 175' }}>
-                    <Image src="/images/retriever/mockup.png" alt="Retriever app screens" fill className="object-contain" />
+                    <Image src="/images/retriever/mockup.png" alt="Retriever app screens" fill className="object-contain" loading="lazy" sizes="(max-width: 768px) 70vw, (max-width: 1024px) 35vw, 18vw" />
                   </div>
                   <GradualBlur position="bottom" height="3rem" strength={2} divCount={5} curve="bezier" exponential opacity={1} zIndex={1} className="lg:hidden" />
                   <div className="absolute top-0 left-0 right-0 p-4 z-[2]">

@@ -57,7 +57,7 @@ function StrategicVisionzMockup() {
         className="absolute left-1/2 -translate-x-1/2 top-[26%] w-[85%] border-[3px] border-white/20 rounded-[10px] overflow-hidden shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
         style={{ aspectRatio: "576 / 360" }}
       >
-        <Image src="/images/strategic-visionz/homepage.png" alt="" fill className="object-cover object-top" />
+        <Image src="/images/strategic-visionz/homepage.png" alt="" fill className="object-cover object-top" loading="lazy" sizes="320px" />
       </div>
     </>
   );
@@ -78,15 +78,15 @@ function TypidMockup() {
       </div>
       {/* Back card */}
       <div className="absolute border-[3px] border-white/20 rounded-[8px] overflow-hidden" style={{ left: "18.5%", top: "21%", width: "62.3%", aspectRatio: "404 / 226", zIndex: 1 }}>
-        <Image src="/images/typid/aisen-3.png" alt="" fill className="object-cover object-top" />
+        <Image src="/images/typid/aisen-3.png" alt="" fill className="object-cover object-top" loading="lazy" sizes="320px" />
       </div>
       {/* Middle card */}
       <div className="absolute border-[3px] border-white/20 rounded-[8px] overflow-hidden" style={{ left: "15.4%", top: "30%", width: "69.1%", aspectRatio: "448 / 250", zIndex: 2 }}>
-        <Image src="/images/typid/Himaya-2.png" alt="" fill className="object-cover object-top" />
+        <Image src="/images/typid/Himaya-2.png" alt="" fill className="object-cover object-top" loading="lazy" sizes="320px" />
       </div>
       {/* Front card */}
       <div className="absolute border-[3px] border-white/20 rounded-[8px] overflow-hidden" style={{ left: "12.3%", top: "41%", width: "75.3%", aspectRatio: "488 / 274", zIndex: 3 }}>
-        <Image src="/images/typid/homepage-1.png" alt="" fill className="object-cover object-top" />
+        <Image src="/images/typid/homepage-1.png" alt="" fill className="object-cover object-top" loading="lazy" sizes="320px" />
       </div>
     </>
   );
@@ -120,7 +120,7 @@ function RetrieverMockup() {
         </div>
       </div>
       <div className="absolute left-1/2 -translate-x-1/2 top-[18%] w-[65%]" style={{ aspectRatio: "236 / 175" }}>
-        <Image src="/images/retriever/mockup.png" alt="" fill className="object-contain" />
+        <Image src="/images/retriever/mockup.png" alt="" fill className="object-contain" loading="lazy" sizes="320px" />
       </div>
     </>
   );
