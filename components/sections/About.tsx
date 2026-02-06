@@ -33,7 +33,7 @@ export function About() {
           className="md:col-span-8 md:col-start-6"
         >
           <p className="text-2xl md:text-3xl font-medium leading-snug mb-12">
-            I'm a design engineer who believes the best work happens when you can see the full picture—from user needs to production code.
+            I'm a design engineer who believes the best work happens when you can see the full picture, from user needs to production code.
           </p>
 
           <div className="space-y-6 text-muted-foreground">
@@ -41,7 +41,7 @@ export function About() {
               Started as an intern at Tactiv Studios, grew into a lead over three years. Built design systems, shipped mobile apps, and learned why designs fail in development.
             </p>
             <p>
-              Now I design and build products. Typid Events is mine—an event platform I created from scratch. I use Flutter, React, and whatever gets the job done.
+              Now I design and build products. Typid Events is mine, an event platform I created from scratch. I use Flutter, React, and whatever gets the job done.
             </p>
             <p>
               I use AI as a tool, not a replacement. The eye that judges still matters.

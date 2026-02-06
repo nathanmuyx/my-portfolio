@@ -1,29 +1,32 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { CaseStudyLayout } from "@/components/case-study/CaseStudyLayout";
+import { MoreProjects } from "@/components/case-study/MoreProjects";
+import { TechIcon } from "@/components/case-study/TechIcon";
+
+const sections = [
+  { id: "hero", label: "Hero" },
+  { id: "overview", label: "Overview" },
+  { id: "finance-app", label: "Finance App" },
+  { id: "the-pivot", label: "The Pivot" },
+  { id: "events-platform", label: "Events Platform" },
+  { id: "stack", label: "Stack" },
+  { id: "reflection", label: "Reflection" },
+];
 
 export default function TypidPage() {
   return (
-    <div className="bg-white text-foreground min-h-screen">
-      {/* Nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-6 bg-white/80 backdrop-blur-sm">
-        <div className="max-w-[1100px] mx-auto flex justify-between items-center">
-          <Link href="/" className="text-sm text-foreground/40 hover:text-foreground transition-colors flex items-center gap-2">
-            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 19l-7-7 7-7" />
-            </svg>
-            Back
-          </Link>
-          <span className="text-sm text-foreground/40">Typid</span>
-        </div>
-      </nav>
-
+    <CaseStudyLayout
+      projectTitle="Typid"
+      sections={sections}
+      accentColor="#f59e0b"
+    >
       {/* Hero */}
-      <section className="pt-32 md:pt-44 pb-20 md:pb-28 px-6 md:px-12">
+      <section id="hero" className="pt-32 md:pt-44 pb-20 md:pb-28 px-6 md:px-12 scroll-mt-24">
         <div className="max-w-[1100px] mx-auto">
           <div className="flex flex-wrap gap-2 mb-8">
-            {["Co-Founder", "Product Design", "Frontend Dev", "2022 — Present"].map((tag) => (
+            {["Co-Founder", "Product Design", "Frontend Dev", "2022 - Present"].map((tag) => (
               <span key={tag} className="text-[11px] px-3 py-1.5 rounded-full bg-cream text-foreground/60">
                 {tag}
               </span>
@@ -35,7 +38,7 @@ export default function TypidPage() {
           </h1>
 
           <p className="text-lg md:text-xl text-foreground/50 max-w-2xl leading-relaxed">
-            Typid started as a personal finance app for Filipinos juggling cash, banks, and e-wallets. After shipping to both app stores, we pivoted to solve a bigger problem — fragmented event management in the Philippines.
+            Typid started as a personal finance app for Filipinos juggling cash, banks, and e-wallets. After shipping to both app stores, we pivoted to solve a bigger problem: fragmented event management in the Philippines.
           </p>
         </div>
       </section>
@@ -44,22 +47,20 @@ export default function TypidPage() {
       <section className="px-6 md:px-12 pb-24 md:pb-32">
         <div className="max-w-[1100px] mx-auto">
           <div className="relative w-full rounded-2xl overflow-hidden bg-[#0a0a0a]" style={{ aspectRatio: "16 / 9" }}>
-            {/* Cyan glow */}
             <div className="absolute left-[-20%] top-[-20%] w-[140%] h-[140%] pointer-events-none">
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#17bff9]/40 blur-[120px] rounded-full w-[600px] h-[600px]" />
             </div>
-            {/* White glow */}
             <div className="absolute left-1/2 top-[30%] -translate-x-1/2 -translate-y-1/2 pointer-events-none">
               <div className="bg-white/20 blur-[80px] rounded-full w-[400px] h-[400px]" />
             </div>
 
-            <div className="absolute border-4 border-white/15 rounded-lg overflow-hidden left-[20%] top-[12%] w-[58%]" style={{ aspectRatio: "404 / 226" }}>
+            <div className="absolute border-4 border-white/15 rounded-[12px] overflow-hidden left-[20%] top-[12%] w-[58%]" style={{ aspectRatio: "404 / 226" }}>
               <Image src="/images/typid/aisen-3.png" alt="Aisen Fest event page" fill className="object-cover object-top" />
             </div>
-            <div className="absolute border-4 border-white/15 rounded-lg overflow-hidden left-[16%] top-[24%] w-[66%]" style={{ aspectRatio: "448 / 250" }}>
+            <div className="absolute border-4 border-white/15 rounded-[12px] overflow-hidden left-[16%] top-[24%] w-[66%]" style={{ aspectRatio: "448 / 250" }}>
               <Image src="/images/typid/Himaya-2.png" alt="Himaya event page" fill className="object-cover object-top" />
             </div>
-            <div className="absolute border-4 border-white/15 rounded-lg overflow-hidden left-[12%] top-[38%] w-[74%]" style={{ aspectRatio: "488 / 274" }}>
+            <div className="absolute border-4 border-white/15 rounded-[12px] overflow-hidden left-[12%] top-[38%] w-[74%]" style={{ aspectRatio: "488 / 274" }}>
               <Image src="/images/typid/homepage-1.png" alt="Typid homepage" fill className="object-cover object-top" />
             </div>
           </div>
@@ -67,7 +68,7 @@ export default function TypidPage() {
       </section>
 
       {/* Overview Grid */}
-      <section className="px-6 md:px-12 pb-24 md:pb-32">
+      <section id="overview" className="px-6 md:px-12 pb-24 md:pb-32 scroll-mt-24">
         <div className="max-w-[1100px] mx-auto">
           <div className="grid md:grid-cols-3 gap-x-12 gap-y-10">
             <div>
@@ -86,13 +87,12 @@ export default function TypidPage() {
         </div>
       </section>
 
-      {/* Divider */}
       <div className="max-w-[1100px] mx-auto px-6 md:px-12">
         <div className="h-px bg-border" />
       </div>
 
       {/* Chapter 1: Finance */}
-      <section className="px-6 md:px-12 py-24 md:py-32">
+      <section id="finance-app" className="px-6 md:px-12 py-24 md:py-32 scroll-mt-24">
         <div className="max-w-[1100px] mx-auto">
           <p className="text-[11px] uppercase tracking-wider text-foreground/40 mb-6">Chapter 1</p>
           <h2 className="text-3xl md:text-4xl font-medium leading-tight tracking-tight max-w-2xl mb-6">
@@ -136,7 +136,7 @@ export default function TypidPage() {
               <h3 className="text-lg font-medium mb-4">What I designed and built</h3>
               <ul className="space-y-3">
                 {[
-                  "Multi-wallet dashboard — cash, bank, and e-wallet balances in one view",
+                  "Multi-wallet dashboard with cash, bank, and e-wallet balances in one view",
                   "Categorized expense tracking with visual breakdowns by wallet",
                   "Emergency fund tracker with savings goal progress",
                   "Cross-platform UI built in Flutter, deployed to both app stores",
@@ -158,7 +158,7 @@ export default function TypidPage() {
                 ].map((item) => (
                   <div key={item.tool} className="text-sm">
                     <span className="font-medium">{item.tool}</span>
-                    <span className="text-foreground/40"> — {item.reason}</span>
+                    <span className="text-foreground/40">: {item.reason}</span>
                   </div>
                 ))}
               </div>
@@ -167,20 +167,19 @@ export default function TypidPage() {
         </div>
       </section>
 
-      {/* Divider */}
       <div className="max-w-[1100px] mx-auto px-6 md:px-12">
         <div className="h-px bg-border" />
       </div>
 
       {/* The Pivot */}
-      <section className="px-6 md:px-12 py-24 md:py-32">
+      <section id="the-pivot" className="px-6 md:px-12 py-24 md:py-32 scroll-mt-24">
         <div className="max-w-[1100px] mx-auto">
           <p className="text-[11px] uppercase tracking-wider text-foreground/40 mb-6">The Pivot</p>
           <h2 className="text-3xl md:text-4xl font-medium leading-tight tracking-tight max-w-2xl mb-6">
             The market was saturated. The problem wasn&apos;t.
           </h2>
           <p className="text-base text-foreground/50 max-w-2xl mb-16 leading-relaxed">
-            After shipping v1, we ran into reality. GCash, Maya, and every major bank had their own finance features. Competing on personal finance alone wasn&apos;t viable. But while organizing a university event, we experienced the real gap — there was no unified platform for Philippine event management.
+            After shipping v1, we ran into reality. GCash, Maya, and every major bank had their own finance features. Competing on personal finance alone wasn&apos;t viable. But while organizing a university event, we experienced the real gap. There was no unified platform for Philippine event management.
           </p>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -211,23 +210,21 @@ export default function TypidPage() {
         </div>
       </section>
 
-      {/* Divider */}
       <div className="max-w-[1100px] mx-auto px-6 md:px-12">
         <div className="h-px bg-border" />
       </div>
 
       {/* Chapter 2: Events */}
-      <section className="px-6 md:px-12 py-24 md:py-32">
+      <section id="events-platform" className="px-6 md:px-12 py-24 md:py-32 scroll-mt-24">
         <div className="max-w-[1100px] mx-auto">
           <p className="text-[11px] uppercase tracking-wider text-foreground/40 mb-6">Chapter 2</p>
           <h2 className="text-3xl md:text-4xl font-medium leading-tight tracking-tight max-w-2xl mb-6">
             Event ticketing built for how the Philippines actually pays
           </h2>
           <p className="text-base text-foreground/50 max-w-2xl mb-16 leading-relaxed">
-            Eventbrite doesn&apos;t support GCash. Ticketmaster doesn&apos;t exist here. Local organizers were using Google Forms and manual bank transfer screenshots. We built the infrastructure they needed — from ticket purchase to venue check-in.
+            Eventbrite doesn&apos;t support GCash. Ticketmaster doesn&apos;t exist here. Local organizers were using Google Forms and manual bank transfer screenshots. We built the infrastructure they needed, from ticket purchase to venue check-in.
           </p>
 
-          {/* Features as a clean 2-col layout */}
           <div className="grid md:grid-cols-2 gap-x-16 gap-y-10 mb-20">
             {[
               {
@@ -240,7 +237,7 @@ export default function TypidPage() {
               },
               {
                 title: "QR check-in",
-                desc: "Each ticket generates a unique QR code. Venue staff scan to validate — handles edge cases like refunds, duplicates, and transfer tickets.",
+                desc: "Each ticket generates a unique QR code. Venue staff scan to validate. Handles edge cases like refunds, duplicates, and transfer tickets.",
               },
               {
                 title: "Attendee management",
@@ -252,7 +249,7 @@ export default function TypidPage() {
               },
               {
                 title: "Multi-tier ticketing",
-                desc: "Early bird, VIP, group discounts — with inventory management per tier and automatic sold-out handling.",
+                desc: "Early bird, VIP, group discounts with inventory management per tier and automatic sold-out handling.",
               },
             ].map((feature) => (
               <div key={feature.title}>
@@ -262,13 +259,12 @@ export default function TypidPage() {
             ))}
           </div>
 
-          {/* Events screenshots */}
           <div className="grid md:grid-cols-2 gap-4">
             <div className="relative rounded-2xl overflow-hidden bg-[#0a0a0a]" style={{ aspectRatio: "4 / 3" }}>
               <div className="absolute left-1/2 top-[40%] -translate-x-1/2 -translate-y-1/2 pointer-events-none">
                 <div className="bg-[#17bff9]/30 blur-[80px] rounded-full w-[300px] h-[300px]" />
               </div>
-              <div className="absolute border-4 border-white/15 rounded-lg overflow-hidden left-[8%] top-[12%] w-[84%]" style={{ aspectRatio: "488 / 274" }}>
+              <div className="absolute border-4 border-white/15 rounded-[12px] overflow-hidden left-[8%] top-[12%] w-[84%]" style={{ aspectRatio: "488 / 274" }}>
                 <Image src="/images/typid/homepage-1.png" alt="Typid events homepage" fill className="object-cover object-top" />
               </div>
             </div>
@@ -276,7 +272,7 @@ export default function TypidPage() {
               <div className="absolute left-1/2 top-[40%] -translate-x-1/2 -translate-y-1/2 pointer-events-none">
                 <div className="bg-[#17bff9]/30 blur-[80px] rounded-full w-[300px] h-[300px]" />
               </div>
-              <div className="absolute border-4 border-white/15 rounded-lg overflow-hidden left-[8%] top-[12%] w-[84%]" style={{ aspectRatio: "448 / 250" }}>
+              <div className="absolute border-4 border-white/15 rounded-[12px] overflow-hidden left-[8%] top-[12%] w-[84%]" style={{ aspectRatio: "448 / 250" }}>
                 <Image src="/images/typid/Himaya-2.png" alt="Himaya event on Typid" fill className="object-cover object-top" />
               </div>
             </div>
@@ -284,13 +280,12 @@ export default function TypidPage() {
         </div>
       </section>
 
-      {/* Divider */}
       <div className="max-w-[1100px] mx-auto px-6 md:px-12">
         <div className="h-px bg-border" />
       </div>
 
       {/* Tech Stack */}
-      <section className="px-6 md:px-12 py-24 md:py-32">
+      <section id="stack" className="px-6 md:px-12 py-24 md:py-32 scroll-mt-24">
         <div className="max-w-[1100px] mx-auto">
           <p className="text-[11px] uppercase tracking-wider text-foreground/40 mb-6">Stack</p>
           <h2 className="text-3xl md:text-4xl font-medium leading-tight tracking-tight max-w-2xl mb-16">
@@ -306,9 +301,10 @@ export default function TypidPage() {
                   { name: "Dart", role: "Application logic" },
                   { name: "Supabase", role: "Database, auth, real-time" },
                   { name: "Riverpod", role: "State management" },
+                  { name: "Claude Code", role: "AI-assisted development" },
                 ].map((tech) => (
-                  <div key={tech.name} className="flex items-baseline justify-between pb-4 border-b border-border">
-                    <span className="text-sm font-medium">{tech.name}</span>
+                  <div key={tech.name} className="flex items-center justify-between pb-4 border-b border-border">
+                    <span className="text-sm font-medium flex items-center gap-2"><TechIcon name={tech.name} />{tech.name}</span>
                     <span className="text-sm text-foreground/40">{tech.role}</span>
                   </div>
                 ))}
@@ -322,9 +318,10 @@ export default function TypidPage() {
                   { name: "TypeScript", role: "Type safety" },
                   { name: "Supabase", role: "Database, auth, storage" },
                   { name: "Resend", role: "Transactional email" },
+                  { name: "Claude Code", role: "AI-assisted development" },
                 ].map((tech) => (
-                  <div key={tech.name} className="flex items-baseline justify-between pb-4 border-b border-border">
-                    <span className="text-sm font-medium">{tech.name}</span>
+                  <div key={tech.name} className="flex items-center justify-between pb-4 border-b border-border">
+                    <span className="text-sm font-medium flex items-center gap-2"><TechIcon name={tech.name} />{tech.name}</span>
                     <span className="text-sm text-foreground/40">{tech.role}</span>
                   </div>
                 ))}
@@ -334,13 +331,12 @@ export default function TypidPage() {
         </div>
       </section>
 
-      {/* Divider */}
       <div className="max-w-[1100px] mx-auto px-6 md:px-12">
         <div className="h-px bg-border" />
       </div>
 
       {/* Reflection */}
-      <section className="px-6 md:px-12 py-24 md:py-32">
+      <section id="reflection" className="px-6 md:px-12 py-24 md:py-32 scroll-mt-24">
         <div className="max-w-[1100px] mx-auto">
           <p className="text-[11px] uppercase tracking-wider text-foreground/40 mb-6">Reflection</p>
           <h2 className="text-3xl md:text-4xl font-medium leading-tight tracking-tight max-w-2xl mb-10">
@@ -363,7 +359,7 @@ export default function TypidPage() {
               },
               {
                 title: "Two-person teams move fast",
-                body: "With clear ownership — design/frontend and backend/infra — we shipped two products in two years without process overhead.",
+                body: "With clear ownership (design/frontend and backend/infra), we shipped two products in two years without process overhead.",
               },
             ].map((lesson) => (
               <div key={lesson.title}>
@@ -375,33 +371,7 @@ export default function TypidPage() {
         </div>
       </section>
 
-      {/* Next Project */}
-      <section className="px-6 md:px-12 py-20 border-t border-border">
-        <Link href="/work/strategic-visionz" className="group block max-w-[1100px] mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-            <div>
-              <p className="text-[11px] uppercase tracking-wider text-foreground/40 mb-3">Next Project</p>
-              <h3 className="text-3xl md:text-4xl font-medium group-hover:text-foreground/60 transition-colors">
-                Strategic Visionz
-              </h3>
-            </div>
-            <svg className="w-8 h-8 text-foreground/20 group-hover:text-foreground/60 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 17L17 7M17 7H7M17 7v10" />
-            </svg>
-          </div>
-        </Link>
-      </section>
-
-      {/* Footer */}
-      <footer className="py-12 px-6 md:px-12 border-t border-border">
-        <div className="max-w-[1100px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-sm text-foreground/40">&copy; {new Date().getFullYear()} Nathaniel Muyco</p>
-          <div className="flex gap-8">
-            <a href="https://linkedin.com/in/nathanielmuyco" target="_blank" rel="noopener noreferrer" className="text-sm text-foreground/40 hover:text-foreground transition-colors">LinkedIn</a>
-            <a href="mailto:nathanmuyx@gmail.com" className="text-sm text-foreground/40 hover:text-foreground transition-colors">Email</a>
-          </div>
-        </div>
-      </footer>
-    </div>
+      <MoreProjects currentSlug="typid" />
+    </CaseStudyLayout>
   );
 }

@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: PageProps) {
   }
 
   return {
-    title: `${caseStudy.title} — Nathaniel Muyco`,
+    title: `${caseStudy.title} | Nathaniel Muyco`,
     description: caseStudy.overview,
   };
 }

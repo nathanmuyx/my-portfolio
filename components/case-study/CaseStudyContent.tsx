@@ -1,10 +1,10 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useMemo } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import Link from "next/link";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import type { CaseStudy } from "@/data/case-studies";
+import { CaseStudyLayout } from "./CaseStudyLayout";
+import { MoreProjects } from "./MoreProjects";
 
 interface CaseStudyContentProps {
   caseStudy: CaseStudy;
@@ -34,29 +34,34 @@ export function CaseStudyContent({ caseStudy }: CaseStudyContentProps) {
 
   const accent = projectAccents[caseStudy.slug] || "#000";
 
-  return (
-    <div className="bg-white">
-      {/* Fixed Nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-6 bg-white/80 backdrop-blur-md">
-        <div className="max-w-[1400px] mx-auto flex justify-between items-center">
-          <Link href="/" className="text-sm font-medium">
-            Nathaniel Muyco
-          </Link>
-          <Link
-            href="/"
-            className="flex items-center gap-2 text-sm text-neutral-500 hover:text-neutral-900 transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Back
-          </Link>
-        </div>
-      </nav>
+  const sections = useMemo(() => {
+    const s = [
+      { id: "hero", label: "Hero" },
+      { id: "hero-image", label: "Hero Image" },
+      { id: "overview", label: "Overview" },
+      { id: "details", label: "Details" },
+      { id: "challenge", label: "Challenge" },
+      { id: "solution", label: "Solution" },
+    ];
+    if (caseStudy.process) {
+      s.push({ id: "process", label: "Process" });
+    }
+    s.push({ id: "outcome", label: "Outcome" });
+    return s;
+  }, [caseStudy.process]);
 
+  return (
+    <CaseStudyLayout
+      projectTitle={caseStudy.title}
+      sections={sections}
+      accentColor={accent}
+    >
       {/* Hero - Full Viewport, Black & White */}
       <motion.section
+        id="hero"
         ref={heroRef}
         style={{ opacity: heroOpacity, scale: heroScale, y: heroY }}
-        className="min-h-screen flex flex-col justify-center items-center text-center px-6"
+        className="min-h-screen flex flex-col justify-center items-center text-center px-6 scroll-mt-24"
       >
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -97,7 +102,7 @@ export function CaseStudyContent({ caseStudy }: CaseStudyContentProps) {
       </motion.section>
 
       {/* Hero Image - Clean */}
-      <section className="relative h-[150vh]">
+      <section id="hero-image" className="relative h-[150vh] scroll-mt-24">
         <div className="sticky top-0 h-screen flex items-center justify-center px-6 md:px-12 overflow-hidden">
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
@@ -112,7 +117,7 @@ export function CaseStudyContent({ caseStudy }: CaseStudyContentProps) {
       </section>
 
       {/* Overview - Large Black Text */}
-      <section className="py-32 md:py-48 px-6 md:px-12">
+      <section id="overview" className="py-32 md:py-48 px-6 md:px-12 scroll-mt-24">
         <div className="max-w-4xl mx-auto">
           <motion.p
             initial={{ opacity: 0, y: 40 }}
@@ -127,7 +132,7 @@ export function CaseStudyContent({ caseStudy }: CaseStudyContentProps) {
       </section>
 
       {/* Role & Details - Minimal */}
-      <section className="py-16 px-6 md:px-12 border-y border-neutral-100">
+      <section id="details" className="py-16 px-6 md:px-12 border-y border-neutral-100 scroll-mt-24">
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
             { label: "Role", value: caseStudy.role },
@@ -150,7 +155,7 @@ export function CaseStudyContent({ caseStudy }: CaseStudyContentProps) {
       </section>
 
       {/* Problem - Cinematic */}
-      <section className="py-32 md:py-48 px-6 md:px-12">
+      <section id="challenge" className="py-32 md:py-48 px-6 md:px-12 scroll-mt-24">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -159,7 +164,6 @@ export function CaseStudyContent({ caseStudy }: CaseStudyContentProps) {
             transition={{ duration: 0.6 }}
             className="mb-16"
           >
-            {/* Accent color used intentionally for section label */}
             <span className="text-sm font-medium" style={{ color: accent }}>
               The Challenge
             </span>
@@ -191,7 +195,7 @@ export function CaseStudyContent({ caseStudy }: CaseStudyContentProps) {
       </section>
 
       {/* Solution */}
-      <section className="py-32 md:py-48 px-6 md:px-12 bg-neutral-50">
+      <section id="solution" className="py-32 md:py-48 px-6 md:px-12 bg-neutral-50 scroll-mt-24">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -226,7 +230,6 @@ export function CaseStudyContent({ caseStudy }: CaseStudyContentProps) {
                   transition={{ duration: 0.4, delay: i * 0.05 }}
                   className="flex gap-4 p-6 bg-white rounded-2xl"
                 >
-                  {/* Accent color for numbers */}
                   <span className="text-lg font-bold" style={{ color: accent }}>
                     {String(i + 1).padStart(2, "0")}
                   </span>
@@ -258,7 +261,7 @@ export function CaseStudyContent({ caseStudy }: CaseStudyContentProps) {
 
       {/* Process */}
       {caseStudy.process && (
-        <section className="py-32 md:py-48 px-6 md:px-12">
+        <section id="process" className="py-32 md:py-48 px-6 md:px-12 scroll-mt-24">
           <div className="max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0 }}
@@ -282,7 +285,6 @@ export function CaseStudyContent({ caseStudy }: CaseStudyContentProps) {
                   transition={{ duration: 0.4, delay: i * 0.1 }}
                   className="group grid md:grid-cols-[100px_1fr] gap-8 py-12 border-b border-neutral-100"
                 >
-                  {/* Accent on hover */}
                   <span
                     className="text-4xl md:text-5xl font-bold text-neutral-200 group-hover:text-current transition-colors"
                     style={{ "--hover-color": accent } as React.CSSProperties}
@@ -319,7 +321,7 @@ export function CaseStudyContent({ caseStudy }: CaseStudyContentProps) {
       </section>
 
       {/* Outcome - Big Numbers with Accent */}
-      <section className="py-32 md:py-48 px-6 md:px-12 bg-neutral-900 text-white">
+      <section id="outcome" className="py-32 md:py-48 px-6 md:px-12 bg-neutral-900 text-white scroll-mt-24">
         <div className="max-w-6xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0 }}
@@ -353,7 +355,6 @@ export function CaseStudyContent({ caseStudy }: CaseStudyContentProps) {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.15 }}
                 >
-                  {/* Accent color for key metrics */}
                   <p
                     className="text-4xl md:text-6xl lg:text-7xl font-bold mb-3"
                     style={{ color: accent }}
@@ -368,50 +369,7 @@ export function CaseStudyContent({ caseStudy }: CaseStudyContentProps) {
         </div>
       </section>
 
-      {/* Next Project */}
-      {caseStudy.nextProject && (
-        <section className="py-32 px-6 md:px-12 border-t border-neutral-100">
-          <Link
-            href={`/work/${caseStudy.nextProject.slug}`}
-            className="group block max-w-6xl mx-auto"
-          >
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-              <div>
-                <p className="text-sm text-neutral-400 mb-4">Next Project</p>
-                <h3 className="text-3xl md:text-5xl font-bold text-neutral-900 group-hover:text-neutral-500 transition-colors">
-                  {caseStudy.nextProject.title}
-                </h3>
-              </div>
-              <ArrowUpRight className="w-12 h-12 text-neutral-200 group-hover:text-neutral-900 group-hover:translate-x-2 group-hover:-translate-y-2 transition-all" />
-            </div>
-          </Link>
-        </section>
-      )}
-
-      {/* Footer */}
-      <footer className="py-12 px-6 md:px-12 border-t border-neutral-100">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-sm text-neutral-400">
-            © {new Date().getFullYear()} Nathaniel Muyco
-          </p>
-          <div className="flex gap-8">
-            <a
-              href="https://linkedin.com/in/nathanielmuyco"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-neutral-400 hover:text-neutral-900 transition-colors"
-            >
-              LinkedIn
-            </a>
-            <a
-              href="mailto:nathanmuyx@gmail.com"
-              className="text-sm text-neutral-400 hover:text-neutral-900 transition-colors"
-            >
-              Email
-            </a>
-          </div>
-        </div>
-      </footer>
-    </div>
+      <MoreProjects currentSlug={caseStudy.slug} />
+    </CaseStudyLayout>
   );
 }

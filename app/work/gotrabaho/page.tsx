@@ -1,26 +1,25 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { CaseStudyLayout } from "@/components/case-study/CaseStudyLayout";
+import { MoreProjects } from "@/components/case-study/MoreProjects";
+import { TechIcon } from "@/components/case-study/TechIcon";
+
+const sections = [
+  { id: "hero", label: "Hero" },
+  { id: "mockup", label: "Mockup" },
+  { id: "details", label: "Details" },
+];
 
 export default function GoTrabahoPage() {
   return (
-    <div className="bg-white text-foreground min-h-screen">
-      {/* Nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-6 bg-white/80 backdrop-blur-sm">
-        <div className="max-w-[1100px] mx-auto flex justify-between items-center">
-          <Link href="/" className="text-sm text-foreground/40 hover:text-foreground transition-colors flex items-center gap-2">
-            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 19l-7-7 7-7" />
-            </svg>
-            Back
-          </Link>
-          <span className="text-sm text-foreground/40">GoTrabaho</span>
-        </div>
-      </nav>
-
+    <CaseStudyLayout
+      projectTitle="GoTrabaho"
+      sections={sections}
+      accentColor="#10b981"
+    >
       {/* Hero */}
-      <section className="pt-32 md:pt-44 pb-16 md:pb-20 px-6 md:px-12">
+      <section id="hero" className="pt-32 md:pt-44 pb-16 md:pb-20 px-6 md:px-12 scroll-mt-24">
         <div className="max-w-[1100px] mx-auto">
           <div className="flex flex-wrap gap-2 mb-8">
             {["Designer & Developer", "Flutter", "End-to-End", "2023"].map((tag) => (
@@ -35,13 +34,13 @@ export default function GoTrabahoPage() {
           </h1>
 
           <p className="text-lg md:text-xl text-foreground/50 max-w-2xl leading-relaxed">
-            GoTrabaho connects blue-collar workers with clients in the Philippines. I designed the UI, built the Flutter app, and set up the Firebase backend — the full stack, solo.
+            GoTrabaho connects blue-collar workers with clients in the Philippines. I designed the UI, built the Flutter app, and set up the Firebase backend. The full stack, solo.
           </p>
         </div>
       </section>
 
       {/* Mockup */}
-      <section className="px-6 md:px-12 pb-16 md:pb-20">
+      <section id="mockup" className="px-6 md:px-12 pb-16 md:pb-20 scroll-mt-24">
         <div className="max-w-[1100px] mx-auto">
           <div className="relative w-full rounded-2xl overflow-hidden bg-[#0a0a0a] flex items-center justify-center" style={{ aspectRatio: "16 / 9" }}>
             {/* Swoosh */}
@@ -59,14 +58,14 @@ export default function GoTrabahoPage() {
       <div className="max-w-[1100px] mx-auto px-6 md:px-12"><div className="h-px bg-border" /></div>
 
       {/* Details */}
-      <section className="px-6 md:px-12 py-20 md:py-24">
+      <section id="details" className="px-6 md:px-12 py-20 md:py-24 scroll-mt-24">
         <div className="max-w-[1100px] mx-auto">
           <div className="grid md:grid-cols-2 gap-16">
             <div>
               <p className="text-[11px] uppercase tracking-wider text-foreground/40 mb-6">What I built</p>
               <ul className="space-y-3">
                 {[
-                  "Identity verification onboarding — added friction intentionally to build trust",
+                  "Identity verification onboarding, added friction intentionally to build trust",
                   "Two-sided marketplace: recruiters post jobs, workers browse and apply",
                   "Skills and experience validation with verification badges",
                   "In-app messaging between clients and workers",
@@ -87,8 +86,8 @@ export default function GoTrabahoPage() {
                     { name: "Firebase", role: "Auth, database, functions" },
                     { name: "Figma", role: "Design & prototyping" },
                   ].map((tech) => (
-                    <div key={tech.name} className="flex items-baseline justify-between pb-4 border-b border-border">
-                      <span className="text-sm font-medium">{tech.name}</span>
+                    <div key={tech.name} className="flex items-center justify-between pb-4 border-b border-border">
+                      <span className="text-sm font-medium flex items-center gap-2"><TechIcon name={tech.name} />{tech.name}</span>
                       <span className="text-sm text-foreground/40">{tech.role}</span>
                     </div>
                   ))}
@@ -98,10 +97,9 @@ export default function GoTrabahoPage() {
             <div>
               <p className="text-[11px] uppercase tracking-wider text-foreground/40 mb-6">Key decision</p>
               <p className="text-base leading-relaxed mb-6">
-                I chose to add friction during onboarding — identity verification, skill validation — even though it increased initial drop-off. For a platform where strangers show up at your home, trust was the product.
+                I chose to add friction during onboarding (identity verification, skill validation) even though it increased initial drop-off. For a platform where strangers show up at your home, trust was the product.
               </p>
 
-              {/* TODO: Replace placeholders with screen flows or user journey screenshots */}
               <div className="grid grid-cols-2 gap-3 mt-8">
                 {[
                   "Recruiter flow screens",
@@ -119,30 +117,7 @@ export default function GoTrabahoPage() {
         </div>
       </section>
 
-      {/* Next Project */}
-      <section className="px-6 md:px-12 py-20 border-t border-border">
-        <Link href="/work/tactiv-studios" className="group block max-w-[1100px] mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-            <div>
-              <p className="text-[11px] uppercase tracking-wider text-foreground/40 mb-3">Next Project</p>
-              <h3 className="text-3xl md:text-4xl font-medium group-hover:text-foreground/60 transition-colors">Tactiv Studios</h3>
-            </div>
-            <svg className="w-8 h-8 text-foreground/20 group-hover:text-foreground/60 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 17L17 7M17 7H7M17 7v10" />
-            </svg>
-          </div>
-        </Link>
-      </section>
-
-      <footer className="py-12 px-6 md:px-12 border-t border-border">
-        <div className="max-w-[1100px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-sm text-foreground/40">&copy; {new Date().getFullYear()} Nathaniel Muyco</p>
-          <div className="flex gap-8">
-            <a href="https://linkedin.com/in/nathanielmuyco" target="_blank" rel="noopener noreferrer" className="text-sm text-foreground/40 hover:text-foreground transition-colors">LinkedIn</a>
-            <a href="mailto:nathanmuyx@gmail.com" className="text-sm text-foreground/40 hover:text-foreground transition-colors">Email</a>
-          </div>
-        </div>
-      </footer>
-    </div>
+      <MoreProjects currentSlug="gotrabaho" />
+    </CaseStudyLayout>
   );
 }

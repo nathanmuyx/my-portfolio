@@ -113,14 +113,14 @@ export default function CardSwap({ images }: { images: CardImage[] }) {
 
   return (
     <div
-      className="absolute inset-0 overflow-hidden"
+      className="absolute inset-0 overflow-hidden isolate"
       onMouseEnter={swap}
     >
       {images.map((img, i) => (
         <div
           key={img.src}
           ref={(el) => { refs.current[i] = el; }}
-          className="absolute border-4 border-white/20 rounded-[8px] overflow-hidden"
+          className="absolute border-4 border-white/20 rounded-[12px] overflow-hidden"
           style={{ aspectRatio: slots[order.indexOf(i)]?.aspectRatio ?? "488 / 274" }}
         >
           <Image

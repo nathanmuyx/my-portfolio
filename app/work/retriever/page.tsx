@@ -1,26 +1,25 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { CaseStudyLayout } from "@/components/case-study/CaseStudyLayout";
+import { MoreProjects } from "@/components/case-study/MoreProjects";
+
+const sections = [
+  { id: "hero", label: "Hero" },
+  { id: "mockup", label: "Mockup" },
+  { id: "problem-solution", label: "Problem & Solution" },
+  { id: "outcome", label: "Outcome" },
+];
 
 export default function RetrieverPage() {
   return (
-    <div className="bg-white text-foreground min-h-screen">
-      {/* Nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-6 bg-white/80 backdrop-blur-sm">
-        <div className="max-w-[1100px] mx-auto flex justify-between items-center">
-          <Link href="/" className="text-sm text-foreground/40 hover:text-foreground transition-colors flex items-center gap-2">
-            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 19l-7-7 7-7" />
-            </svg>
-            Back
-          </Link>
-          <span className="text-sm text-foreground/40">Retriever PH</span>
-        </div>
-      </nav>
-
+    <CaseStudyLayout
+      projectTitle="Retriever PH"
+      sections={sections}
+      accentColor="#06b6d4"
+    >
       {/* Hero */}
-      <section className="pt-32 md:pt-44 pb-16 md:pb-20 px-6 md:px-12">
+      <section id="hero" className="pt-32 md:pt-44 pb-16 md:pb-20 px-6 md:px-12 scroll-mt-24">
         <div className="max-w-[1100px] mx-auto">
           <div className="flex flex-wrap gap-2 mb-8">
             {["Product Designer", "Redesign", "54 Screens", "2023"].map((tag) => (
@@ -41,7 +40,7 @@ export default function RetrieverPage() {
       </section>
 
       {/* Mockup */}
-      <section className="px-6 md:px-12 pb-16 md:pb-20">
+      <section id="mockup" className="px-6 md:px-12 pb-16 md:pb-20 scroll-mt-24">
         <div className="max-w-[1100px] mx-auto">
           <div className="relative w-full rounded-2xl overflow-hidden bg-[#0a0a0a] flex items-center justify-center py-12" style={{ aspectRatio: "16 / 7" }}>
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
@@ -56,8 +55,8 @@ export default function RetrieverPage() {
 
       <div className="max-w-[1100px] mx-auto px-6 md:px-12"><div className="h-px bg-border" /></div>
 
-      {/* Problem → Solution */}
-      <section className="px-6 md:px-12 py-20 md:py-24">
+      {/* Problem + Solution */}
+      <section id="problem-solution" className="px-6 md:px-12 py-20 md:py-24 scroll-mt-24">
         <div className="max-w-[1100px] mx-auto">
           <div className="grid md:grid-cols-2 gap-16">
             <div>
@@ -66,7 +65,7 @@ export default function RetrieverPage() {
                 {[
                   "Screens designed at 1080x1920 instead of proper iPhone dimensions (390x844)",
                   "No color palette, typography system, or component library",
-                  "Prototype connections were tangled — impossible to follow user journeys",
+                  "Prototype connections were tangled, impossible to follow user journeys",
                   "Spacing varied wildly across every screen",
                 ].map((item) => (
                   <li key={item} className="flex gap-3 text-sm text-foreground/60 leading-relaxed">
@@ -81,7 +80,7 @@ export default function RetrieverPage() {
               <ul className="space-y-3">
                 {[
                   "Correct iPhone 13 Pro device frames with safe areas",
-                  "Reusable component library — buttons, inputs, cards, navigation",
+                  "Reusable component library: buttons, inputs, cards, navigation",
                   "8px spacing grid with consistent margins and padding",
                   "Typography scale with clear heading and body hierarchy",
                   "Brand colors with proper contrast ratios",
@@ -100,8 +99,8 @@ export default function RetrieverPage() {
 
       <div className="max-w-[1100px] mx-auto px-6 md:px-12"><div className="h-px bg-border" /></div>
 
-      {/* Outcome + Placeholders */}
-      <section className="px-6 md:px-12 py-20 md:py-24">
+      {/* Outcome */}
+      <section id="outcome" className="px-6 md:px-12 py-20 md:py-24 scroll-mt-24">
         <div className="max-w-[1100px] mx-auto">
           <div className="grid md:grid-cols-3 gap-6 mb-16">
             {[
@@ -116,7 +115,6 @@ export default function RetrieverPage() {
             ))}
           </div>
 
-          {/* TODO: Replace placeholders with before/after screens, component library, or flow screenshots */}
           <div className="grid md:grid-cols-2 gap-4">
             {[
               "Before vs After comparison",
@@ -130,30 +128,7 @@ export default function RetrieverPage() {
         </div>
       </section>
 
-      {/* Next Project */}
-      <section className="px-6 md:px-12 py-20 border-t border-border">
-        <Link href="/work/gotrabaho" className="group block max-w-[1100px] mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-            <div>
-              <p className="text-[11px] uppercase tracking-wider text-foreground/40 mb-3">Next Project</p>
-              <h3 className="text-3xl md:text-4xl font-medium group-hover:text-foreground/60 transition-colors">GoTrabaho</h3>
-            </div>
-            <svg className="w-8 h-8 text-foreground/20 group-hover:text-foreground/60 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 17L17 7M17 7H7M17 7v10" />
-            </svg>
-          </div>
-        </Link>
-      </section>
-
-      <footer className="py-12 px-6 md:px-12 border-t border-border">
-        <div className="max-w-[1100px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-sm text-foreground/40">&copy; {new Date().getFullYear()} Nathaniel Muyco</p>
-          <div className="flex gap-8">
-            <a href="https://linkedin.com/in/nathanielmuyco" target="_blank" rel="noopener noreferrer" className="text-sm text-foreground/40 hover:text-foreground transition-colors">LinkedIn</a>
-            <a href="mailto:nathanmuyx@gmail.com" className="text-sm text-foreground/40 hover:text-foreground transition-colors">Email</a>
-          </div>
-        </div>
-      </footer>
-    </div>
+      <MoreProjects currentSlug="retriever" />
+    </CaseStudyLayout>
   );
 }
