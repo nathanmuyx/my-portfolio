@@ -76,7 +76,7 @@ export default function BlazesoftPage() {
                   "Set up Figma-to-code handoff workflows that cut production time",
                 ].map((item) => (
                   <li key={item} className="flex gap-3 text-sm text-foreground/60 leading-relaxed">
-                    <span className="w-1 h-1 rounded-full bg-foreground/30 mt-2 flex-shrink-0" />
+                    <span className="text-foreground/40 shrink-0">•</span>
                     {item}
                   </li>
                 ))}
@@ -97,10 +97,18 @@ export default function BlazesoftPage() {
                 ))}
               </div>
 
-              <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-4">Tools</p>
-              <div className="flex flex-wrap gap-2">
-                {["Figma", "Design Tokens", "Adobe XD", "React"].map((tool) => (
-                  <span key={tool} className="text-[11px] px-3 py-1.5 rounded-full bg-cream text-foreground/60 inline-flex items-center gap-1.5"><TechIcon name={tool} className="w-3 h-3" />{tool}</span>
+              <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-4">Stack</p>
+              <div className="space-y-4">
+                {[
+                  { name: "Figma", role: "Design & prototyping" },
+                  { name: "Design Tokens", role: "Systematic theming" },
+                  { name: "Adobe XD", role: "Legacy design files" },
+                  { name: "React", role: "Component development" },
+                ].map((tech) => (
+                  <div key={tech.name} className="flex items-center justify-between pb-4 border-b border-border">
+                    <span className="text-sm font-medium flex items-center gap-2"><TechIcon name={tech.name} />{tech.name}</span>
+                    <span className="text-sm text-foreground/60">{tech.role}</span>
+                  </div>
                 ))}
               </div>
             </div>

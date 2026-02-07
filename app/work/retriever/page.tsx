@@ -3,12 +3,14 @@
 import Image from "next/image";
 import { CaseStudyLayout } from "@/components/case-study/CaseStudyLayout";
 import { MoreProjects } from "@/components/case-study/MoreProjects";
+import { TechIcon } from "@/components/case-study/TechIcon";
 
 const sections = [
   { id: "hero", label: "Hero" },
   { id: "mockup", label: "Mockup" },
   { id: "problem-solution", label: "Problem & Solution" },
   { id: "outcome", label: "Outcome" },
+  { id: "stack", label: "Stack" },
 ];
 
 export default function RetrieverPage() {
@@ -69,7 +71,7 @@ export default function RetrieverPage() {
                   "Spacing varied wildly across every screen",
                 ].map((item) => (
                   <li key={item} className="flex gap-3 text-sm text-foreground/60 leading-relaxed">
-                    <span className="w-1 h-1 rounded-full bg-foreground/30 mt-2 flex-shrink-0" />
+                    <span className="text-foreground/40 shrink-0">•</span>
                     {item}
                   </li>
                 ))}
@@ -87,7 +89,7 @@ export default function RetrieverPage() {
                   "Clean prototypes with organized user flows per persona",
                 ].map((item) => (
                   <li key={item} className="flex gap-3 text-sm text-foreground/60 leading-relaxed">
-                    <span className="w-1 h-1 rounded-full bg-foreground/30 mt-2 flex-shrink-0" />
+                    <span className="text-foreground/40 shrink-0">•</span>
                     {item}
                   </li>
                 ))}
@@ -121,6 +123,27 @@ export default function RetrieverPage() {
               "Component library & design tokens",
             ].map((label) => (
               <div key={label} className="rounded-2xl bg-[#0a0a0a] flex items-center justify-center" style={{ aspectRatio: "16 / 10" }}>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <div className="max-w-[1100px] mx-auto px-6 md:px-12"><div className="h-px bg-border" /></div>
+
+      {/* Stack */}
+      <section id="stack" className="px-6 md:px-12 py-24 md:py-32 scroll-mt-24">
+        <div className="max-w-[1100px] mx-auto">
+          <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-6">Stack</p>
+          <div className="space-y-4 max-w-md">
+            {[
+              { name: "Figma", role: "Design & prototyping" },
+              { name: "React Native", role: "Mobile application" },
+              { name: "Firebase", role: "Backend services" },
+            ].map((tech) => (
+              <div key={tech.name} className="flex items-center justify-between pb-4 border-b border-border">
+                <span className="text-sm font-medium flex items-center gap-2"><TechIcon name={tech.name} />{tech.name}</span>
+                <span className="text-sm text-foreground/60">{tech.role}</span>
               </div>
             ))}
           </div>

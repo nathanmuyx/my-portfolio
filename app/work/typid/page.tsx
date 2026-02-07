@@ -275,7 +275,7 @@ export default function TypidPage() {
           <div className="grid md:grid-cols-2 gap-4">
             {[
               { title: "Event creation", desc: "Custom branding, ticket tiers, pricing, capacity limits" },
-              { title: "PH payments", desc: "GCash, Maya, bank transfer verification" },
+              { title: "Custom QR payments", desc: "Upload GCash or bank transfer QR, displayed in payment settings" },
               { title: "QR check-in", desc: "Unique QR per ticket, handles refunds and duplicates" },
               { title: "Organizer dashboard", desc: "Real-time buyer, payment, and check-in tracking" },
             ].map((feature) => (

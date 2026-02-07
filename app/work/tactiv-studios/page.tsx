@@ -102,10 +102,20 @@ export default function TactivStudiosPage() {
               </div>
 
               <div className="mt-10">
-                <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-4">Tools</p>
-                <div className="flex flex-wrap gap-2">
-                  {["Figma", "Adobe XD", "Trello", "Jira", "Webflow", "Loom"].map((tool) => (
-                    <span key={tool} className="text-[11px] px-3 py-1.5 rounded-full bg-cream text-foreground/60 inline-flex items-center gap-1.5"><TechIcon name={tool} className="w-3 h-3" />{tool}</span>
+                <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-4">Stack</p>
+                <div className="space-y-4">
+                  {[
+                    { name: "Figma", role: "Design & prototyping" },
+                    { name: "Adobe XD", role: "Legacy design files" },
+                    { name: "Webflow", role: "Marketing sites" },
+                    { name: "Trello", role: "Project management" },
+                    { name: "Jira", role: "Issue tracking" },
+                    { name: "Loom", role: "Async communication" },
+                  ].map((tech) => (
+                    <div key={tech.name} className="flex items-center justify-between pb-4 border-b border-border">
+                      <span className="text-sm font-medium flex items-center gap-2"><TechIcon name={tech.name} />{tech.name}</span>
+                      <span className="text-sm text-foreground/60">{tech.role}</span>
+                    </div>
                   ))}
                 </div>
               </div>
