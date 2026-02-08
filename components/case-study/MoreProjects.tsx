@@ -57,7 +57,7 @@ function StrategicVisionzMockup() {
         className="absolute left-1/2 -translate-x-1/2 top-[26%] w-[85%] border-[3px] border-white/20 rounded-[10px] overflow-hidden shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
         style={{ aspectRatio: "576 / 360" }}
       >
-        <Image src="/images/strategic-visionz/homepage.png" alt="" fill className="object-cover object-top" loading="lazy" sizes="320px" />
+        <Image src="/images/strategic-visionz/homepage.webp" alt="" fill className="object-cover object-top" loading="lazy" sizes="320px" />
       </div>
     </>
   );
@@ -78,15 +78,15 @@ function TypidMockup() {
       </div>
       {/* Back card */}
       <div className="absolute border-[3px] border-white/20 rounded-[8px] overflow-hidden" style={{ left: "18.5%", top: "21%", width: "62.3%", aspectRatio: "404 / 226", zIndex: 1 }}>
-        <Image src="/images/typid/aisen-3.png" alt="" fill className="object-cover object-top" loading="lazy" sizes="320px" />
+        <Image src="/images/typid/aisen-3.webp" alt="" fill className="object-cover object-top" loading="lazy" sizes="320px" />
       </div>
       {/* Middle card */}
       <div className="absolute border-[3px] border-white/20 rounded-[8px] overflow-hidden" style={{ left: "15.4%", top: "30%", width: "69.1%", aspectRatio: "448 / 250", zIndex: 2 }}>
-        <Image src="/images/typid/Himaya-2.png" alt="" fill className="object-cover object-top" loading="lazy" sizes="320px" />
+        <Image src="/images/typid/Himaya-2.webp" alt="" fill className="object-cover object-top" loading="lazy" sizes="320px" />
       </div>
       {/* Front card */}
       <div className="absolute border-[3px] border-white/20 rounded-[8px] overflow-hidden" style={{ left: "12.3%", top: "41%", width: "75.3%", aspectRatio: "488 / 274", zIndex: 3 }}>
-        <Image src="/images/typid/homepage-1.png" alt="" fill className="object-cover object-top" loading="lazy" sizes="320px" />
+        <Image src="/images/typid/homepage-1.webp" alt="" fill className="object-cover object-top" loading="lazy" sizes="320px" />
       </div>
     </>
   );
@@ -98,13 +98,13 @@ function BlazesoftMockup() {
       <div className="absolute left-[23%] top-[18%] w-[58%]" style={{ aspectRatio: "198 / 152" }}>
         <div className="absolute inset-0 overflow-hidden rounded-[8px]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/blazesoft/screenshot-1.png" alt="" className="absolute h-[112%] left-[-3%] top-[-5%] w-[110%] max-w-none border-none outline-none" />
+          <img src="/images/blazesoft/screenshot-1.webp" alt="" className="absolute h-[112%] left-[-3%] top-[-5%] w-[110%] max-w-none border-none outline-none" />
         </div>
       </div>
       <div className="absolute left-[12%] top-[32%] w-[58%]" style={{ aspectRatio: "197 / 152" }}>
         <div className="absolute inset-0 overflow-hidden rounded-[8px]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/blazesoft/screenshot-2.png" alt="" className="absolute h-[112%] left-[-2%] top-[-5%] w-[105%] max-w-none border-none outline-none" />
+          <img src="/images/blazesoft/screenshot-2.webp" alt="" className="absolute h-[112%] left-[-2%] top-[-5%] w-[105%] max-w-none border-none outline-none" />
         </div>
       </div>
     </>
@@ -120,7 +120,7 @@ function RetrieverMockup() {
         </div>
       </div>
       <div className="absolute left-1/2 -translate-x-1/2 top-[18%] w-[65%]" style={{ aspectRatio: "236 / 175" }}>
-        <Image src="/images/retriever/mockup.png" alt="" fill className="object-contain" loading="lazy" sizes="320px" />
+        <Image src="/images/retriever/mockup.webp" alt="" fill className="object-contain" loading="lazy" sizes="320px" />
       </div>
     </>
   );
@@ -135,7 +135,7 @@ function GoTrabahoMockup() {
       </div>
       <div className="absolute left-1/2 top-[55%] -translate-x-1/2 -translate-y-1/2 w-[50%]" style={{ aspectRatio: "201 / 233" }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/gotrabaho/mockup.png" alt="" className="w-full h-full object-contain" />
+        <img src="/images/gotrabaho/mockup.webp" alt="" className="w-full h-full object-contain" />
       </div>
     </>
   );
@@ -147,13 +147,13 @@ function TactivMockup() {
       <div className="absolute left-1/2 -translate-x-[45%] top-[20%] w-[60%]" style={{ aspectRatio: "214 / 133" }}>
         <div className="absolute inset-0 overflow-hidden rounded-[5px]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/tactiv-studios/screenshot-1.png" alt="" className="absolute inset-0 w-full h-full object-cover" />
+          <img src="/images/tactiv-studios/screenshot-1.webp" alt="" className="absolute inset-0 w-full h-full object-cover" />
         </div>
       </div>
       <div className="absolute left-1/2 -translate-x-[52%] top-[33%] w-[72%]" style={{ aspectRatio: "258 / 159" }}>
         <div className="absolute inset-0 overflow-hidden rounded-[5px]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/tactiv-studios/screenshot-2.png" alt="" className="absolute inset-0 w-full h-full object-cover" />
+          <img src="/images/tactiv-studios/screenshot-2.webp" alt="" className="absolute inset-0 w-full h-full object-cover" />
         </div>
       </div>
     </>

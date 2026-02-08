@@ -60,15 +60,15 @@ export default function TactivStudiosPage() {
             </div>
             {/* Schedule — right */}
             <div className="absolute overflow-hidden" style={{ left: "64%", top: "41%", width: "36%", height: "42%" }}>
-              <Image src="/images/tactiv-studios/schedule.webp" alt="Schedule calendar view" fill className="object-cover object-top" priority sizes="(max-width: 768px) 90vw, 36vw" />
+              <Image src="/images/tactiv-studios/schedule.webp" alt="Schedule calendar view" fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 90vw, 36vw" />
             </div>
             {/* HRMS People — bottom center, bleeds past edge */}
             <div className="absolute border-[3px] border-white/20 rounded-[5px] overflow-hidden" style={{ left: "25%", top: "66%", width: "36%", height: "42%" }}>
-              <Image src="/images/tactiv-studios/hrms-people.webp" alt="HRMS employee profiles" fill className="object-cover object-top" priority sizes="(max-width: 768px) 90vw, 36vw" />
+              <Image src="/images/tactiv-studios/hrms-people.webp" alt="HRMS employee profiles" fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 90vw, 36vw" />
             </div>
             {/* Tactiv Logo — centered */}
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10" style={{ width: "17%", height: "7.5%" }}>
-              <Image src="/images/tactiv-studios/tactiv-logo.webp" alt="Tactiv Studios" fill className="object-contain" priority sizes="170px" />
+              <Image src="/images/tactiv-studios/tactiv-logo.webp" alt="Tactiv Studios" fill className="object-contain" loading="lazy" sizes="170px" />
             </div>
           </div>
         </div>

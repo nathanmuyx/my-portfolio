@@ -57,10 +57,10 @@ export default function TypidPage() {
             </div>
 
             <div className="absolute border-4 border-white/15 rounded-[12px] overflow-hidden left-[20%] top-[12%] w-[58%]" style={{ aspectRatio: "404 / 226" }}>
-              <Image src="/images/typid/aisen-3.webp" alt="Aisen Fest event page" fill className="object-cover object-top" priority sizes="(max-width: 768px) 90vw, 60vw" />
+              <Image src="/images/typid/aisen-3.webp" alt="Aisen Fest event page" fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 90vw, 60vw" />
             </div>
             <div className="absolute border-4 border-white/15 rounded-[12px] overflow-hidden left-[16%] top-[24%] w-[66%]" style={{ aspectRatio: "448 / 250" }}>
-              <Image src="/images/typid/Himaya-2.webp" alt="Himaya event page" fill className="object-cover object-top" priority sizes="(max-width: 768px) 90vw, 66vw" />
+              <Image src="/images/typid/Himaya-2.webp" alt="Himaya event page" fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 90vw, 66vw" />
             </div>
             <div className="absolute border-4 border-white/15 rounded-[12px] overflow-hidden left-[12%] top-[38%] w-[74%]" style={{ aspectRatio: "488 / 274" }}>
               <Image src="/images/typid/homepage-1.webp" alt="Typid homepage" fill className="object-cover object-top" priority sizes="(max-width: 768px) 90vw, 74vw" />
