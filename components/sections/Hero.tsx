@@ -13,7 +13,7 @@ export function Hero() {
             transition={{ duration: 0.6 }}
             className="text-muted-foreground mb-4"
           >
-            Design Engineer, Davao City
+            Davao City, Philippines
           </motion.p>
 
           <motion.h1

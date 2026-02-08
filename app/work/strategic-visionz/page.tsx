@@ -51,7 +51,7 @@ export default function StrategicVisionzPage() {
               <div className="bg-[#0a4299]/40 blur-[100px] rounded-full w-[500px] h-[500px]" />
             </div>
             <div className="absolute border-[6px] border-white/15 rounded-xl overflow-hidden left-[8%] top-[10%] w-[84%]" style={{ aspectRatio: "576 / 360" }}>
-              <Image src="/images/strategic-visionz/homepage.png" alt="Strategic Visionz platform" fill className="object-cover object-top" priority sizes="(max-width: 768px) 90vw, 84vw" />
+              <Image src="/images/strategic-visionz/homepage.webp" alt="Strategic Visionz platform" fill className="object-cover object-top" priority sizes="(max-width: 768px) 90vw, 84vw" />
             </div>
           </div>
         </div>
@@ -60,11 +60,7 @@ export default function StrategicVisionzPage() {
       {/* Overview Grid */}
       <section id="overview" className="px-6 md:px-12 pb-24 md:pb-32 scroll-mt-24">
         <div className="max-w-[1100px] mx-auto">
-          <div className="grid md:grid-cols-3 gap-x-12 gap-y-10">
-            <div>
-              <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-3">Role</p>
-              <p className="text-sm leading-relaxed">Product Designer. I own the full design-to-delivery pipeline — from Figma concepts through WeWeb for no-code builds, and Next.js and Expo with AI-assisted development for custom projects.</p>
-            </div>
+          <div className="grid md:grid-cols-2 gap-x-12 gap-y-10">
             <div>
               <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-3">Platforms</p>
               <p className="text-sm leading-relaxed">WeWeb for no-code builds. React and Next.js for custom projects. Figma for all design work.</p>
@@ -108,10 +104,18 @@ export default function StrategicVisionzPage() {
       {/* Project 1: Valet Waste */}
       <section id="valet-waste" className="px-6 md:px-12 py-24 md:py-32 scroll-mt-24">
         <div className="max-w-[1100px] mx-auto">
-          <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-6">Project</p>
-          <h2 className="text-3xl md:text-4xl font-medium leading-tight tracking-tight max-w-2xl mb-6">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
+            <span className="text-[11px] uppercase tracking-wider text-foreground/60">Completed and turned over</span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-medium leading-tight tracking-tight max-w-2xl mb-4">
             Valet Waste Operations Dashboard
           </h2>
+          <div className="flex flex-wrap gap-2 mb-6">
+            {["Figma", "WeWeb"].map((t) => (
+              <span key={t} className="text-[11px] px-3 py-1.5 rounded-full bg-cream text-foreground/60 inline-flex items-center gap-1.5"><TechIcon name={t} className="w-3 h-3" />{t}</span>
+            ))}
+          </div>
           <p className="text-sm text-foreground/70 leading-relaxed max-w-2xl mb-12">
             An operations dashboard for a nationwide doorstep waste collection service managing multifamily communities. I designed the full UI in Figma and built the entire frontend in WeWeb.
           </p>
@@ -122,10 +126,10 @@ export default function StrategicVisionzPage() {
               <div className="w-full h-full bg-[#0a4299] blur-[50px] rounded-full rotate-[131deg]" />
             </div>
             <div className="absolute border-[3px] border-white/20 rounded-lg overflow-hidden" style={{ left: "15%", top: "11%", width: "69.5%", aspectRatio: "504 / 282" }}>
-              <Image src="/images/strategic-visionz/valet-waste-back.png" alt="Valet Waste dashboard overview" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 70vw, 50vw" />
+              <Image src="/images/strategic-visionz/valet-waste-back.webp" alt="Valet Waste dashboard overview" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 70vw, 50vw" />
             </div>
             <div className="absolute border-[3px] border-[#adadad]/40 rounded-lg overflow-hidden shadow-[0px_-10px_27px_rgba(0,0,0,0.25)]" style={{ left: "10%", top: "20.5%", width: "80%", aspectRatio: "581 / 419" }}>
-              <Image src="/images/strategic-visionz/valet-waste-front.png" alt="Valet Waste community detail page" fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 80vw, 60vw" />
+              <Image src="/images/strategic-visionz/valet-waste-front.webp" alt="Valet Waste community detail page" fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 80vw, 60vw" />
             </div>
           </div>
 
@@ -164,20 +168,6 @@ export default function StrategicVisionzPage() {
             </div>
           </div>
 
-          <div className="flex flex-wrap gap-x-12 gap-y-4 mt-12 pt-8 border-t border-border">
-            <div>
-              <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-1">Role</p>
-              <p className="text-sm">UI/UX Design, WeWeb Frontend</p>
-            </div>
-            <div>
-              <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-1">Stack</p>
-              <p className="text-sm">Figma, WeWeb</p>
-            </div>
-            <div>
-              <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-1">Status</p>
-              <p className="text-sm">Completed and turned over</p>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -186,10 +176,18 @@ export default function StrategicVisionzPage() {
       {/* Project 2: Franchise Social */}
       <section id="franchise-social" className="px-6 md:px-12 py-24 md:py-32 scroll-mt-24">
         <div className="max-w-[1100px] mx-auto">
-          <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-6">Project</p>
-          <h2 className="text-3xl md:text-4xl font-medium leading-tight tracking-tight max-w-2xl mb-6">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
+            <span className="text-[11px] uppercase tracking-wider text-foreground/60">MVP completed</span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-medium leading-tight tracking-tight max-w-2xl mb-4">
             Franchise Internal Social Platform
           </h2>
+          <div className="flex flex-wrap gap-2 mb-6">
+            {["Figma", "Claude Code", "Expo", "Next.js"].map((t) => (
+              <span key={t} className="text-[11px] px-3 py-1.5 rounded-full bg-cream text-foreground/60 inline-flex items-center gap-1.5"><TechIcon name={t} className="w-3 h-3" />{t}</span>
+            ))}
+          </div>
           <p className="text-sm text-foreground/70 leading-relaxed max-w-2xl mb-12">
             An internal social platform for a national franchise company. I designed the UI in Figma and built the MVP in Next.js.
           </p>
@@ -200,10 +198,10 @@ export default function StrategicVisionzPage() {
               <div className="w-full h-full bg-[#0a4299] blur-[50px] rounded-full rotate-[131deg]" />
             </div>
             <div className="absolute z-10" style={{ left: "11.3%", top: "-1.3%", width: "40.7%", height: "131%" }}>
-              <Image src="/images/strategic-visionz/flex-portrait.png" alt="Flex app login screen" fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 35vw, 30vw" quality={75} />
+              <Image src="/images/strategic-visionz/flex-portrait.webp" alt="Flex app login screen" fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 35vw, 30vw" quality={75} />
             </div>
             <div className="absolute z-10" style={{ left: "52.8%", top: "-45%", width: "37.1%", height: "119%" }}>
-              <Image src="/images/strategic-visionz/flex-landscape.png" alt="Flex app social feed" fill className="object-cover object-bottom" loading="lazy" sizes="(max-width: 768px) 30vw, 25vw" quality={75} />
+              <Image src="/images/strategic-visionz/flex-landscape.webp" alt="Flex app social feed" fill className="object-cover object-bottom" loading="lazy" sizes="(max-width: 768px) 30vw, 25vw" quality={75} />
             </div>
           </div>
 
@@ -224,20 +222,6 @@ export default function StrategicVisionzPage() {
             </div>
           </div>
 
-          <div className="flex flex-wrap gap-x-12 gap-y-4 mt-12 pt-8 border-t border-border">
-            <div>
-              <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-1">Role</p>
-              <p className="text-sm">UI/UX Design, Frontend Development</p>
-            </div>
-            <div>
-              <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-1">Stack</p>
-              <p className="text-sm">Figma, Expo, Next.js, Claude Code</p>
-            </div>
-            <div>
-              <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-1">Status</p>
-              <p className="text-sm">MVP completed</p>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -246,10 +230,18 @@ export default function StrategicVisionzPage() {
       {/* Project 3: SV Website */}
       <section id="sv-website" className="px-6 md:px-12 py-24 md:py-32 scroll-mt-24">
         <div className="max-w-[1100px] mx-auto">
-          <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-6">Project</p>
-          <h2 className="text-3xl md:text-4xl font-medium leading-tight tracking-tight max-w-2xl mb-6">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+            <span className="text-[11px] uppercase tracking-wider text-foreground/60">Concept</span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-medium leading-tight tracking-tight max-w-2xl mb-4">
             Strategic Visionz Website Concept
           </h2>
+          <div className="flex flex-wrap gap-2 mb-6">
+            {["Claude Code", "Next.js"].map((t) => (
+              <span key={t} className="text-[11px] px-3 py-1.5 rounded-full bg-cream text-foreground/60 inline-flex items-center gap-1.5"><TechIcon name={t} className="w-3 h-3" />{t}</span>
+            ))}
+          </div>
           <p className="text-sm text-foreground/70 leading-relaxed max-w-2xl mb-12">
             Designed and developed the studio's own website concept — moving away from generic agency positioning toward showcasing the actual tech stack and operational focus of the studio.
           </p>
@@ -260,10 +252,10 @@ export default function StrategicVisionzPage() {
               <div className="w-full h-full bg-[#0a4299] blur-[50px] rounded-full rotate-[131deg]" />
             </div>
             <div className="absolute border-[2.5px] border-white/20 rounded-lg overflow-hidden" style={{ left: "3.7%", top: "12%", width: "45.4%", height: "200%" }}>
-              <Image src="/images/strategic-visionz/sv-website.png" alt="Strategic Visionz website — homepage" fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 45vw, 35vw" />
+              <Image src="/images/strategic-visionz/sv-website.webp" alt="Strategic Visionz website — homepage" fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 45vw, 35vw" />
             </div>
             <div className="absolute border-[2.5px] border-white/20 rounded-[4px] overflow-hidden" style={{ left: "51.1%", top: "-68%", width: "45.4%", height: "200%" }}>
-              <Image src="/images/strategic-visionz/sv-website.png" alt="Strategic Visionz website — scrolled sections" fill className="object-cover object-bottom" loading="lazy" sizes="(max-width: 768px) 45vw, 35vw" />
+              <Image src="/images/strategic-visionz/sv-website.webp" alt="Strategic Visionz website — scrolled sections" fill className="object-cover object-bottom" loading="lazy" sizes="(max-width: 768px) 45vw, 35vw" />
             </div>
           </div>
 
@@ -276,16 +268,6 @@ export default function StrategicVisionzPage() {
             </a>
           </div>
 
-          <div className="flex flex-wrap gap-x-12 gap-y-4 pt-8 border-t border-border">
-            <div>
-              <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-1">Role</p>
-              <p className="text-sm">Design & Development</p>
-            </div>
-            <div>
-              <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-1">Stack</p>
-              <p className="text-sm">Next.js, Claude Code</p>
-            </div>
-          </div>
         </div>
       </section>
 

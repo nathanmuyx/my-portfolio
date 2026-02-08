@@ -131,11 +131,10 @@ export function CaseStudyContent({ caseStudy }: CaseStudyContentProps) {
         </div>
       </section>
 
-      {/* Role & Details - Minimal */}
+      {/* Details - Minimal */}
       <section id="details" className="py-16 px-6 md:px-12 border-y border-neutral-100 scroll-mt-24">
-        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="max-w-6xl mx-auto grid grid-cols-3 gap-8">
           {[
-            { label: "Role", value: caseStudy.role },
             { label: "Timeline", value: caseStudy.timeline },
             { label: "Year", value: caseStudy.year },
             { label: "Tools", value: caseStudy.tools.join(", ") },

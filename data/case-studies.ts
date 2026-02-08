@@ -4,7 +4,6 @@ export interface CaseStudy {
   subtitle: string;
   tags: string[];
   year: string;
-  role: string;
   timeline: string;
   overview: string;
   problem: {
@@ -44,9 +43,8 @@ export const caseStudies: Record<string, CaseStudy> = {
     slug: "strategic-visionz",
     title: "Strategic Visionz",
     subtitle: "Enterprise design engineering",
-    tags: ["CURRENT ROLE", "DESIGN ENGINEER", "ENTERPRISE"],
+    tags: ["CURRENT ROLE", "ENTERPRISE"],
     year: "2024 — Present",
-    role: "Design Engineer",
     timeline: "Ongoing",
     overview: "Leading product design and frontend development for enterprise clients at Strategic Visionz. Building design systems and shipping production-ready code that scales.",
     problem: {
@@ -85,7 +83,6 @@ export const caseStudies: Record<string, CaseStudy> = {
     subtitle: "Design system from scratch",
     tags: ["DESIGN SYSTEM", "GAMING", "FINTECH"],
     year: "2023 — 2024",
-    role: "Product Designer",
     timeline: "6 months",
     overview: "Built and maintained the design system powering Blazesoft's gaming and fintech products. Established design-to-dev workflows that reduced production time significantly.",
     problem: {
@@ -149,7 +146,6 @@ export const caseStudies: Record<string, CaseStudy> = {
     subtitle: "All-in-one event management platform",
     tags: ["FOUNDER", "PRODUCT DESIGN", "DEVELOPMENT"],
     year: "2022 — Present",
-    role: "Founder & Product Designer",
     timeline: "Ongoing",
     overview: "Typid Events is an all-in-one event management platform that centralizes the entire event workflow—from planning through ticket sales, analytics, and payouts. Built to solve the fragmented event ticketing experience in the Philippines.",
     problem: {
@@ -215,7 +211,6 @@ export const caseStudies: Record<string, CaseStudy> = {
     subtitle: "Lost and found mobile application",
     tags: ["REDESIGN", "MOBILE APP", "UI/UX"],
     year: "2023",
-    role: "Product Designer",
     timeline: "2 months",
     overview: "Retriever PH is a lost and found platform connecting communities. I was brought in to fix fundamental design issues and rebuild the mobile experience from the ground up.",
     problem: {
@@ -254,7 +249,6 @@ export const caseStudies: Record<string, CaseStudy> = {
     subtitle: "Blue-collar job matching platform",
     tags: ["END-TO-END", "FLUTTER", "FULL STACK"],
     year: "2023",
-    role: "Designer & Developer",
     timeline: "3 months",
     overview: "GoTrabaho is a job matching platform for blue-collar workers in the Philippines. I designed and built the entire product—from design system to shipped Flutter app.",
     problem: {
@@ -318,7 +312,6 @@ export const caseStudies: Record<string, CaseStudy> = {
     subtitle: "3 years of product work",
     tags: ["3 YEARS", "PM + DESIGN", "6+ PRODUCTS"],
     year: "2020 — 2023",
-    role: "Lead Designer & Developer",
     timeline: "3 years",
     overview: "At Tactiv Studios, I grew from intern to lead over three years. I shipped 6+ products across mobile and web, wearing multiple hats—design, development, and project management.",
     problem: {

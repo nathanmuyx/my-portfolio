@@ -13,7 +13,7 @@ const brandColors = [
 ];
 
 const portfolioChecklist = [
-  { item: "Clear value proposition", status: "done", note: "Design Engineer - I design it. Then I build it." },
+  { item: "Clear value proposition", status: "done", note: "I design it. Then I build it." },
   { item: "Role clarity", status: "done", note: "Lead with current position and skills" },
   { item: "Project case studies", status: "done", note: "6 projects with context and outcomes" },
   { item: "Brand consistency", status: "done", note: "Each project has its own identity" },

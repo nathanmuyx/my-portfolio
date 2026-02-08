@@ -114,7 +114,6 @@ export default function CardSwap({ images }: { images: CardImage[] }) {
   return (
     <div
       className="absolute inset-0 overflow-hidden isolate"
-      onMouseEnter={swap}
     >
       {images.map((img, i) => (
         <div

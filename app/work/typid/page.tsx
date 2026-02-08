@@ -57,13 +57,13 @@ export default function TypidPage() {
             </div>
 
             <div className="absolute border-4 border-white/15 rounded-[12px] overflow-hidden left-[20%] top-[12%] w-[58%]" style={{ aspectRatio: "404 / 226" }}>
-              <Image src="/images/typid/aisen-3.png" alt="Aisen Fest event page" fill className="object-cover object-top" priority sizes="(max-width: 768px) 90vw, 60vw" />
+              <Image src="/images/typid/aisen-3.webp" alt="Aisen Fest event page" fill className="object-cover object-top" priority sizes="(max-width: 768px) 90vw, 60vw" />
             </div>
             <div className="absolute border-4 border-white/15 rounded-[12px] overflow-hidden left-[16%] top-[24%] w-[66%]" style={{ aspectRatio: "448 / 250" }}>
-              <Image src="/images/typid/Himaya-2.png" alt="Himaya event page" fill className="object-cover object-top" priority sizes="(max-width: 768px) 90vw, 66vw" />
+              <Image src="/images/typid/Himaya-2.webp" alt="Himaya event page" fill className="object-cover object-top" priority sizes="(max-width: 768px) 90vw, 66vw" />
             </div>
             <div className="absolute border-4 border-white/15 rounded-[12px] overflow-hidden left-[12%] top-[38%] w-[74%]" style={{ aspectRatio: "488 / 274" }}>
-              <Image src="/images/typid/homepage-1.png" alt="Typid homepage" fill className="object-cover object-top" priority sizes="(max-width: 768px) 90vw, 74vw" />
+              <Image src="/images/typid/homepage-1.webp" alt="Typid homepage" fill className="object-cover object-top" priority sizes="(max-width: 768px) 90vw, 74vw" />
             </div>
           </div>
         </div>
@@ -110,10 +110,10 @@ export default function TypidPage() {
             {/* Phone screens */}
             <div className="absolute inset-0 flex items-center justify-center gap-[0.5%] px-[3%] pt-[3%] pb-[1%]">
               {[
-                { src: "/images/typid/phone-home.png", alt: "Home screen" },
-                { src: "/images/typid/phone-wallets.png", alt: "Wallets screen" },
-                { src: "/images/typid/phone-emergency.png", alt: "Emergency fund setup" },
-                { src: "/images/typid/phone-transactions.png", alt: "Transactions screen" },
+                { src: "/images/typid/phone-home.webp", alt: "Home screen" },
+                { src: "/images/typid/phone-wallets.webp", alt: "Wallets screen" },
+                { src: "/images/typid/phone-emergency.webp", alt: "Emergency fund setup" },
+                { src: "/images/typid/phone-transactions.webp", alt: "Transactions screen" },
               ].map((phone, i) => (
                 <div key={i} className="relative h-full flex-1">
                   <Image src={phone.src} alt={phone.alt} fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 25vw, 20vw" quality={75} />
@@ -234,10 +234,10 @@ export default function TypidPage() {
                 </div>
               </div>
               <div className="absolute border-[2.5px] border-white/20 rounded-[5px] overflow-hidden left-[7%] top-[9%] w-[67%] h-[55%]">
-                <Image src="/images/typid/dashboard.png" alt="Typid seller dashboard" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 90vw, 45vw" quality={75} />
+                <Image src="/images/typid/dashboard.webp" alt="Typid seller dashboard" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 90vw, 45vw" quality={75} />
               </div>
               <div className="absolute border-[2.5px] border-white/20 rounded-[5px] overflow-hidden left-[24%] top-[32%] w-[72%] h-[60%]">
-                <Image src="/images/typid/himaya-event.png" alt="Himaya event page" fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 90vw, 45vw" quality={75} />
+                <Image src="/images/typid/himaya-event.webp" alt="Himaya event page" fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 90vw, 45vw" quality={75} />
               </div>
             </div>
             {/* Attendee list + QR scanner */}
@@ -248,10 +248,10 @@ export default function TypidPage() {
                 </div>
               </div>
               <div className="absolute border-2 border-white/20 rounded-[4px] overflow-hidden left-[9%] top-[18%] w-[80%] h-[62%]">
-                <Image src="/images/typid/attendee-list.png" alt="Attendee management list" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 90vw, 45vw" quality={75} />
+                <Image src="/images/typid/attendee-list.webp" alt="Attendee management list" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 90vw, 45vw" quality={75} />
               </div>
               <div className="absolute border-2 border-white/20 rounded-[9px] overflow-hidden left-[70%] top-[36%] w-[22%] h-[56%]">
-                <Image src="/images/typid/qr-scanner.png" alt="QR check-in scanner" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 30vw, 15vw" quality={75} />
+                <Image src="/images/typid/qr-scanner.webp" alt="QR check-in scanner" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 30vw, 15vw" quality={75} />
               </div>
             </div>
           </div>

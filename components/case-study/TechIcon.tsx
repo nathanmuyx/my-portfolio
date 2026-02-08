@@ -16,6 +16,8 @@ import {
   SiResend,
   SiClaude,
   SiGithub,
+  SiAsana,
+  SiSlack,
 } from "react-icons/si";
 
 function FigmaIcon({ className }: { className?: string; style?: React.CSSProperties }) {
@@ -76,6 +78,8 @@ const iconMap: Record<string, { icon: React.ComponentType<{ className?: string; 
   "Resend": { icon: SiResend, color: "#000000" },
   "Claude Code": { icon: SiClaude, color: "#D97757" },
   "GitHub": { icon: SiGithub, color: "#181717" },
+  "Asana": { icon: SiAsana, color: "#F06A6A" },
+  "Slack": { icon: SiSlack, color: "#4A154B" },
 };
 
 export function TechIcon({ name, className = "w-4 h-4" }: { name: string; className?: string }) {

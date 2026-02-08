@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback, useRef } from "react";
 import { CaseStudyNav } from "./CaseStudySideNav";
+import { Footer } from "@/components/sections/Footer";
 
 interface Section {
   id: string;
@@ -120,6 +121,8 @@ export function CaseStudyLayout({
 
       {/* Content */}
       <div>{children}</div>
+
+      <Footer />
     </div>
   );
 }

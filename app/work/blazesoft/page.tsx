@@ -46,12 +46,12 @@ export default function BlazesoftPage() {
           <div className="grid md:grid-cols-2 gap-4">
             <div className="relative rounded-2xl overflow-hidden bg-[#0a0a0a]" style={{ aspectRatio: "4 / 3" }}>
               <div className="absolute left-[6%] top-[8%] w-[88%] rounded-lg overflow-hidden" style={{ aspectRatio: "198 / 152" }}>
-                <Image src="/images/blazesoft/screenshot-1.png" alt="Sportzino design" fill className="object-cover" priority sizes="(max-width: 768px) 90vw, 45vw" />
+                <Image src="/images/blazesoft/screenshot-1.webp" alt="Sportzino design" fill className="object-cover" priority sizes="(max-width: 768px) 90vw, 45vw" />
               </div>
             </div>
             <div className="relative rounded-2xl overflow-hidden bg-[#0a0a0a]" style={{ aspectRatio: "4 / 3" }}>
               <div className="absolute left-[6%] top-[8%] w-[88%] rounded-lg overflow-hidden" style={{ aspectRatio: "197 / 152" }}>
-                <Image src="/images/blazesoft/screenshot-2.png" alt="Blazesoft Figma file" fill className="object-cover" priority sizes="(max-width: 768px) 90vw, 45vw" />
+                <Image src="/images/blazesoft/screenshot-2.webp" alt="Blazesoft Figma file" fill className="object-cover" priority sizes="(max-width: 768px) 90vw, 45vw" />
               </div>
             </div>
           </div>

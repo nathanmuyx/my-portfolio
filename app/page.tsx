@@ -4,8 +4,8 @@ import { useState, useCallback, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import CardSwap from "@/components/ui/CardSwap";
-import GradualBlur from "@/components/ui/GradualBlur";
 import BubbleMenu from "@/components/ui/BubbleMenu";
+import { Footer } from "@/components/sections/Footer";
 import { IconType } from "react-icons";
 import { SiFlutter, SiNextdotjs, SiSupabase, SiReact, SiExpo, SiAdobexd, SiClaude } from "react-icons/si";
 import { HiOutlineColorSwatch, HiOutlinePencil, HiOutlineClipboardList, HiOutlineSparkles, HiOutlineSwitchHorizontal } from "react-icons/hi";
@@ -86,6 +86,14 @@ const projects: Project[] = [
     bgColor: "bg-[#0a0a0a]",
   },
   {
+    id: "tactiv-studios",
+    title: "Tactiv Studios",
+    subtitle: "3 Years",
+    description: "PM + Designer. Shipped 6+ products.",
+    pills: ["Figma", "PM", "Design"],
+    bgColor: "bg-[#0a0a0a]",
+  },
+  {
     id: "blazesoft",
     title: "Blazesoft",
     subtitle: "6 Months",
@@ -109,14 +117,6 @@ const projects: Project[] = [
     pills: ["Flutter", "Supabase", "Figma"],
     bgColor: "bg-[#0a0a0a]",
   },
-  {
-    id: "tactiv-studios",
-    title: "Tactiv Studios",
-    subtitle: "3 Years",
-    description: "PM + Designer. Shipped 6+ products.",
-    pills: ["Figma", "PM", "Design"],
-    bgColor: "bg-[#0a0a0a]",
-  },
 ];
 
 /* ——— Experience section with hover previews ——— */
@@ -127,7 +127,7 @@ function ExpSvMockup() {
         <div className="flex-none rotate-[131deg]"><div className="bg-[#0a4299] blur-[30px] rounded-full w-[200px] h-[210px]" /></div>
       </div>
       <div className="absolute left-1/2 -translate-x-1/2 top-[26%] w-[85%] border-[3px] border-white/20 rounded-[10px] overflow-hidden shadow-[0_4px_4px_rgba(0,0,0,0.25)]" style={{ aspectRatio: "576/360" }}>
-        <Image src="/images/strategic-visionz/homepage.png" alt="" fill className="object-cover object-top" loading="lazy" sizes="280px" />
+        <Image src="/images/strategic-visionz/homepage.webp" alt="" fill className="object-cover object-top" loading="lazy" sizes="280px" />
       </div>
     </>
   );
@@ -137,11 +137,11 @@ function ExpBlazeMockup() {
     <>
       <div className="absolute left-[23%] top-[22%] w-[61%] rounded-[8px] overflow-hidden" style={{ aspectRatio: "198/152" }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/blazesoft/screenshot-1.png" alt="" className="w-full h-full object-cover" />
+        <img src="/images/blazesoft/screenshot-1.webp" alt="" className="w-full h-full object-cover" />
       </div>
       <div className="absolute left-[12%] top-[35%] w-[61%] rounded-[8px] overflow-hidden" style={{ aspectRatio: "197/152" }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/blazesoft/screenshot-2.png" alt="" className="w-full h-full object-cover" />
+        <img src="/images/blazesoft/screenshot-2.webp" alt="" className="w-full h-full object-cover" />
       </div>
     </>
   );
@@ -153,7 +153,7 @@ function ExpRetrieverMockup() {
         <div className="flex-none rotate-[131deg]"><div className="bg-[#ff5411] blur-[30px] rounded-full w-[80px] h-[85px]" /></div>
       </div>
       <div className="absolute left-1/2 -translate-x-1/2 top-[22%] w-[55%]" style={{ aspectRatio: "236/175" }}>
-        <Image src="/images/retriever/mockup.png" alt="" fill className="object-contain" loading="lazy" sizes="280px" />
+        <Image src="/images/retriever/mockup.webp" alt="" fill className="object-contain" loading="lazy" sizes="280px" />
       </div>
     </>
   );
@@ -161,13 +161,11 @@ function ExpRetrieverMockup() {
 function ExpTactivMockup() {
   return (
     <>
-      <div className="absolute left-1/2 -translate-x-[45%] top-[20%] w-[60%] rounded-[5px] overflow-hidden" style={{ aspectRatio: "214/133" }}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/tactiv-studios/screenshot-1.png" alt="" className="w-full h-full object-cover" />
+      <div className="absolute left-1/2 -translate-x-1/2 top-[40px] w-[88%] aspect-square flex items-center justify-center pointer-events-none">
+        <div className="flex-none rotate-[131deg]"><div className="bg-[#990a0a] blur-[30px] rounded-full w-[200px] h-[210px]" /></div>
       </div>
-      <div className="absolute left-1/2 -translate-x-[52%] top-[33%] w-[72%] rounded-[5px] overflow-hidden" style={{ aspectRatio: "258/159" }}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/tactiv-studios/screenshot-2.png" alt="" className="w-full h-full object-cover" />
+      <div className="absolute left-1/2 -translate-x-1/2 top-[26%] w-[85%] border-[3px] border-white/20 rounded-[10px] overflow-hidden shadow-[0_4px_4px_rgba(0,0,0,0.25)]" style={{ aspectRatio: "576/360" }}>
+        <Image src="/images/tactiv-studios/hrms-dashboard.webp" alt="" fill className="object-cover object-top" loading="lazy" sizes="280px" />
       </div>
     </>
   );
@@ -444,15 +442,13 @@ export default function Home() {
                   </div>
                   <CardSwap
                     images={[
-                      { src: "/images/typid/aisen-3.png", alt: "Aisen Fest" },
-                      { src: "/images/typid/Himaya-2.png", alt: "Himaya" },
-                      { src: "/images/typid/homepage-1.png", alt: "Typid Homepage" },
+                      { src: "/images/typid/aisen-3.webp", alt: "Aisen Fest" },
+                      { src: "/images/typid/Himaya-2.webp", alt: "Himaya" },
+                      { src: "/images/typid/homepage-1.webp", alt: "Typid Homepage" },
                     ]}
                   />
                   {/* Top gradient for pill readability */}
                   <div className="absolute top-0 left-0 right-0 h-[35%] bg-gradient-to-b from-black/50 to-transparent pointer-events-none z-[1]" />
-                  {/* Bottom dissolve into text area */}
-                  <GradualBlur position="bottom" height="4rem" strength={2} divCount={5} curve="bezier" exponential opacity={1} zIndex={1} className="md:hidden" />
                   {/* Pills */}
                   <div className="absolute top-0 left-0 right-0 p-4 md:p-6 z-[2]">
                     <div className="flex flex-wrap gap-1.5">
@@ -500,10 +496,8 @@ export default function Home() {
                   </div>
                   {/* Screenshot */}
                   <div className="absolute left-1/2 -translate-x-1/2 top-[26%] w-[89%] border-[3px] md:border-[4px] xl:border-[7px] border-white/20 rounded-[10px] md:rounded-[12px] xl:rounded-[19px] overflow-hidden shadow-[0px_4px_4px_rgba(0,0,0,0.25)] md:shadow-[0px_7px_7px_rgba(0,0,0,0.25)]" style={{ aspectRatio: '576 / 360' }}>
-                    <Image src="/images/strategic-visionz/homepage.png" alt="Strategic Visionz Homepage" fill className="object-cover object-top" priority sizes="(max-width: 768px) 90vw, (max-width: 1024px) 50vw, 45vw" />
+                    <Image src="/images/strategic-visionz/homepage.webp" alt="Strategic Visionz Homepage" fill className="object-cover object-top" priority sizes="(max-width: 768px) 90vw, (max-width: 1024px) 50vw, 45vw" />
                   </div>
-                  {/* Bottom dissolve into text area */}
-                  <GradualBlur position="bottom" height="4rem" strength={2} divCount={5} curve="bezier" exponential opacity={1} zIndex={1} className="md:hidden" />
                   {/* Pills */}
                   <div className="absolute top-0 left-0 right-0 p-4 md:p-6 z-[2]">
                     <div className="flex flex-wrap gap-1.5">
@@ -538,68 +532,18 @@ export default function Home() {
               </div>
             </Link>
 
-            {/* Retriever */}
-            <Link href="/work/retriever" className="col-span-1 block group">
+            {/* Tactiv Studios */}
+            <Link href="/work/tactiv-studios" className="col-span-1 block group">
               <div className="rounded-[20px] overflow-hidden bg-[#0a0a0a] lg:relative lg:h-full transition-transform duration-300 ease-out group-hover:scale-[0.96]">
                 <div className="relative aspect-[4/3] lg:aspect-auto lg:absolute lg:inset-0 overflow-hidden">
-                  {/* Orange glow */}
-                  <div className="absolute left-1/2 -translate-x-1/2 top-[22%] w-[46%] aspect-square flex items-center justify-center pointer-events-none">
-                    <div className="flex-none rotate-[131.17deg]">
-                      <div className="bg-[#ff5411] blur-[50px] rounded-full w-[102px] h-[108px]" />
-                    </div>
+                  {/* Red glow */}
+                  <div className="absolute left-1/2 -translate-x-1/2 top-[40px] w-[88%] aspect-square flex items-center justify-center pointer-events-none">
+                    <div className="flex-none rotate-[131deg]"><div className="bg-[#990a0a] blur-[30px] rounded-full w-[200px] h-[210px]" /></div>
                   </div>
-                  <div className="absolute left-1/2 -translate-x-1/2 top-[22%] w-[73%]" style={{ aspectRatio: '236 / 175' }}>
-                    <Image src="/images/retriever/mockup.png" alt="Retriever app screens" fill className="object-contain" loading="lazy" sizes="(max-width: 768px) 70vw, (max-width: 1024px) 35vw, 18vw" />
+                  {/* Screenshot */}
+                  <div className="absolute left-1/2 -translate-x-1/2 top-[26%] w-[85%] border-[3px] md:border-[4px] xl:border-[7px] border-white/20 rounded-[10px] md:rounded-[12px] xl:rounded-[19px] overflow-hidden shadow-[0px_4px_4px_rgba(0,0,0,0.25)]" style={{ aspectRatio: "576 / 360" }}>
+                    <Image src="/images/tactiv-studios/hrms-dashboard.webp" alt="HRMS dashboard" fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 85vw, (max-width: 1024px) 40vw, 20vw" />
                   </div>
-                  <GradualBlur position="bottom" height="3rem" strength={2} divCount={5} curve="bezier" exponential opacity={1} zIndex={1} className="lg:hidden" />
-                  <div className="absolute top-0 left-0 right-0 p-4 z-[2]">
-                    <div className="flex flex-wrap gap-1">
-                      {projects[3].pills.map((pill) => {
-                        const data = pillData[pill];
-                        const Icon = data?.icon;
-                        return (
-                          <span key={pill} className="text-[9px] px-1.5 py-0.5 rounded-full bg-white/10 text-white/70 inline-flex items-center gap-1">
-                            {Icon && <Icon className="w-2 h-2" style={data.multicolor ? undefined : { color: data.color }} />}
-                            {pill}
-                          </span>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </div>
-                <div className="p-4 lg:hidden">
-                  <h3 className="text-base font-medium text-white mb-1">{projects[3].title}</h3>
-                  <p className="text-xs text-white/50 leading-snug">{projects[3].description}</p>
-                  <p className="text-xs text-white/40 mt-2">View project &rarr;</p>
-                </div>
-                <div className="hidden lg:block absolute inset-0 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/70 to-black/20 rounded-[20px]" />
-                  <div className="relative h-full p-4 flex flex-col justify-end z-[2]">
-                    <h3 className="text-lg font-medium text-white mb-1">{projects[3].title}</h3>
-                    <p className="text-[10px] text-white/50 leading-snug">{projects[3].description}</p>
-                    <p className="text-[10px] text-white/40 mt-2">View project →</p>
-                  </div>
-                </div>
-              </div>
-            </Link>
-
-            {/* Blazesoft */}
-            <Link href="/work/blazesoft" className="col-span-1 block group">
-              <div className="rounded-[20px] overflow-hidden bg-[#0a0a0a] lg:relative lg:h-full transition-transform duration-300 ease-out group-hover:scale-[0.96]">
-                <div className="relative aspect-[4/3] lg:aspect-auto lg:absolute lg:inset-0 overflow-hidden">
-                  <div className="absolute left-[23%] top-[22%] w-[61%] border-none outline-none" style={{ aspectRatio: '198 / 152' }}>
-                    <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[11px]">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src="/images/blazesoft/screenshot-1.png" alt="Sportzino design" className="absolute h-[112.27%] left-[-3.15%] top-[-5.45%] w-[109.79%] max-w-none border-none outline-none" />
-                    </div>
-                  </div>
-                  <div className="absolute left-[12%] top-[35%] w-[61%] border-none outline-none" style={{ aspectRatio: '197 / 152' }}>
-                    <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[12px]">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src="/images/blazesoft/screenshot-2.png" alt="Sportzino Figma" className="absolute h-[111.76%] left-[-2.1%] top-[-4.98%] w-[104.9%] max-w-none border-none outline-none" />
-                    </div>
-                  </div>
-                  <GradualBlur position="bottom" height="3rem" strength={2} divCount={5} curve="bezier" exponential opacity={1} zIndex={1} className="lg:hidden" />
                   <div className="absolute top-0 left-0 right-0 p-4 z-[2]">
                     <div className="flex flex-wrap gap-1">
                       {projects[2].pills.map((pill) => {
@@ -631,20 +575,66 @@ export default function Home() {
               </div>
             </Link>
 
-            {/* GoTrabaho */}
-            <Link href="/work/gotrabaho" className="col-span-1 block group">
+            {/* Blazesoft */}
+            <Link href="/work/blazesoft" className="col-span-1 block group">
               <div className="rounded-[20px] overflow-hidden bg-[#0a0a0a] lg:relative lg:h-full transition-transform duration-300 ease-out group-hover:scale-[0.96]">
                 <div className="relative aspect-[4/3] lg:aspect-auto lg:absolute lg:inset-0 overflow-hidden">
-                  <div className="absolute top-0 left-0 right-0 h-[40%] bg-gradient-to-b from-black/60 to-transparent pointer-events-none z-[1]" />
-                  <div className="absolute bottom-[18%] right-[7%] w-[65%] h-[84%] pointer-events-none">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/images/gotrabaho/swoosh.svg" alt="" className="w-full h-full" />
+                  <div className="absolute left-[23%] top-[22%] w-[61%] border-none outline-none" style={{ aspectRatio: '198 / 152' }}>
+                    <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[11px]">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src="/images/blazesoft/screenshot-1.webp" alt="Sportzino design" className="absolute h-[112.27%] left-[-3.15%] top-[-5.45%] w-[109.79%] max-w-none border-none outline-none" />
+                    </div>
                   </div>
-                  <div className="absolute left-1/2 top-[calc(50%+17.5%)] -translate-x-1/2 -translate-y-1/2 w-[62%]" style={{ aspectRatio: '201 / 233' }}>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/images/gotrabaho/mockup.png" alt="GoTrabaho app screens" className="absolute inset-0 w-full h-full object-contain border-none outline-none" />
+                  <div className="absolute left-[12%] top-[35%] w-[61%] border-none outline-none" style={{ aspectRatio: '197 / 152' }}>
+                    <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[12px]">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src="/images/blazesoft/screenshot-2.webp" alt="Sportzino Figma" className="absolute h-[111.76%] left-[-2.1%] top-[-4.98%] w-[104.9%] max-w-none border-none outline-none" />
+                    </div>
                   </div>
-                  <GradualBlur position="bottom" height="3rem" strength={2} divCount={5} curve="bezier" exponential opacity={1} zIndex={1} className="lg:hidden" />
+                  <div className="absolute top-0 left-0 right-0 p-4 z-[2]">
+                    <div className="flex flex-wrap gap-1">
+                      {projects[3].pills.map((pill) => {
+                        const data = pillData[pill];
+                        const Icon = data?.icon;
+                        return (
+                          <span key={pill} className="text-[9px] px-1.5 py-0.5 rounded-full bg-white/10 text-white/70 inline-flex items-center gap-1">
+                            {Icon && <Icon className="w-2 h-2" style={data.multicolor ? undefined : { color: data.color }} />}
+                            {pill}
+                          </span>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+                <div className="p-4 lg:hidden">
+                  <h3 className="text-base font-medium text-white mb-1">{projects[3].title}</h3>
+                  <p className="text-xs text-white/50 leading-snug">{projects[3].description}</p>
+                  <p className="text-xs text-white/40 mt-2">View project &rarr;</p>
+                </div>
+                <div className="hidden lg:block absolute inset-0 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/70 to-black/20 rounded-[20px]" />
+                  <div className="relative h-full p-4 flex flex-col justify-end z-[2]">
+                    <h3 className="text-lg font-medium text-white mb-1">{projects[3].title}</h3>
+                    <p className="text-[10px] text-white/50 leading-snug">{projects[3].description}</p>
+                    <p className="text-[10px] text-white/40 mt-2">View project →</p>
+                  </div>
+                </div>
+              </div>
+            </Link>
+
+            {/* Retriever */}
+            <Link href="/work/retriever" className="col-span-1 block group">
+              <div className="rounded-[20px] overflow-hidden bg-[#0a0a0a] lg:relative lg:h-full transition-transform duration-300 ease-out group-hover:scale-[0.96]">
+                <div className="relative aspect-[4/3] lg:aspect-auto lg:absolute lg:inset-0 overflow-hidden">
+                  {/* Orange glow */}
+                  <div className="absolute left-1/2 -translate-x-1/2 top-[22%] w-[46%] aspect-square flex items-center justify-center pointer-events-none">
+                    <div className="flex-none rotate-[131.17deg]">
+                      <div className="bg-[#ff5411] blur-[50px] rounded-full w-[102px] h-[108px]" />
+                    </div>
+                  </div>
+                  <div className="absolute left-1/2 -translate-x-1/2 top-[22%] w-[73%]" style={{ aspectRatio: '236 / 175' }}>
+                    <Image src="/images/retriever/mockup.webp" alt="Retriever app screens" fill className="object-contain" loading="lazy" sizes="(max-width: 768px) 70vw, (max-width: 1024px) 35vw, 18vw" />
+                  </div>
                   <div className="absolute top-0 left-0 right-0 p-4 z-[2]">
                     <div className="flex flex-wrap gap-1">
                       {projects[4].pills.map((pill) => {
@@ -676,23 +666,19 @@ export default function Home() {
               </div>
             </Link>
 
-            {/* Tactiv */}
-            <Link href="/work/tactiv-studios" className="col-span-1 block group">
+            {/* GoTrabaho */}
+            <Link href="/work/gotrabaho" className="col-span-1 block group">
               <div className="rounded-[20px] overflow-hidden bg-[#0a0a0a] lg:relative lg:h-full transition-transform duration-300 ease-out group-hover:scale-[0.96]">
                 <div className="relative aspect-[4/3] lg:aspect-auto lg:absolute lg:inset-0 overflow-hidden">
-                  <div className="absolute left-1/2 -translate-x-[45%] top-[24%] w-[65%] border-none outline-none" style={{ aspectRatio: '214 / 133' }}>
-                    <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[6px]">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src="/images/tactiv-studios/screenshot-1.png" alt="Tactiv Studios dashboard" className="absolute inset-0 w-full h-full object-cover border-none outline-none" />
-                    </div>
+                  <div className="absolute top-0 left-0 right-0 h-[40%] bg-gradient-to-b from-black/60 to-transparent pointer-events-none z-[1]" />
+                  <div className="absolute bottom-[18%] right-[7%] w-[65%] h-[84%] pointer-events-none">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/images/gotrabaho/swoosh.svg" alt="" className="w-full h-full" />
                   </div>
-                  <div className="absolute left-1/2 -translate-x-[52%] top-[36%] w-[78%] border-none outline-none" style={{ aspectRatio: '258 / 159' }}>
-                    <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[6px]">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src="/images/tactiv-studios/screenshot-2.png" alt="Tactiv Studios app" className="absolute inset-0 w-full h-full object-cover border-none outline-none" />
-                    </div>
+                  <div className="absolute left-1/2 top-[calc(50%+17.5%)] -translate-x-1/2 -translate-y-1/2 w-[62%]" style={{ aspectRatio: '201 / 233' }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/images/gotrabaho/mockup.webp" alt="GoTrabaho app screens" className="absolute inset-0 w-full h-full object-contain border-none outline-none" />
                   </div>
-                  <GradualBlur position="bottom" height="3rem" strength={2} divCount={5} curve="bezier" exponential opacity={1} zIndex={1} className="lg:hidden" />
                   <div className="absolute top-0 left-0 right-0 p-4 z-[2]">
                     <div className="flex flex-wrap gap-1">
                       {projects[5].pills.map((pill) => {
@@ -756,16 +742,7 @@ export default function Home() {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-[#0a0a0a] px-6 md:px-12 py-10">
-        <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-          <p className="text-xs text-white/30">&copy; {new Date().getFullYear()} Nathaniel Muyco</p>
-          <div className="flex gap-6">
-            <a href="mailto:nathanmuyx@gmail.com" className="text-xs text-white/30 hover:text-white/50 transition-colors">Email</a>
-            <a href="https://www.linkedin.com/in/nathaniel-muyco-903422272/" target="_blank" rel="noopener noreferrer" className="text-xs text-white/30 hover:text-white/50 transition-colors">LinkedIn</a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
