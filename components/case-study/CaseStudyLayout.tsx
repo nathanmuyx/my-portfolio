@@ -40,6 +40,7 @@ export function CaseStudyLayout({
   const [overDark, setOverDark] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
   const rafRef = useRef<number>(0);
+  const lastDarkCheck = useRef<number>(0);
 
   const handleScroll = useCallback(() => {
     cancelAnimationFrame(rafRef.current);
@@ -48,16 +49,18 @@ export function CaseStudyLayout({
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       setScrollProgress(docHeight > 0 ? Math.min(scrollTop / docHeight, 1) : 0);
 
-      if (navRef.current) {
+      // Throttle the expensive dark-background check to every 200ms
+      const now = performance.now();
+      if (navRef.current && now - lastDarkCheck.current > 200) {
+        lastDarkCheck.current = now;
         const rect = navRef.current.getBoundingClientRect();
         const sampleY = rect.top + rect.height / 2;
 
         navRef.current.style.pointerEvents = "none";
         navRef.current.style.visibility = "hidden";
 
-        // Sample 5 points across the nav width for majority vote
         let darkCount = 0;
-        const offsets = [0.2, 0.35, 0.5, 0.65, 0.8];
+        const offsets = [0.2, 0.5, 0.8];
         for (const pct of offsets) {
           const x = rect.left + rect.width * pct;
           const behind = document.elementFromPoint(x, sampleY);
@@ -67,7 +70,7 @@ export function CaseStudyLayout({
         navRef.current.style.visibility = "";
         navRef.current.style.pointerEvents = "";
 
-        setOverDark(darkCount >= 3);
+        setOverDark(darkCount >= 2);
       }
     });
   }, []);
