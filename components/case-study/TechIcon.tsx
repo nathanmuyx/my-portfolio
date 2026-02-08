@@ -9,7 +9,6 @@ import {
   SiAdobexd,
   SiTypescript,
   SiDart,
-  SiFirebase,
   SiTrello,
   SiJira,
   SiWebflow,
@@ -27,6 +26,21 @@ function FigmaIcon({ className }: { className?: string; style?: React.CSSPropert
       <path d="M19 0V19H28.5C33.7467 19 38 14.7467 38 9.5C38 4.25329 33.7467 0 28.5 0H19Z" fill="#FF7262"/>
       <path d="M0 9.5C0 14.7467 4.25329 19 9.5 19H19V0H9.5C4.25329 0 0 4.25329 0 9.5Z" fill="#F24E1E"/>
       <path d="M0 28.5C0 33.7467 4.25329 38 9.5 38H19V19H9.5C4.25329 19 0 23.2533 0 28.5Z" fill="#A259FF"/>
+    </svg>
+  );
+}
+
+function FirebaseIcon({ className }: { className?: string; style?: React.CSSProperties }) {
+  return (
+    <svg viewBox="0 0 256 351" fill="none" className={className}>
+      <path d="M0 282.998L2.123 280.026 102.567 89.512 102.567 88.336 58.434 2.102C55.928 -2.684 48.548 -0.316 49.142 5.06L0 282.998Z" fill="#FFC24A"/>
+      <path d="M1.253 280.432L1.854 279.2 102.21 89.932 58.13 2.386C55.725 -2.192 48.793 -0.058 49.352 4.87L1.253 280.432Z" fill="#FFA712"/>
+      <path d="M135.005 150.38L167.318 117.169 135.005 48.478C132.999 44.043 126.847 44.134 124.963 48.628L108.121 86.214 107.343 88.878 135.005 150.38Z" fill="#F4BD62"/>
+      <path d="M134.417 149.076L166.283 117.169 134.417 49.272C132.511 45.037 127.39 45.037 125.484 49.272L108.793 86.076 107.636 89.614 134.417 149.076Z" fill="#FFA50E"/>
+      <path d="M0 282.998L0.962 282.03 4.045 279.326 132.792 153.284 134.417 148.724 107.636 89.614 0 282.998Z" fill="#F6820C"/>
+      <path d="M139.121 347.551L255.395 282.703 222.191 78.208C221.153 71.97 213.303 69.674 209.247 74.454L0 282.998 115.608 347.37C122.914 351.556 131.726 351.592 139.121 347.551Z" fill="#FDE068"/>
+      <path d="M254.354 282.16L221.402 79.218C220.364 73.16 213.014 70.864 209.048 75.374L0.962 282.03 116.19 346.828C123.316 350.924 131.948 350.96 139.164 347.01L254.354 282.16Z" fill="#FCCA3F"/>
+      <path d="M139.121 345.565C131.726 349.606 122.914 349.57 115.608 345.384L0.931 281.08 0 282.998 115.608 347.37C122.914 351.556 131.726 351.592 139.121 347.551L255.395 282.703 255.111 280.876 139.121 345.565Z" fill="#EEAB37"/>
     </svg>
   );
 }
@@ -54,7 +68,7 @@ const iconMap: Record<string, { icon: React.ComponentType<{ className?: string; 
   "Adobe XD": { icon: SiAdobexd, color: "#FF61F6" },
   "TypeScript": { icon: SiTypescript, color: "#3178C6" },
   "Dart": { icon: SiDart, color: "#0175C2" },
-  "Firebase": { icon: SiFirebase, color: "#FFCA28" },
+  "Firebase": { icon: FirebaseIcon, color: "#FFCA28" },
   "Trello": { icon: SiTrello, color: "#0052CC" },
   "Jira": { icon: SiJira, color: "#0052CC" },
   "Webflow": { icon: SiWebflow, color: "#4353FF" },

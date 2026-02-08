@@ -356,11 +356,12 @@ export default function TypidPage() {
               <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-6">Events Platform</p>
               <div className="space-y-4">
                 {[
+                  { name: "Claude Code", role: "AI-assisted development" },
+                  { name: "GitHub", role: "Version control" },
                   { name: "Next.js 14", role: "React framework" },
                   { name: "TypeScript", role: "Type safety" },
                   { name: "Supabase", role: "Database, auth, storage" },
                   { name: "Resend", role: "Transactional email" },
-                  { name: "Claude Code", role: "AI-assisted development" },
                 ].map((tech) => (
                   <div key={tech.name} className="flex items-center justify-between pb-4 border-b border-border">
                     <span className="text-sm font-medium flex items-center gap-2"><TechIcon name={tech.name} />{tech.name}</span>
