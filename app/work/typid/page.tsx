@@ -180,10 +180,10 @@ export default function TypidPage() {
                   <div className="bg-[#17bff9] blur-[50px] rounded-full w-[360px] h-[360px]" />
                 </div>
               </div>
-              <div className="absolute border-[clamp(1.5px,0.25vw,3px)] border-white/20 rounded-[clamp(3px,0.4vw,6px)] overflow-hidden left-[7%] top-[9%] w-[67%] h-[55%]">
+              <div className="absolute border-[clamp(1.5px,0.25vw,3px)] border-white/20 rounded-[clamp(3px,0.4vw,6px)] overflow-hidden left-[7%] top-[9%] w-[67%]" style={{ aspectRatio: "1400 / 788" }}>
                 <LazyImage src="/images/typid/dashboard.webp" alt="Typid seller dashboard" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 90vw, 45vw" quality={75} />
               </div>
-              <div className="absolute border-[clamp(1.5px,0.25vw,3px)] border-white/20 rounded-[clamp(3px,0.4vw,6px)] overflow-hidden left-[24%] top-[32%] w-[72%] h-[60%]">
+              <div className="absolute border-[clamp(1.5px,0.25vw,3px)] border-white/20 rounded-[clamp(3px,0.4vw,6px)] overflow-hidden left-[24%] top-[32%] w-[72%]" style={{ aspectRatio: "1400 / 851" }}>
                 <LazyImage src="/images/typid/himaya-event.webp" alt="Himaya event page" fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 90vw, 45vw" quality={75} />
               </div>
             </SkeletonCard>
@@ -194,10 +194,10 @@ export default function TypidPage() {
                   <div className="bg-[#17bff9] blur-[50px] rounded-full w-[360px] h-[360px]" />
                 </div>
               </div>
-              <div className="absolute border-[clamp(1.5px,0.2vw,2.5px)] border-white/20 rounded-[clamp(3px,0.35vw,5px)] overflow-hidden left-[9%] top-[18%] w-[80%] h-[62%]">
+              <div className="absolute border-[clamp(1.5px,0.2vw,2.5px)] border-white/20 rounded-[clamp(3px,0.35vw,5px)] overflow-hidden left-[9%] top-[18%] w-[80%]" style={{ aspectRatio: "1400 / 723" }}>
                 <LazyImage src="/images/typid/attendee-list.webp" alt="Attendee management list" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 90vw, 45vw" quality={75} />
               </div>
-              <div className="absolute border-[clamp(1.5px,0.2vw,2.5px)] border-white/20 rounded-[clamp(4px,0.7vw,9px)] overflow-hidden left-[70%] top-[36%] w-[22%] h-[56%]">
+              <div className="absolute border-[clamp(1.5px,0.2vw,2.5px)] border-white/20 rounded-[clamp(4px,0.7vw,9px)] overflow-hidden left-[70%] top-[36%] w-[22%]" style={{ aspectRatio: "992 / 1642" }}>
                 <LazyImage src="/images/typid/qr-scanner.webp" alt="QR check-in scanner" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 30vw, 15vw" quality={75} />
               </div>
             </SkeletonCard>

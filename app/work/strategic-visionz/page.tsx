@@ -139,10 +139,9 @@ export default function StrategicVisionzPage() {
               <h3 className="text-base font-medium mb-4">What I designed</h3>
               <ul className="space-y-3">
                 {[
-                  "Community management dashboards and service detail modals",
-                  "Filter-first interface for managing large community lists — multi-filter selection across service ID, shift, status, and more",
-                  "Sticky navigation banners, community info cards, and responsive page layouts",
-                  "A component system with consistent naming conventions",
+                  "Community concierge dashboards — tables, filters, and service detail views",
+                  "Multi-filter selection across service ID, shift, status, and more",
+                  "Responsive mobile table layouts for field operations",
                 ].map((item) => (
                   <li key={item} className="text-sm text-foreground/70 leading-relaxed flex gap-2">
                     <span className="text-foreground/40 shrink-0">•</span>
@@ -155,10 +154,9 @@ export default function StrategicVisionzPage() {
               <h3 className="text-base font-medium mb-4">What I built</h3>
               <ul className="space-y-3">
                 {[
-                  "Implemented all Figma designs into WeWeb components",
-                  "Created reusable component structures with custom CSS classes",
-                  "Built responsive layouts that worked across desktop and mobile",
-                  "Handled complex data displays — pagination, search, and filtering for large datasets",
+                  "Built all designs from Figma into WeWeb — tables, filters, and responsive layouts",
+                  "Community concierge data views with pagination, search, and multi-filter support",
+                  "Mobile-responsive tables for on-the-go access",
                 ].map((item) => (
                   <li key={item} className="text-sm text-foreground/70 leading-relaxed flex gap-2">
                     <span className="text-foreground/40 shrink-0">•</span>
