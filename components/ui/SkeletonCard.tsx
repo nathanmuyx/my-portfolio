@@ -1,7 +1,7 @@
 "use client";
-import { useState, useLayoutEffect, useRef, CSSProperties, HTMLAttributes } from "react";
+import { useState, useLayoutEffect, useRef, HTMLAttributes } from "react";
 
-export function SkeletonCard({ children, className = "", style, ...rest }: HTMLAttributes<HTMLDivElement>) {
+export function SkeletonCard({ children, className = "", ...rest }: HTMLAttributes<HTMLDivElement>) {
   const [loaded, setLoaded] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -24,15 +24,12 @@ export function SkeletonCard({ children, className = "", style, ...rest }: HTMLA
     return () => imgs.forEach(img => img.removeEventListener("load", onLoad));
   }, []);
 
-  const skeletonStyle: CSSProperties | undefined = !loaded
-    ? { ...style, background: "var(--cream-dark)" }
-    : style;
-
   return (
-    <div ref={ref} className={className} style={skeletonStyle} {...rest}>
-      {!loaded && (
-        <div className="absolute inset-0 bg-cream-dark animate-pulse rounded-[inherit] z-50 pointer-events-none" />
-      )}
+    <div ref={ref} className={className} {...rest}>
+      <div
+        className="absolute inset-0 bg-cream-dark rounded-[inherit] z-50 pointer-events-none transition-opacity duration-700 ease-out"
+        style={{ opacity: loaded ? 0 : 1 }}
+      />
       {children}
     </div>
   );
