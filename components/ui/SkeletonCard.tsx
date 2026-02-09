@@ -1,11 +1,11 @@
 "use client";
-import { useState, useEffect, useRef, HTMLAttributes } from "react";
+import { useState, useLayoutEffect, useRef, HTMLAttributes } from "react";
 
 export function SkeletonCard({ children, className = "", ...rest }: HTMLAttributes<HTMLDivElement>) {
   const [loaded, setLoaded] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const el = ref.current;
     if (!el) return;
     const imgs = el.querySelectorAll("img");
