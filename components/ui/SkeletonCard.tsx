@@ -1,7 +1,7 @@
 "use client";
-import { useState, useLayoutEffect, useRef, HTMLAttributes } from "react";
+import { useState, useLayoutEffect, useRef, CSSProperties, HTMLAttributes } from "react";
 
-export function SkeletonCard({ children, className = "", ...rest }: HTMLAttributes<HTMLDivElement>) {
+export function SkeletonCard({ children, className = "", style, ...rest }: HTMLAttributes<HTMLDivElement>) {
   const [loaded, setLoaded] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -17,7 +17,6 @@ export function SkeletonCard({ children, className = "", ...rest }: HTMLAttribut
       }
     };
 
-    // Check if already cached
     checkAll();
 
     const onLoad = () => checkAll();
@@ -25,12 +24,16 @@ export function SkeletonCard({ children, className = "", ...rest }: HTMLAttribut
     return () => imgs.forEach(img => img.removeEventListener("load", onLoad));
   }, []);
 
+  const skeletonStyle: CSSProperties | undefined = !loaded
+    ? { ...style, background: "var(--cream-dark)" }
+    : style;
+
   return (
-    <div ref={ref} className={className} {...rest}>
-      {children}
+    <div ref={ref} className={className} style={skeletonStyle} {...rest}>
       {!loaded && (
-        <div className="absolute inset-0 bg-[#0a0a0a] animate-pulse rounded-[inherit] z-[5] pointer-events-none" />
+        <div className="absolute inset-0 bg-cream-dark animate-pulse rounded-[inherit] z-50 pointer-events-none" />
       )}
+      {children}
     </div>
   );
 }
