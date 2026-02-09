@@ -45,19 +45,19 @@ export default function BlazesoftPage() {
       {/* Mockup */}
       <section id="mockup" className="px-6 md:px-12 pb-16 md:pb-20 scroll-mt-24">
         <div className="max-w-[1100px] mx-auto">
-          <SkeletonCard className="relative w-full rounded-2xl overflow-hidden bg-[#0a0a0a]" style={{ aspectRatio: "894 / 620" }}>
+          <SkeletonCard className="relative w-full rounded-2xl overflow-hidden bg-[#0a0a0a]" style={{ aspectRatio: "16 / 9" }}>
             {/* Blazesoft logo */}
-            <div className="absolute left-1/2 -translate-x-1/2 top-[6%] w-[23%] pointer-events-none" style={{ aspectRatio: "454 / 80" }}>
+            <div className="absolute left-1/2 -translate-x-1/2 top-[5%] w-[23%] z-20 pointer-events-none" style={{ aspectRatio: "454 / 80" }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/images/blazesoft/blazesoft-logo.png" alt="Blazesoft" className="w-full h-full object-contain" />
             </div>
             {/* Back screenshot — YayCasino */}
-            <div className="absolute border-[clamp(3px,0.5vw,7px)] border-white/20 rounded-[clamp(6px,1vw,16px)] overflow-hidden" style={{ left: "8.3%", top: "18%", width: "83.4%", aspectRatio: "746 / 479" }}>
-              <LazyImage src="/images/blazesoft/yaycasino.webp" alt="YayCasino homepage" fill className="object-cover" priority sizes="(max-width: 768px) 90vw, 84vw" />
+            <div className="absolute border-[clamp(2px,0.35vw,4px)] border-white/15 rounded-[clamp(6px,0.8vw,12px)] overflow-hidden left-[18%] top-[18%] w-[62%]" style={{ aspectRatio: "1440 / 926" }}>
+              <LazyImage src="/images/blazesoft/yaycasino.webp" alt="YayCasino homepage" fill className="object-cover object-top" priority sizes="(max-width: 768px) 90vw, 62vw" />
             </div>
             {/* Front screenshot — Sportzino */}
-            <div className="absolute border-[clamp(3px,0.5vw,7px)] border-white/20 rounded-[clamp(6px,1vw,16px)] overflow-hidden shadow-[0px_-10px_33px_rgba(0,0,0,0.25)]" style={{ left: "15.3%", top: "31.5%", width: "69.5%", aspectRatio: "621 / 414" }}>
-              <LazyImage src="/images/blazesoft/sportzino.webp" alt="Sportzino homepage" fill className="object-cover" priority sizes="(max-width: 768px) 70vw, 60vw" />
+            <div className="absolute border-[clamp(2px,0.35vw,4px)] border-white/15 rounded-[clamp(6px,0.8vw,12px)] overflow-hidden shadow-[0px_-10px_33px_rgba(0,0,0,0.25)] left-[12%] top-[38%] w-[74%]" style={{ aspectRatio: "1440 / 951" }}>
+              <LazyImage src="/images/blazesoft/sportzino.webp" alt="Sportzino homepage" fill className="object-cover object-top" priority sizes="(max-width: 768px) 90vw, 74vw" />
             </div>
           </SkeletonCard>
         </div>
