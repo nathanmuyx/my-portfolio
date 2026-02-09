@@ -68,24 +68,99 @@ export default function BlazesoftPage() {
       {/* Story */}
       <section id="story" className="px-6 md:px-12 py-20 md:py-24 scroll-mt-24">
         <div className="max-w-[1100px] mx-auto">
-          <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-6">The problem</p>
+          <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-6">The shift</p>
           <h2 className="text-3xl md:text-4xl font-medium leading-tight tracking-tight max-w-2xl mb-6">
-            Every file was a maze.
+            From XD chaos to Figma structure.
           </h2>
-          <p className="text-base text-foreground/70 max-w-2xl leading-relaxed mb-16">
-            When I joined, all design work lived in Adobe XD. Files were massive, unorganized, and hard to navigate. There was no component structure — just flattened screens duplicated across files. Every new version meant downloading the entire file again. There was no way to share a link and get live updates. If you wanted to see the latest version, you had to ask someone to export and send it.
+          <p className="text-base text-foreground/70 max-w-2xl leading-relaxed mb-12">
+            Design files were scattered across Adobe XD — no components, no naming, no version control. Every review meant downloading the latest file and hoping it was current. I migrated everything to Figma and built real structure into the files.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-x-16 gap-y-12 mb-16">
+          {/* Before / After illustration */}
+          <div className="grid md:grid-cols-2 gap-4 mb-16 pointer-events-none select-none">
+            {/* BEFORE — XD */}
+            <div className="rounded-2xl bg-[#141414] p-6 md:p-8">
+              <div className="flex items-center gap-2 mb-5">
+                <TechIcon name="Adobe XD" className="w-4 h-4" />
+                <p className="text-[11px] uppercase tracking-wider text-white/40">Before</p>
+              </div>
+              {/* Messy file list */}
+              <div className="space-y-2.5">
+                {[
+                  { name: "Sportzino_FINAL_v3_copy.xd", size: "248 MB", color: "text-red-400/60" },
+                  { name: "YeyCasino_homepage_OLD.xd", size: "189 MB", color: "text-red-400/60" },
+                  { name: "Sportzino_FINAL_FINAL.xd", size: "312 MB", color: "text-red-400/60" },
+                  { name: "FC_update_feb_NEW(2).xd", size: "201 MB", color: "text-red-400/60" },
+                  { name: "YeyCasino_v2_backup.xd", size: "156 MB", color: "text-red-400/60" },
+                ].map((file) => (
+                  <div key={file.name} className="flex items-center gap-3 rounded-lg bg-white/[0.03] px-3 py-2.5">
+                    <svg className="w-3.5 h-3.5 text-white/20 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    <span className="text-[11px] text-white/40 truncate flex-1 font-mono">{file.name}</span>
+                    <span className={`text-[10px] shrink-0 ${file.color}`}>{file.size}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-4 flex items-center gap-2">
+                <svg className="w-3 h-3 text-red-400/50" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                </svg>
+                <span className="text-[10px] text-red-400/50">Download to view. No links. No version history.</span>
+              </div>
+            </div>
+
+            {/* AFTER — Figma */}
+            <div className="rounded-2xl bg-[#141414] p-6 md:p-8">
+              <div className="flex items-center gap-2 mb-5">
+                <TechIcon name="Figma" className="w-4 h-4" />
+                <p className="text-[11px] uppercase tracking-wider text-white/40">After</p>
+              </div>
+              {/* Clean file list with thumbnails */}
+              <div className="space-y-2.5">
+                {[
+                  { name: "Sportzino", pages: "32 pages", status: "Updated 2h ago", thumb: "#FF6B35" },
+                  { name: "YeyCasino", pages: "28 pages", status: "Updated today", thumb: "#FBBF24" },
+                  { name: "Fortune Coins", pages: "24 pages", status: "Updated 1d ago", thumb: "#8B5CF6" },
+                ].map((file) => (
+                  <div key={file.name} className="flex items-center gap-3 rounded-lg bg-white/[0.03] px-3 py-2.5">
+                    <div className="w-8 h-6 rounded-[3px] shrink-0 flex items-center justify-center" style={{ backgroundColor: file.thumb + "20", border: `1px solid ${file.thumb}30` }}>
+                      <div className="w-3 h-2 rounded-[1px]" style={{ backgroundColor: file.thumb + "60" }} />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <span className="text-[11px] text-white/60 font-medium block">{file.name}</span>
+                      <span className="text-[10px] text-white/25">{file.pages}</span>
+                    </div>
+                    <span className="text-[10px] text-emerald-400/50 shrink-0">{file.status}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="h-px bg-white/[0.06] my-4" />
+              <div className="space-y-2">
+                {[
+                  { label: "Components", value: "Reusable with variants" },
+                  { label: "Auto layout", value: "Responsive frames" },
+                  { label: "Version control", value: "Live links + history" },
+                ].map((row) => (
+                  <div key={row.label} className="flex items-center justify-between">
+                    <span className="text-[10px] text-white/30">{row.label}</span>
+                    <span className="text-[10px] text-emerald-400/40">{row.value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* What I did — simplified */}
+          <div className="grid md:grid-cols-2 gap-x-16 gap-y-10">
             <div>
               <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-6">What I did</p>
               <ul className="space-y-3">
                 {[
-                  "Migrated all casino product files from Adobe XD to Figma",
-                  "Introduced shareable links with live thumbnails — no more downloading files for version control",
-                  "Built proper components, variants, and auto layouts across all product files",
-                  "Established naming conventions and page organization for multi-product files",
-                  "Trained the junior designer on Figma best practices — components, variants, auto layouts, and file structure",
+                  "Migrated all product files from Adobe XD to Figma",
+                  "Built components, variants, and auto layouts for every product",
+                  "Set up shareable links — no more downloading files to review",
+                  "Trained junior designer on Figma best practices",
                 ].map((item) => (
                   <li key={item} className="flex gap-3 text-sm text-foreground/60 leading-relaxed">
                     <span className="text-foreground/40 shrink-0">•</span>
@@ -95,18 +170,20 @@ export default function BlazesoftPage() {
               </ul>
             </div>
             <div>
-              <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-6">The shift</p>
-              <div className="space-y-6">
-                <p className="text-base leading-relaxed">
-                  The XD workflow was download-based. Every review cycle meant someone exporting, sending a file, and hoping everyone was on the same version.
-                </p>
-                <p className="text-base leading-relaxed">
-                  Figma changed that overnight. One link, always up to date, with thumbnails so you could see what changed without opening anything. Version history built in. Comments in context instead of over Slack.
-                </p>
-                <p className="text-base leading-relaxed">
-                  But the tool switch alone wasn't enough. The files needed structure — real components instead of copied frames, variants instead of duplicated artboards, auto layout instead of manually resizing everything. That's what I spent most of my time building.
-                </p>
-              </div>
+              <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-6">What changed</p>
+              <ul className="space-y-3">
+                {[
+                  "One link per product — always current, with thumbnails",
+                  "Version history replaced file-naming chaos",
+                  "Structured files across Sportzino, YeyCasino, Fortune Coins, and more",
+                  "Junior designer became self-sufficient in Figma",
+                ].map((item) => (
+                  <li key={item} className="flex gap-3 text-sm text-foreground/60 leading-relaxed">
+                    <span className="text-foreground/40 shrink-0">•</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
@@ -117,15 +194,12 @@ export default function BlazesoftPage() {
       {/* Products */}
       <section id="products" className="px-6 md:px-12 py-20 md:py-24 scroll-mt-24">
         <div className="max-w-[1100px] mx-auto">
-          <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-6">Products I worked on</p>
-          <p className="text-base text-foreground/70 max-w-2xl leading-relaxed mb-10">
-            Blazesoft operated multiple casino brands. I edited and maintained design files across all of them — not just one product.
-          </p>
-          <div className="space-y-4">
+          <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-6">Products</p>
+          <div className="max-w-lg space-y-4">
             {[
-              { name: "Sportzino", desc: "Sports betting and casino platform" },
-              { name: "YeyCasino", desc: "Online casino product" },
-              { name: "Fortune Coins", desc: "Social casino gaming" },
+              { name: "Sportzino", desc: "Sports betting & casino" },
+              { name: "YeyCasino", desc: "Online casino" },
+              { name: "Fortune Coins", desc: "Social casino" },
             ].map((product) => (
               <div key={product.name} className="flex items-center justify-between pb-4 border-b border-border">
                 <span className="text-sm font-medium">{product.name}</span>
