@@ -4,6 +4,7 @@ import { LazyImage } from "@/components/ui/LazyImage";
 import { CaseStudyLayout } from "@/components/case-study/CaseStudyLayout";
 import { MoreProjects } from "@/components/case-study/MoreProjects";
 import { TechIcon } from "@/components/case-study/TechIcon";
+import { SkeletonCard } from "@/components/ui/SkeletonCard";
 
 const sections = [
   { id: "hero", label: "Hero" },
@@ -42,7 +43,7 @@ export default function GoTrabahoPage() {
       {/* Mockup */}
       <section id="mockup" className="px-6 md:px-12 pb-16 md:pb-20 scroll-mt-24">
         <div className="max-w-[1100px] mx-auto">
-          <div className="relative w-full rounded-2xl overflow-hidden bg-[#0a0a0a] flex items-center justify-center" style={{ aspectRatio: "16 / 9" }}>
+          <SkeletonCard className="relative w-full rounded-2xl overflow-hidden bg-[#0a0a0a] flex items-center justify-center" style={{ aspectRatio: "16 / 9" }}>
             {/* Swoosh */}
             <div className="absolute bottom-[10%] right-[5%] w-[50%] h-[70%] pointer-events-none opacity-60">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -51,7 +52,7 @@ export default function GoTrabahoPage() {
             <div className="relative w-[40%] max-w-[300px]" style={{ aspectRatio: "201 / 233" }}>
               <LazyImage src="/images/gotrabaho/mockup.webp" alt="GoTrabaho app screens" fill className="object-contain" priority sizes="(max-width: 768px) 80vw, 40vw" />
             </div>
-          </div>
+          </SkeletonCard>
         </div>
       </section>
 
@@ -102,7 +103,7 @@ export default function GoTrabahoPage() {
 
               <div className="grid grid-cols-2 gap-3 mt-8">
                 {/* Card 1: ID verification — two stacked phones */}
-                <div className="relative rounded-xl bg-[#0a0a0a] overflow-hidden" style={{ aspectRatio: "253 / 540" }}>
+                <SkeletonCard className="relative rounded-xl bg-[#0a0a0a] overflow-hidden" style={{ aspectRatio: "253 / 540" }}>
                   <div className="absolute left-1/2 top-[32%] -translate-x-1/2 pointer-events-none w-[130%] aspect-square">
                     <div className="w-full h-full bg-[#fc8505] blur-[50px] rounded-full rotate-[131deg]" />
                   </div>
@@ -112,37 +113,37 @@ export default function GoTrabahoPage() {
                   <div className="absolute z-10 shadow-[0px_-10px_33px_rgba(0,0,0,0.25)]" style={{ left: "9.1%", top: "14.4%", width: "81.8%", height: "80.7%" }}>
                     <LazyImage src="/images/gotrabaho/onboard-front.webp" alt="NBI Clearance verification" fill className="object-cover" loading="lazy" sizes="25vw" />
                   </div>
-                </div>
+                </SkeletonCard>
 
                 {/* Card 2: Profile with portfolio */}
-                <div className="relative rounded-xl bg-[#0a0a0a] overflow-hidden" style={{ aspectRatio: "253 / 540" }}>
+                <SkeletonCard className="relative rounded-xl bg-[#0a0a0a] overflow-hidden" style={{ aspectRatio: "253 / 540" }}>
                   <div className="absolute left-1/2 top-[32%] -translate-x-1/2 pointer-events-none w-[130%] aspect-square">
                     <div className="w-full h-full bg-[#fc8505] blur-[50px] rounded-full rotate-[131deg]" />
                   </div>
                   <div className="absolute z-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" style={{ width: "80%", height: "80%" }}>
                     <LazyImage src="/images/gotrabaho/profile-portfolio.webp" alt="Verified worker profile with portfolio" fill className="object-cover" loading="lazy" sizes="25vw" />
                   </div>
-                </div>
+                </SkeletonCard>
 
                 {/* Card 3: Profile with reviews */}
-                <div className="relative rounded-xl bg-[#0a0a0a] overflow-hidden" style={{ aspectRatio: "253 / 540" }}>
+                <SkeletonCard className="relative rounded-xl bg-[#0a0a0a] overflow-hidden" style={{ aspectRatio: "253 / 540" }}>
                   <div className="absolute left-1/2 top-[32%] -translate-x-1/2 pointer-events-none w-[130%] aspect-square">
                     <div className="w-full h-full bg-[#fc8505] blur-[50px] rounded-full rotate-[131deg]" />
                   </div>
-                  <div className="absolute z-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 border-[5px] border-white/50 rounded-[14px] overflow-hidden" style={{ width: "80%", height: "80%" }}>
+                  <div className="absolute z-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 border-[clamp(2.5px,0.45vw,5px)] border-white/50 rounded-[clamp(6px,1vw,14px)] overflow-hidden" style={{ width: "80%", height: "80%" }}>
                     <LazyImage src="/images/gotrabaho/profile-reviews.webp" alt="Worker profile with feedback and ratings" fill className="object-cover" loading="lazy" sizes="25vw" />
                   </div>
-                </div>
+                </SkeletonCard>
 
                 {/* Card 4: Jobs listing with unverified banner */}
-                <div className="relative rounded-xl bg-[#0a0a0a] overflow-hidden" style={{ aspectRatio: "253 / 540" }}>
+                <SkeletonCard className="relative rounded-xl bg-[#0a0a0a] overflow-hidden" style={{ aspectRatio: "253 / 540" }}>
                   <div className="absolute left-1/2 top-[32%] -translate-x-1/2 pointer-events-none w-[130%] aspect-square">
                     <div className="w-full h-full bg-[#fc8505] blur-[50px] rounded-full rotate-[131deg]" />
                   </div>
-                  <div className="absolute z-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 border-[5px] border-white/50 rounded-[14px] overflow-hidden" style={{ width: "78%", height: "79%" }}>
+                  <div className="absolute z-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 border-[clamp(2.5px,0.45vw,5px)] border-white/50 rounded-[clamp(6px,1vw,14px)] overflow-hidden" style={{ width: "78%", height: "79%" }}>
                     <LazyImage src="/images/gotrabaho/jobs-unverified.webp" alt="Jobs listing with unverified warning" fill className="object-cover" loading="lazy" sizes="25vw" />
                   </div>
-                </div>
+                </SkeletonCard>
               </div>
             </div>
           </div>

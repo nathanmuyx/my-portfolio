@@ -4,6 +4,7 @@ import { LazyImage } from "@/components/ui/LazyImage";
 import { CaseStudyLayout } from "@/components/case-study/CaseStudyLayout";
 import { MoreProjects } from "@/components/case-study/MoreProjects";
 import { TechIcon } from "@/components/case-study/TechIcon";
+import { SkeletonCard } from "@/components/ui/SkeletonCard";
 
 const sections = [
   { id: "hero", label: "Hero" },
@@ -46,14 +47,14 @@ export default function StrategicVisionzPage() {
       {/* Hero Image */}
       <section className="px-6 md:px-12 pb-24 md:pb-32">
         <div className="max-w-[1100px] mx-auto">
-          <div className="relative w-full rounded-2xl overflow-hidden bg-[#0a0a0a]" style={{ aspectRatio: "16 / 9" }}>
+          <SkeletonCard className="relative w-full rounded-2xl overflow-hidden bg-[#0a0a0a]" style={{ aspectRatio: "16 / 9" }}>
             <div className="absolute left-1/2 top-[40%] -translate-x-1/2 -translate-y-1/2 pointer-events-none">
               <div className="bg-[#0a4299]/40 blur-[100px] rounded-full w-[500px] h-[500px]" />
             </div>
-            <div className="absolute border-[6px] border-white/15 rounded-xl overflow-hidden left-[8%] top-[10%] w-[84%]" style={{ aspectRatio: "576 / 360" }}>
+            <div className="absolute border-[clamp(3px,0.5vw,6px)] border-white/15 rounded-[clamp(6px,1vw,14px)] overflow-hidden left-[8%] top-[10%] w-[84%]" style={{ aspectRatio: "576 / 360" }}>
               <LazyImage src="/images/strategic-visionz/homepage.webp" alt="Strategic Visionz platform" fill className="object-cover object-top" priority sizes="(max-width: 768px) 90vw, 84vw" />
             </div>
-          </div>
+          </SkeletonCard>
         </div>
       </section>
 
@@ -121,17 +122,17 @@ export default function StrategicVisionzPage() {
           </p>
 
           {/* Dashboard screenshots */}
-          <div className="relative rounded-2xl bg-[#0a0a0a] overflow-hidden mb-16" style={{ aspectRatio: "4 / 3" }}>
+          <SkeletonCard className="relative rounded-2xl bg-[#0a0a0a] overflow-hidden mb-16" style={{ aspectRatio: "4 / 3" }}>
             <div className="absolute left-1/2 top-[-10%] -translate-x-1/2 pointer-events-none" style={{ width: "85%", aspectRatio: "1 / 1" }}>
               <div className="w-full h-full bg-[#0a4299] blur-[50px] rounded-full rotate-[131deg]" />
             </div>
-            <div className="absolute border-[3px] border-white/20 rounded-lg overflow-hidden" style={{ left: "15%", top: "11%", width: "69.5%", aspectRatio: "504 / 282" }}>
+            <div className="absolute border-[clamp(2px,0.25vw,3px)] border-white/20 rounded-[clamp(4px,0.6vw,8px)] overflow-hidden" style={{ left: "15%", top: "11%", width: "69.5%", aspectRatio: "504 / 282" }}>
               <LazyImage src="/images/strategic-visionz/valet-waste-back.webp" alt="Valet Waste dashboard overview" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 70vw, 50vw" />
             </div>
-            <div className="absolute border-[3px] border-[#adadad]/40 rounded-lg overflow-hidden shadow-[0px_-10px_27px_rgba(0,0,0,0.25)]" style={{ left: "10%", top: "20.5%", width: "80%", aspectRatio: "581 / 419" }}>
+            <div className="absolute border-[clamp(2px,0.25vw,3px)] border-[#adadad]/40 rounded-[clamp(4px,0.6vw,8px)] overflow-hidden shadow-[0px_-10px_27px_rgba(0,0,0,0.25)]" style={{ left: "10%", top: "20.5%", width: "80%", aspectRatio: "581 / 419" }}>
               <LazyImage src="/images/strategic-visionz/valet-waste-front.webp" alt="Valet Waste community detail page" fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 80vw, 60vw" />
             </div>
-          </div>
+          </SkeletonCard>
 
           <div className="grid md:grid-cols-2 gap-x-16 gap-y-12">
             <div>
@@ -193,7 +194,7 @@ export default function StrategicVisionzPage() {
           </p>
 
           {/* Flex app phone mockups */}
-          <div className="relative rounded-2xl bg-[#0a0a0a] overflow-hidden mb-16" style={{ aspectRatio: "725 / 360" }}>
+          <SkeletonCard className="relative rounded-2xl bg-[#0a0a0a] overflow-hidden mb-16" style={{ aspectRatio: "725 / 360" }}>
             <div className="absolute left-1/2 top-[28%] -translate-x-1/2 pointer-events-none" style={{ width: "85%", aspectRatio: "1 / 1" }}>
               <div className="w-full h-full bg-[#0a4299] blur-[50px] rounded-full rotate-[131deg]" />
             </div>
@@ -203,7 +204,7 @@ export default function StrategicVisionzPage() {
             <div className="absolute z-10" style={{ left: "52.8%", top: "-45%", width: "37.1%", height: "119%" }}>
               <LazyImage src="/images/strategic-visionz/flex-landscape.webp" alt="Flex app social feed" fill className="object-cover object-bottom" loading="lazy" sizes="(max-width: 768px) 30vw, 25vw" quality={75} />
             </div>
-          </div>
+          </SkeletonCard>
 
           <div>
             <h3 className="text-base font-medium mb-4">What I designed and built</h3>
@@ -247,17 +248,17 @@ export default function StrategicVisionzPage() {
           </p>
 
           {/* Website screenshots — two offset columns */}
-          <div className="relative rounded-2xl bg-[#0a0a0a] overflow-hidden mb-8" style={{ aspectRatio: "4 / 3" }}>
+          <SkeletonCard className="relative rounded-2xl bg-[#0a0a0a] overflow-hidden mb-8" style={{ aspectRatio: "4 / 3" }}>
             <div className="absolute left-1/2 top-[40%] -translate-x-1/2 pointer-events-none" style={{ width: "85%", aspectRatio: "1 / 1" }}>
               <div className="w-full h-full bg-[#0a4299] blur-[50px] rounded-full rotate-[131deg]" />
             </div>
-            <div className="absolute border-[2.5px] border-white/20 rounded-lg overflow-hidden" style={{ left: "3.7%", top: "12%", width: "45.4%", height: "200%" }}>
+            <div className="absolute border-[clamp(1.5px,0.22vw,2.5px)] border-white/20 rounded-[clamp(4px,0.6vw,8px)] overflow-hidden" style={{ left: "3.7%", top: "12%", width: "45.4%", height: "200%" }}>
               <LazyImage src="/images/strategic-visionz/sv-website.webp" alt="Strategic Visionz website — homepage" fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 45vw, 35vw" />
             </div>
-            <div className="absolute border-[2.5px] border-white/20 rounded-[4px] overflow-hidden" style={{ left: "51.1%", top: "-68%", width: "45.4%", height: "200%" }}>
+            <div className="absolute border-[clamp(1.5px,0.22vw,2.5px)] border-white/20 rounded-[clamp(3px,0.35vw,5px)] overflow-hidden" style={{ left: "51.1%", top: "-68%", width: "45.4%", height: "200%" }}>
               <LazyImage src="/images/strategic-visionz/sv-website.webp" alt="Strategic Visionz website — scrolled sections" fill className="object-cover object-bottom" loading="lazy" sizes="(max-width: 768px) 45vw, 35vw" />
             </div>
-          </div>
+          </SkeletonCard>
 
           <div className="flex gap-4 mb-12">
             <a href="https://strategic-visionz.vercel.app" target="_blank" rel="noopener noreferrer" className="text-sm text-foreground/60 hover:text-foreground transition-colors underline underline-offset-4">

@@ -495,7 +495,7 @@ export default function Home() {
                     </div>
                   </div>
                   {/* Screenshot */}
-                  <div className="absolute left-1/2 -translate-x-1/2 top-[26%] w-[89%] border-[3px] md:border-[4px] xl:border-[7px] border-white/20 rounded-[10px] md:rounded-[12px] xl:rounded-[19px] overflow-hidden shadow-[0px_4px_4px_rgba(0,0,0,0.25)] md:shadow-[0px_7px_7px_rgba(0,0,0,0.25)]" style={{ aspectRatio: '576 / 360' }}>
+                  <div className="absolute left-1/2 -translate-x-1/2 top-[26%] w-[89%] border-[2px] md:border-[3px] border-white/20 rounded-[clamp(6px,1.2vw,16px)] overflow-hidden shadow-[0px_4px_4px_rgba(0,0,0,0.25)] md:shadow-[0px_7px_7px_rgba(0,0,0,0.25)]" style={{ aspectRatio: '576 / 360' }}>
                     <LazyImage src="/images/strategic-visionz/homepage.webp" alt="Strategic Visionz Homepage" fill className="object-cover object-top" priority sizes="(max-width: 768px) 90vw, (max-width: 1024px) 50vw, 45vw" />
                   </div>
                   {/* Pills */}
@@ -541,7 +541,7 @@ export default function Home() {
                     <div className="flex-none rotate-[131deg]"><div className="bg-[#990a0a] blur-[30px] rounded-full w-[200px] h-[210px]" /></div>
                   </div>
                   {/* Screenshot */}
-                  <div className="absolute left-1/2 -translate-x-1/2 top-[26%] w-[85%] border-[3px] md:border-[4px] xl:border-[7px] border-white/20 rounded-[10px] md:rounded-[12px] xl:rounded-[19px] overflow-hidden shadow-[0px_4px_4px_rgba(0,0,0,0.25)]" style={{ aspectRatio: "576 / 360" }}>
+                  <div className="absolute left-1/2 -translate-x-1/2 top-[26%] w-[85%] border-[2px] md:border-[3px] xl:border-[3px] border-white/20 rounded-[clamp(6px,1.2vw,16px)] overflow-hidden shadow-[0px_4px_4px_rgba(0,0,0,0.25)]" style={{ aspectRatio: "576 / 360" }}>
                     <LazyImage src="/images/tactiv-studios/hrms-dashboard.webp" alt="HRMS dashboard" fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 85vw, (max-width: 1024px) 40vw, 20vw" />
                   </div>
                   <div className="absolute top-0 left-0 right-0 p-4 z-[2]">

@@ -4,6 +4,7 @@ import { LazyImage } from "@/components/ui/LazyImage";
 import { CaseStudyLayout } from "@/components/case-study/CaseStudyLayout";
 import { MoreProjects } from "@/components/case-study/MoreProjects";
 import { TechIcon } from "@/components/case-study/TechIcon";
+import { SkeletonCard } from "@/components/ui/SkeletonCard";
 
 const sections = [
   { id: "hero", label: "Hero" },
@@ -46,7 +47,7 @@ export default function TypidPage() {
       {/* Hero Image */}
       <section className="px-6 md:px-12 pb-24 md:pb-32">
         <div className="max-w-[1100px] mx-auto">
-          <div className="relative w-full rounded-2xl overflow-hidden bg-[#0a0a0a]" style={{ aspectRatio: "16 / 9" }}>
+          <SkeletonCard className="relative w-full rounded-2xl overflow-hidden bg-[#0a0a0a]" style={{ aspectRatio: "16 / 9" }}>
             <div className="absolute left-[-20%] top-[-20%] w-[140%] h-[140%] pointer-events-none">
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#17bff9]/40 blur-[120px] rounded-full w-[600px] h-[600px]" />
             </div>
@@ -54,16 +55,16 @@ export default function TypidPage() {
               <div className="bg-white/20 blur-[80px] rounded-full w-[400px] h-[400px]" />
             </div>
 
-            <div className="absolute border-4 border-white/15 rounded-[12px] overflow-hidden left-[20%] top-[12%] w-[58%]" style={{ aspectRatio: "404 / 226" }}>
+            <div className="absolute border-[clamp(2px,0.35vw,4px)] border-white/15 rounded-[clamp(6px,0.8vw,12px)] overflow-hidden left-[20%] top-[12%] w-[58%]" style={{ aspectRatio: "404 / 226" }}>
               <LazyImage src="/images/typid/aisen-3.webp" alt="Aisen Fest event page" fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 90vw, 60vw" />
             </div>
-            <div className="absolute border-4 border-white/15 rounded-[12px] overflow-hidden left-[16%] top-[24%] w-[66%]" style={{ aspectRatio: "448 / 250" }}>
+            <div className="absolute border-[clamp(2px,0.35vw,4px)] border-white/15 rounded-[clamp(6px,0.8vw,12px)] overflow-hidden left-[16%] top-[24%] w-[66%]" style={{ aspectRatio: "448 / 250" }}>
               <LazyImage src="/images/typid/Himaya-2.webp" alt="Himaya event page" fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 90vw, 66vw" />
             </div>
-            <div className="absolute border-4 border-white/15 rounded-[12px] overflow-hidden left-[12%] top-[38%] w-[74%]" style={{ aspectRatio: "488 / 274" }}>
+            <div className="absolute border-[clamp(2px,0.35vw,4px)] border-white/15 rounded-[clamp(6px,0.8vw,12px)] overflow-hidden left-[12%] top-[38%] w-[74%]" style={{ aspectRatio: "488 / 274" }}>
               <LazyImage src="/images/typid/homepage-1.webp" alt="Typid homepage" fill className="object-cover object-top" priority sizes="(max-width: 768px) 90vw, 74vw" />
             </div>
-          </div>
+          </SkeletonCard>
         </div>
       </section>
 
@@ -81,7 +82,7 @@ export default function TypidPage() {
           </p>
 
           {/* Finance App Screens */}
-          <div className="relative w-full rounded-2xl overflow-hidden bg-[#0a0a0a] mb-8" style={{ aspectRatio: "860 / 420" }}>
+          <SkeletonCard className="relative w-full rounded-2xl overflow-hidden bg-[#0a0a0a] mb-8" style={{ aspectRatio: "860 / 420" }}>
             <div className="absolute left-1/2 -translate-x-1/2 top-0 flex items-center justify-center w-[400px] h-[400px] pointer-events-none">
               <div className="rotate-[131deg]">
                 <div className="bg-white blur-[50px] rounded-full w-[280px] h-[280px]" />
@@ -104,7 +105,7 @@ export default function TypidPage() {
                 </div>
               ))}
             </div>
-          </div>
+          </SkeletonCard>
 
           {/* App store badges */}
           <div className="flex flex-wrap gap-3">
@@ -173,33 +174,33 @@ export default function TypidPage() {
           {/* Build process screenshots */}
           <div className="grid md:grid-cols-2 gap-4">
             {/* Dashboard + Himaya event page */}
-            <div className="relative rounded-2xl overflow-hidden bg-[#0a0a0a]" style={{ aspectRatio: "4 / 3" }}>
+            <SkeletonCard className="relative rounded-2xl overflow-hidden bg-[#0a0a0a]" style={{ aspectRatio: "4 / 3" }}>
               <div className="absolute left-[-8%] top-[-1%] w-[120%] h-[120%] flex items-center justify-center pointer-events-none">
                 <div className="rotate-[131deg]">
                   <div className="bg-[#17bff9] blur-[50px] rounded-full w-[360px] h-[360px]" />
                 </div>
               </div>
-              <div className="absolute border-[2.5px] border-white/20 rounded-[5px] overflow-hidden left-[7%] top-[9%] w-[67%] h-[55%]">
+              <div className="absolute border-[clamp(1.5px,0.25vw,3px)] border-white/20 rounded-[clamp(3px,0.4vw,6px)] overflow-hidden left-[7%] top-[9%] w-[67%] h-[55%]">
                 <LazyImage src="/images/typid/dashboard.webp" alt="Typid seller dashboard" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 90vw, 45vw" quality={75} />
               </div>
-              <div className="absolute border-[2.5px] border-white/20 rounded-[5px] overflow-hidden left-[24%] top-[32%] w-[72%] h-[60%]">
+              <div className="absolute border-[clamp(1.5px,0.25vw,3px)] border-white/20 rounded-[clamp(3px,0.4vw,6px)] overflow-hidden left-[24%] top-[32%] w-[72%] h-[60%]">
                 <LazyImage src="/images/typid/himaya-event.webp" alt="Himaya event page" fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 90vw, 45vw" quality={75} />
               </div>
-            </div>
+            </SkeletonCard>
             {/* Attendee list + QR scanner */}
-            <div className="relative rounded-2xl overflow-hidden bg-[#0a0a0a]" style={{ aspectRatio: "4 / 3" }}>
+            <SkeletonCard className="relative rounded-2xl overflow-hidden bg-[#0a0a0a]" style={{ aspectRatio: "4 / 3" }}>
               <div className="absolute left-[-8%] top-[-1%] w-[120%] h-[120%] flex items-center justify-center pointer-events-none">
                 <div className="rotate-[131deg]">
                   <div className="bg-[#17bff9] blur-[50px] rounded-full w-[360px] h-[360px]" />
                 </div>
               </div>
-              <div className="absolute border-2 border-white/20 rounded-[4px] overflow-hidden left-[9%] top-[18%] w-[80%] h-[62%]">
+              <div className="absolute border-[clamp(1.5px,0.2vw,2.5px)] border-white/20 rounded-[clamp(3px,0.35vw,5px)] overflow-hidden left-[9%] top-[18%] w-[80%] h-[62%]">
                 <LazyImage src="/images/typid/attendee-list.webp" alt="Attendee management list" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 90vw, 45vw" quality={75} />
               </div>
-              <div className="absolute border-2 border-white/20 rounded-[9px] overflow-hidden left-[70%] top-[36%] w-[22%] h-[56%]">
+              <div className="absolute border-[clamp(1.5px,0.2vw,2.5px)] border-white/20 rounded-[clamp(4px,0.7vw,9px)] overflow-hidden left-[70%] top-[36%] w-[22%] h-[56%]">
                 <LazyImage src="/images/typid/qr-scanner.webp" alt="QR check-in scanner" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 30vw, 15vw" quality={75} />
               </div>
-            </div>
+            </SkeletonCard>
           </div>
         </div>
       </section>

@@ -4,6 +4,7 @@ import { LazyImage } from "@/components/ui/LazyImage";
 import { CaseStudyLayout } from "@/components/case-study/CaseStudyLayout";
 import { MoreProjects } from "@/components/case-study/MoreProjects";
 import { TechIcon } from "@/components/case-study/TechIcon";
+import { SkeletonCard } from "@/components/ui/SkeletonCard";
 
 const sections = [
   { id: "hero", label: "Hero" },
@@ -45,13 +46,13 @@ export default function TactivStudiosPage() {
       {/* Hero Thumbnail */}
       <section className="px-6 md:px-12 pb-16 md:pb-20 scroll-mt-24">
         <div className="max-w-[1100px] mx-auto">
-          <div className="relative rounded-[14px] overflow-hidden bg-[#0a0a0a]" style={{ aspectRatio: "943 / 460" }}>
+          <SkeletonCard className="relative rounded-[14px] overflow-hidden bg-[#0a0a0a]" style={{ aspectRatio: "943 / 460" }}>
             {/* Red glow */}
             <div className="absolute pointer-events-none" style={{ left: "60%", top: "15%", width: "50%", aspectRatio: "1 / 1" }}>
               <div className="w-full h-full bg-[#990a0a] blur-[50px] rounded-full rotate-[131deg]" />
             </div>
             {/* HRMS Dashboard — top left */}
-            <div className="absolute border-[3px] border-white/20 rounded-[4px] overflow-hidden" style={{ left: "0%", top: "18%", width: "32.5%", height: "41%" }}>
+            <div className="absolute border-[clamp(2px,0.25vw,3px)] border-white/20 rounded-[clamp(3px,0.35vw,5px)] overflow-hidden" style={{ left: "0%", top: "18%", width: "32.5%", height: "41%" }}>
               <LazyImage src="/images/tactiv-studios/hrms-dashboard.webp" alt="HRMS dashboard" fill className="object-cover" priority sizes="(max-width: 768px) 90vw, 33vw" />
             </div>
             {/* Login Form — top right */}
@@ -63,14 +64,14 @@ export default function TactivStudiosPage() {
               <LazyImage src="/images/tactiv-studios/schedule.webp" alt="Schedule calendar view" fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 90vw, 36vw" />
             </div>
             {/* HRMS People — bottom center, bleeds past edge */}
-            <div className="absolute border-[3px] border-white/20 rounded-[5px] overflow-hidden" style={{ left: "25%", top: "66%", width: "36%", height: "42%" }}>
+            <div className="absolute border-[clamp(2px,0.25vw,3px)] border-white/20 rounded-[clamp(3px,0.4vw,6px)] overflow-hidden" style={{ left: "25%", top: "66%", width: "36%", height: "42%" }}>
               <LazyImage src="/images/tactiv-studios/hrms-people.webp" alt="HRMS employee profiles" fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 90vw, 36vw" />
             </div>
             {/* Tactiv Logo — centered */}
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10" style={{ width: "17%", height: "7.5%" }}>
               <LazyImage src="/images/tactiv-studios/tactiv-logo.webp" alt="Tactiv Studios" fill className="object-contain" loading="lazy" sizes="170px" />
             </div>
-          </div>
+          </SkeletonCard>
         </div>
       </section>
 
@@ -113,7 +114,7 @@ export default function TactivStudiosPage() {
 
           <div className="grid md:grid-cols-2 gap-4 mb-16">
             {/* Design system */}
-            <div className="relative rounded-xl overflow-hidden bg-[#0a0a0a]" style={{ aspectRatio: "4 / 3" }}>
+            <SkeletonCard className="relative rounded-xl overflow-hidden bg-[#0a0a0a]" style={{ aspectRatio: "4 / 3" }}>
               <div className="absolute pointer-events-none" style={{ left: "-8%", top: "-1%", width: "107%", height: "107%" }}>
                 <div className="flex items-center justify-center w-full h-full">
                   <div className="bg-[#990a0a] blur-[50px] rounded-full" style={{ width: "76%", height: "76%" }} />
@@ -131,9 +132,9 @@ export default function TactivStudiosPage() {
               <div className="absolute overflow-hidden" style={{ left: "17%", top: "58%", width: "45%", height: "41%" }}>
                 <LazyImage src="/images/tactiv-studios/design-email-input.webp" alt="Email input component" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 45vw, 23vw" />
               </div>
-            </div>
+            </SkeletonCard>
             {/* Sprint board */}
-            <div className="relative rounded-xl overflow-hidden bg-[#0a0a0a]" style={{ aspectRatio: "4 / 3" }}>
+            <SkeletonCard className="relative rounded-xl overflow-hidden bg-[#0a0a0a]" style={{ aspectRatio: "4 / 3" }}>
               <div className="absolute pointer-events-none" style={{ left: "-8%", top: "-1%", width: "107%", height: "107%" }}>
                 <div className="flex items-center justify-center w-full h-full">
                   <div className="bg-[#990a0a] blur-[50px] rounded-full" style={{ width: "76%", height: "76%" }} />
@@ -142,7 +143,7 @@ export default function TactivStudiosPage() {
               <div className="absolute overflow-hidden" style={{ left: "-5%", top: "-10%", width: "110%", height: "110%", transform: "rotate(15deg) skewX(-10deg)" }}>
                 <LazyImage src="/images/tactiv-studios/sprint-board.webp" alt="Jira sprint board" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 90vw, 50vw" />
               </div>
-            </div>
+            </SkeletonCard>
           </div>
 
           <div className="grid md:grid-cols-2 gap-x-16 gap-y-10">
@@ -175,7 +176,7 @@ export default function TactivStudiosPage() {
           <div className="space-y-16">
             {/* 01 — Home Loan Application */}
             <div className="grid md:grid-cols-2 gap-8 items-start">
-              <div className="relative rounded-xl overflow-hidden" style={{ aspectRatio: "460 / 235", background: "linear-gradient(135deg, #171a22 19%, #000 87%)" }}>
+              <SkeletonCard className="relative rounded-xl overflow-hidden" style={{ aspectRatio: "460 / 235", background: "linear-gradient(135deg, #171a22 19%, #000 87%)" }}>
                 <p className="absolute top-3 left-4 text-[10px] text-white/40 italic z-10">Design excellence under NDA.*</p>
                 {/* Red glow */}
                 <div className="absolute pointer-events-none" style={{ left: "1%", top: "0%", width: "56%", height: "100%" }}>
@@ -193,7 +194,7 @@ export default function TactivStudiosPage() {
                 <div className="absolute rounded-[5px] overflow-hidden" style={{ left: "78.3%", top: "5.8%", width: "18.4%", aspectRatio: "84.78 / 183.799" }}>
                   <LazyImage src="/images/tactiv-studios/homeloan-phone2.webp" alt="Income details screen" fill className="object-contain" loading="lazy" sizes="(max-width: 768px) 19vw, 10vw" />
                 </div>
-              </div>
+              </SkeletonCard>
               <div>
                 <span className="text-[11px] text-foreground/40 mb-3 block">Mobile App, Fintech</span>
                 <h3 className="text-xl font-medium mb-3">Home Loan Application</h3>
@@ -203,7 +204,7 @@ export default function TactivStudiosPage() {
 
             {/* 02 — HRMS */}
             <div className="grid md:grid-cols-2 gap-8 items-start">
-              <div className="md:order-2 relative rounded-xl overflow-hidden" style={{ aspectRatio: "440 / 224", background: "linear-gradient(138deg, #171a22 19%, #000 87%)" }}>
+              <SkeletonCard className="md:order-2 relative rounded-xl overflow-hidden" style={{ aspectRatio: "440 / 224", background: "linear-gradient(138deg, #171a22 19%, #000 87%)" }}>
                 <p className="absolute top-3 left-4 text-[10px] text-white/40 italic z-10">Design excellence under NDA.*</p>
                 {/* Red glow */}
                 <div className="absolute pointer-events-none" style={{ left: "1%", top: "0%", width: "56%", height: "100%" }}>
@@ -217,7 +218,7 @@ export default function TactivStudiosPage() {
                 <div className="absolute rounded-[3px] overflow-hidden" style={{ left: "57.2%", top: "8.5%", width: "42.5%", aspectRatio: "187.117 / 116.997" }}>
                   <LazyImage src="/images/tactiv-studios/hrms-detail.webp" alt="HRMS employee detail" fill className="object-contain" loading="lazy" sizes="(max-width: 768px) 43vw, 22vw" />
                 </div>
-              </div>
+              </SkeletonCard>
               <div className="md:order-1">
                 <span className="text-[11px] text-foreground/40 mb-3 block">Enterprise SaaS</span>
                 <h3 className="text-xl font-medium mb-3">HRMS</h3>
@@ -227,7 +228,7 @@ export default function TactivStudiosPage() {
 
             {/* 03 — Emergency Monitoring System */}
             <div className="grid md:grid-cols-2 gap-8 items-start">
-              <div className="relative rounded-xl overflow-hidden" style={{ aspectRatio: "522 / 235", background: "linear-gradient(135deg, #171a22 19%, #000 87%)" }}>
+              <SkeletonCard className="relative rounded-xl overflow-hidden" style={{ aspectRatio: "522 / 235", background: "linear-gradient(135deg, #171a22 19%, #000 87%)" }}>
                 <p className="absolute top-3 left-4 text-[10px] text-white/40 italic z-10">Design excellence under NDA.*</p>
                 {/* Red glow */}
                 <div className="absolute pointer-events-none" style={{ left: "1%", top: "0%", width: "56%", height: "100%" }}>
@@ -241,7 +242,7 @@ export default function TactivStudiosPage() {
                 <div className="absolute rounded-[8px] overflow-hidden" style={{ left: "56.6%", top: "9.8%", width: "43%", aspectRatio: "2881 / 1640" }}>
                   <LazyImage src="/images/tactiv-studios/emergency-map.webp" alt="Satellite map monitoring view" fill className="object-contain" loading="lazy" sizes="(max-width: 768px) 43vw, 22vw" />
                 </div>
-              </div>
+              </SkeletonCard>
               <div>
                 <span className="text-[11px] text-foreground/40 mb-3 block">Web Dashboard, Government</span>
                 <h3 className="text-xl font-medium mb-3">Emergency Monitoring System</h3>
@@ -251,7 +252,7 @@ export default function TactivStudiosPage() {
 
             {/* 04 — Wealth Management Dashboards */}
             <div className="grid md:grid-cols-2 gap-8 items-start">
-              <div className="md:order-2 relative rounded-xl overflow-hidden" style={{ aspectRatio: "500 / 235", background: "linear-gradient(138deg, #171a22 19%, #000 87%)" }}>
+              <SkeletonCard className="md:order-2 relative rounded-xl overflow-hidden" style={{ aspectRatio: "500 / 235", background: "linear-gradient(138deg, #171a22 19%, #000 87%)" }}>
                 <p className="absolute top-3 left-4 text-[10px] text-white/40 italic z-10">Not the actual design.*</p>
                 {/* Red glow */}
                 <div className="absolute pointer-events-none" style={{ left: "1%", top: "0%", width: "56%", height: "100%" }}>
@@ -265,7 +266,7 @@ export default function TactivStudiosPage() {
                 <div className="absolute rounded-[3px] overflow-hidden" style={{ left: "55%", top: "25%", width: "40%", aspectRatio: "544 / 692" }}>
                   <LazyImage src="/images/tactiv-studios/wealth-donut.webp" alt="KPI donut chart" fill className="object-contain" loading="lazy" sizes="(max-width: 768px) 40vw, 20vw" />
                 </div>
-              </div>
+              </SkeletonCard>
               <div className="md:order-1">
                 <span className="text-[11px] text-foreground/40 mb-3 block">Fintech</span>
                 <h3 className="text-xl font-medium mb-3">Wealth Management Dashboards</h3>
@@ -275,7 +276,7 @@ export default function TactivStudiosPage() {
 
             {/* 05 — iOS Fitness App */}
             <div className="grid md:grid-cols-2 gap-8 items-start">
-              <div className="relative rounded-xl overflow-hidden" style={{ aspectRatio: "490 / 253", background: "linear-gradient(135deg, #171a22 19%, #000 87%)" }}>
+              <SkeletonCard className="relative rounded-xl overflow-hidden" style={{ aspectRatio: "490 / 253", background: "linear-gradient(135deg, #171a22 19%, #000 87%)" }}>
                 <p className="absolute top-3 left-4 text-[10px] text-white/40 italic z-10">Not the actual design.*</p>
                 {/* Red glow */}
                 <div className="absolute pointer-events-none" style={{ left: "30%", top: "0%", width: "56%", height: "100%" }}>
@@ -285,7 +286,7 @@ export default function TactivStudiosPage() {
                 <div className="absolute overflow-hidden" style={{ left: "-18%", top: "8%", width: "118%", height: "88%" }}>
                   <LazyImage src="/images/tactiv-studios/fitness-wireframes.webp" alt="iOS fitness app wireframes" fill className="object-contain object-left" loading="lazy" sizes="(max-width: 768px) 100vw, 55vw" />
                 </div>
-              </div>
+              </SkeletonCard>
               <div>
                 <span className="text-[11px] text-foreground/40 mb-3 block">Mobile, Health</span>
                 <h3 className="text-xl font-medium mb-3">iOS Fitness App</h3>
@@ -295,7 +296,7 @@ export default function TactivStudiosPage() {
 
             {/* 06 — Rideshare Marketplace */}
             <div className="grid md:grid-cols-2 gap-8 items-start">
-              <div className="md:order-2 relative rounded-xl overflow-hidden" style={{ aspectRatio: "430 / 282", background: "linear-gradient(139deg, #171a22 19%, #000 87%)" }}>
+              <SkeletonCard className="md:order-2 relative rounded-xl overflow-hidden" style={{ aspectRatio: "430 / 282", background: "linear-gradient(139deg, #171a22 19%, #000 87%)" }}>
                 {/* Two text lines */}
                 <div className="absolute left-4 top-3 z-10">
                   <p className="text-[10px] text-white/40 italic leading-relaxed">Design excellence under NDA.*</p>
@@ -314,7 +315,7 @@ export default function TactivStudiosPage() {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src="/images/tactiv-studios/rideshare-route.svg" alt="Route overlay" className="w-full h-full" />
                 </div>
-              </div>
+              </SkeletonCard>
               <div className="md:order-1">
                 <span className="text-[11px] text-foreground/40 mb-3 block">Web App, Marketplace</span>
                 <h3 className="text-xl font-medium mb-3">Job & Rideshare Marketplace</h3>

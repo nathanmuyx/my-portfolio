@@ -4,6 +4,7 @@ import { LazyImage } from "@/components/ui/LazyImage";
 import { CaseStudyLayout } from "@/components/case-study/CaseStudyLayout";
 import { MoreProjects } from "@/components/case-study/MoreProjects";
 import { TechIcon } from "@/components/case-study/TechIcon";
+import { SkeletonCard } from "@/components/ui/SkeletonCard";
 
 const sections = [
   { id: "hero", label: "Hero" },
@@ -44,16 +45,16 @@ export default function BlazesoftPage() {
       <section id="screenshots" className="px-6 md:px-12 pb-16 md:pb-20 scroll-mt-24">
         <div className="max-w-[1100px] mx-auto">
           <div className="grid md:grid-cols-2 gap-4">
-            <div className="relative rounded-2xl overflow-hidden bg-[#0a0a0a]" style={{ aspectRatio: "4 / 3" }}>
+            <SkeletonCard className="relative rounded-2xl overflow-hidden bg-[#0a0a0a]" style={{ aspectRatio: "4 / 3" }}>
               <div className="absolute left-[6%] top-[8%] w-[88%] rounded-lg overflow-hidden" style={{ aspectRatio: "198 / 152" }}>
                 <LazyImage src="/images/blazesoft/screenshot-1.webp" alt="Sportzino design" fill className="object-cover" priority sizes="(max-width: 768px) 90vw, 45vw" />
               </div>
-            </div>
-            <div className="relative rounded-2xl overflow-hidden bg-[#0a0a0a]" style={{ aspectRatio: "4 / 3" }}>
+            </SkeletonCard>
+            <SkeletonCard className="relative rounded-2xl overflow-hidden bg-[#0a0a0a]" style={{ aspectRatio: "4 / 3" }}>
               <div className="absolute left-[6%] top-[8%] w-[88%] rounded-lg overflow-hidden" style={{ aspectRatio: "197 / 152" }}>
                 <LazyImage src="/images/blazesoft/screenshot-2.webp" alt="Blazesoft Figma file" fill className="object-cover" priority sizes="(max-width: 768px) 90vw, 45vw" />
               </div>
-            </div>
+            </SkeletonCard>
           </div>
         </div>
       </section>
@@ -103,7 +104,6 @@ export default function BlazesoftPage() {
                   { name: "Figma", role: "Design & prototyping" },
                   { name: "Design Tokens", role: "Systematic theming" },
                   { name: "Adobe XD", role: "Legacy design files" },
-                  { name: "React", role: "Component development" },
                 ].map((tech) => (
                   <div key={tech.name} className="flex items-center justify-between pb-4 border-b border-border">
                     <span className="text-sm font-medium flex items-center gap-2"><TechIcon name={tech.name} />{tech.name}</span>

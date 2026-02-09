@@ -5,6 +5,7 @@ import { LazyImage } from "@/components/ui/LazyImage";
 import { CaseStudyLayout } from "@/components/case-study/CaseStudyLayout";
 import { MoreProjects } from "@/components/case-study/MoreProjects";
 import { TechIcon } from "@/components/case-study/TechIcon";
+import { SkeletonCard } from "@/components/ui/SkeletonCard";
 
 const sections = [
   { id: "hero", label: "Hero" },
@@ -33,7 +34,7 @@ function OldScreensCarousel() {
   const [activeSlide, setActiveSlide] = useState(0);
 
   return (
-    <div className="relative rounded-2xl overflow-hidden bg-[#0a0a0a]">
+    <SkeletonCard className="relative rounded-2xl overflow-hidden bg-[#0a0a0a]">
       <div className="relative overflow-hidden">
         <div
           className="flex transition-transform duration-400 ease-out"
@@ -83,7 +84,7 @@ function OldScreensCarousel() {
           />
         ))}
       </div>
-    </div>
+    </SkeletonCard>
   );
 }
 
@@ -118,14 +119,14 @@ export default function RetrieverPage() {
       {/* Mockup */}
       <section id="mockup" className="px-6 md:px-12 pb-16 md:pb-20 scroll-mt-24">
         <div className="max-w-[1100px] mx-auto">
-          <div className="relative w-full rounded-2xl overflow-hidden bg-[#0a0a0a] flex items-center justify-center py-12" style={{ aspectRatio: "16 / 7" }}>
+          <SkeletonCard className="relative w-full rounded-2xl overflow-hidden bg-[#0a0a0a] flex items-center justify-center py-12" style={{ aspectRatio: "16 / 7" }}>
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
               <div className="bg-[#ff5411]/30 blur-[80px] rounded-full w-[300px] h-[300px]" />
             </div>
             <div className="relative w-[60%] max-w-[500px]" style={{ aspectRatio: "236 / 175" }}>
               <LazyImage src="/images/retriever/mockup.webp" alt="Retriever app screens" fill className="object-contain" priority sizes="(max-width: 768px) 90vw, 50vw" />
             </div>
-          </div>
+          </SkeletonCard>
         </div>
       </section>
 
@@ -167,9 +168,9 @@ export default function RetrieverPage() {
           </h2>
 
           {/* Annotated Figma screenshot — old file */}
-          <div className="relative rounded-2xl overflow-hidden bg-[#0a0a0a] mb-6" style={{ aspectRatio: "2334 / 931" }}>
+          <SkeletonCard className="relative rounded-2xl overflow-hidden bg-[#0a0a0a] mb-6" style={{ aspectRatio: "2334 / 931" }}>
             <LazyImage src="/images/retriever/old-figma-file.webp" alt="Previous designer's Figma file showing 1080x1920 frames, confusing flow lines, and no brand guidelines" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 90vw, 1100px" />
-          </div>
+          </SkeletonCard>
           <p className="text-sm text-foreground/50 mb-16">The previous designer&apos;s Figma file: 1080x1920 frames (not a real device), no brand guidelines, tangled prototype connections, and inconsistent layouts across every screen.</p>
 
           {/* Old screens carousel */}
@@ -224,9 +225,9 @@ export default function RetrieverPage() {
           </div>
 
           {/* Improved Figma file screenshot */}
-          <div className="relative rounded-2xl overflow-hidden bg-[#0a0a0a] mt-16" style={{ aspectRatio: "2334 / 943" }}>
+          <SkeletonCard className="relative rounded-2xl overflow-hidden bg-[#0a0a0a] mt-16" style={{ aspectRatio: "2334 / 943" }}>
             <LazyImage src="/images/retriever/new-figma-file.webp" alt="Rebuilt Figma file with Design Guidelines page, organized persona sections, and proper 390x844 frames" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 90vw, 1100px" />
-          </div>
+          </SkeletonCard>
           <p className="text-sm text-foreground/50 mt-4">Rebuilt file: Design Guidelines page, organized persona sections (Buyer, Merchant, Rider, Fetch), proper 390x844 frames, and clean layer naming.</p>
         </div>
       </section>
@@ -242,9 +243,9 @@ export default function RetrieverPage() {
           </h2>
 
           {/* Typography + Colors */}
-          <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: "2334 / 1247" }}>
+          <SkeletonCard className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: "2334 / 1247" }}>
             <LazyImage src="/images/retriever/typography-colors.webp" alt="Typography specimens (HK RTVR primary, Criteria CF secondary) and color palette with grays, primary orange, secondary peach, and tertiary teal" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 90vw, 1100px" />
-          </div>
+          </SkeletonCard>
           <p className="text-sm text-foreground/50 mt-4">HK RTVR (primary) and Criteria CF (secondary). Client-specified color palette with proper contrast ratios across all interface elements.</p>
         </div>
       </section>
@@ -262,11 +263,11 @@ export default function RetrieverPage() {
           <div className="space-y-24">
             {/* Sign Up / Sign In */}
             <div className="grid md:grid-cols-2 gap-8 items-start">
-              <div className="rounded-2xl overflow-hidden bg-[#0a0a0a] p-6 md:p-10">
+              <SkeletonCard className="relative rounded-2xl overflow-hidden bg-[#0a0a0a] p-6 md:p-10">
                 <div className="relative w-full" style={{ aspectRatio: "634 / 625" }}>
                   <LazyImage src="/images/retriever/screens-signin.webp" alt="Sign In and Create Account screens" fill className="object-contain" loading="lazy" sizes="(max-width: 768px) 90vw, 500px" />
                 </div>
-              </div>
+              </SkeletonCard>
               <div>
                 <h3 className="text-xl font-medium mb-3">Sign Up / Sign In</h3>
                 <p className="text-sm text-foreground/60 leading-relaxed">Removed orange-outlined inputs that looked like error states. Cleaned up unnecessary illustrations. Added proper validation hints and password visibility toggles.</p>
@@ -275,11 +276,11 @@ export default function RetrieverPage() {
 
             {/* Food Dashboard */}
             <div className="grid md:grid-cols-2 gap-8 items-start">
-              <div className="md:order-2 rounded-2xl overflow-hidden bg-[#0a0a0a] p-6 md:p-10">
+              <SkeletonCard className="relative md:order-2 rounded-2xl overflow-hidden bg-[#0a0a0a] p-6 md:p-10">
                 <div className="relative w-full" style={{ aspectRatio: "946 / 933" }}>
                   <LazyImage src="/images/retriever/screens-dashboard.webp" alt="Food Dashboard and Story preview screens" fill className="object-contain" loading="lazy" sizes="(max-width: 768px) 90vw, 500px" />
                 </div>
-              </div>
+              </SkeletonCard>
               <div className="md:order-1">
                 <h3 className="text-xl font-medium mb-3">Food Dashboard</h3>
                 <p className="text-sm text-foreground/60 leading-relaxed">Established clear hierarchy: stories first, then offers and discounts, then food. Added viewed/unviewed indicators to stories. Reorganized restaurant cards with consistent distance and rating placement.</p>
@@ -288,11 +289,11 @@ export default function RetrieverPage() {
 
             {/* Product Details + Wallet */}
             <div className="grid md:grid-cols-2 gap-8 items-start">
-              <div className="rounded-2xl overflow-hidden bg-[#0a0a0a] p-6 md:p-10">
+              <SkeletonCard className="relative rounded-2xl overflow-hidden bg-[#0a0a0a] p-6 md:p-10">
                 <div className="relative w-full" style={{ aspectRatio: "980 / 933" }}>
                   <LazyImage src="/images/retriever/screens-wallet.webp" alt="Wallet and transaction receipt screens" fill className="object-contain" loading="lazy" sizes="(max-width: 768px) 90vw, 500px" />
                 </div>
-              </div>
+              </SkeletonCard>
               <div>
                 <h3 className="text-xl font-medium mb-3">Product Details & Wallet</h3>
                 <p className="text-sm text-foreground/60 leading-relaxed">Removed text overlays on food images for a cleaner, consistent look. Redesigned wallet with clear balance visibility, proper transaction history, and a new receipt confirmation screen.</p>
@@ -301,11 +302,11 @@ export default function RetrieverPage() {
 
             {/* Order Tracking */}
             <div className="grid md:grid-cols-2 gap-8 items-start">
-              <div className="md:order-2 rounded-2xl overflow-hidden bg-[#0a0a0a] p-6 md:p-10">
+              <SkeletonCard className="relative md:order-2 rounded-2xl overflow-hidden bg-[#0a0a0a] p-6 md:p-10">
                 <div className="relative w-full" style={{ aspectRatio: "980 / 933" }}>
                   <LazyImage src="/images/retriever/screens-tracking.webp" alt="Order tracking map and in-app messaging screens" fill className="object-contain" loading="lazy" sizes="(max-width: 768px) 90vw, 500px" />
                 </div>
-              </div>
+              </SkeletonCard>
               <div className="md:order-1">
                 <h3 className="text-xl font-medium mb-3">Order Tracking</h3>
                 <p className="text-sm text-foreground/60 leading-relaxed">Designed from scratch — this screen didn&apos;t exist before. Live map with driver location, estimated delivery time, and in-app messaging. Kept it minimal since users check briefly then leave.</p>
