@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { LazyImage } from "@/components/ui/LazyImage";
 import { CaseStudyLayout } from "@/components/case-study/CaseStudyLayout";
 import { MoreProjects } from "@/components/case-study/MoreProjects";
 import { TechIcon } from "@/components/case-study/TechIcon";
@@ -52,23 +52,23 @@ export default function TactivStudiosPage() {
             </div>
             {/* HRMS Dashboard — top left */}
             <div className="absolute border-[3px] border-white/20 rounded-[4px] overflow-hidden" style={{ left: "0%", top: "18%", width: "32.5%", height: "41%" }}>
-              <Image src="/images/tactiv-studios/hrms-dashboard.webp" alt="HRMS dashboard" fill className="object-cover" priority sizes="(max-width: 768px) 90vw, 33vw" />
+              <LazyImage src="/images/tactiv-studios/hrms-dashboard.webp" alt="HRMS dashboard" fill className="object-cover" priority sizes="(max-width: 768px) 90vw, 33vw" />
             </div>
             {/* Login Form — top right */}
             <div className="absolute rounded-[4px] overflow-hidden" style={{ left: "42.5%", top: "-8%", width: "31%", height: "40%" }}>
-              <Image src="/images/tactiv-studios/login-form.webp" alt="Application login screen" fill className="object-cover" priority sizes="(max-width: 768px) 90vw, 31vw" />
+              <LazyImage src="/images/tactiv-studios/login-form.webp" alt="Application login screen" fill className="object-cover" priority sizes="(max-width: 768px) 90vw, 31vw" />
             </div>
             {/* Schedule — right */}
             <div className="absolute overflow-hidden" style={{ left: "64%", top: "41%", width: "36%", height: "42%" }}>
-              <Image src="/images/tactiv-studios/schedule.webp" alt="Schedule calendar view" fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 90vw, 36vw" />
+              <LazyImage src="/images/tactiv-studios/schedule.webp" alt="Schedule calendar view" fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 90vw, 36vw" />
             </div>
             {/* HRMS People — bottom center, bleeds past edge */}
             <div className="absolute border-[3px] border-white/20 rounded-[5px] overflow-hidden" style={{ left: "25%", top: "66%", width: "36%", height: "42%" }}>
-              <Image src="/images/tactiv-studios/hrms-people.webp" alt="HRMS employee profiles" fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 90vw, 36vw" />
+              <LazyImage src="/images/tactiv-studios/hrms-people.webp" alt="HRMS employee profiles" fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 90vw, 36vw" />
             </div>
             {/* Tactiv Logo — centered */}
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10" style={{ width: "17%", height: "7.5%" }}>
-              <Image src="/images/tactiv-studios/tactiv-logo.webp" alt="Tactiv Studios" fill className="object-contain" loading="lazy" sizes="170px" />
+              <LazyImage src="/images/tactiv-studios/tactiv-logo.webp" alt="Tactiv Studios" fill className="object-contain" loading="lazy" sizes="170px" />
             </div>
           </div>
         </div>
@@ -121,15 +121,15 @@ export default function TactivStudiosPage() {
               </div>
               {/* Payment card — top left */}
               <div className="absolute overflow-hidden" style={{ left: "14%", top: "7%", width: "26%", height: "49%" }}>
-                <Image src="/images/tactiv-studios/design-payment-card.webp" alt="Payment method component" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 26vw, 14vw" />
+                <LazyImage src="/images/tactiv-studios/design-payment-card.webp" alt="Payment method component" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 26vw, 14vw" />
               </div>
               {/* Color picker — top right */}
               <div className="absolute overflow-hidden" style={{ left: "45%", top: "10%", width: "33%", height: "46%" }}>
-                <Image src="/images/tactiv-studios/design-color-picker.webp" alt="Color picker component" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 33vw, 17vw" />
+                <LazyImage src="/images/tactiv-studios/design-color-picker.webp" alt="Color picker component" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 33vw, 17vw" />
               </div>
               {/* Email input — bottom center */}
               <div className="absolute overflow-hidden" style={{ left: "17%", top: "58%", width: "45%", height: "41%" }}>
-                <Image src="/images/tactiv-studios/design-email-input.webp" alt="Email input component" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 45vw, 23vw" />
+                <LazyImage src="/images/tactiv-studios/design-email-input.webp" alt="Email input component" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 45vw, 23vw" />
               </div>
             </div>
             {/* Sprint board */}
@@ -140,7 +140,7 @@ export default function TactivStudiosPage() {
                 </div>
               </div>
               <div className="absolute overflow-hidden" style={{ left: "-5%", top: "-10%", width: "110%", height: "110%", transform: "rotate(15deg) skewX(-10deg)" }}>
-                <Image src="/images/tactiv-studios/sprint-board.webp" alt="Jira sprint board" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 90vw, 50vw" />
+                <LazyImage src="/images/tactiv-studios/sprint-board.webp" alt="Jira sprint board" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 90vw, 50vw" />
               </div>
             </div>
           </div>
@@ -183,15 +183,15 @@ export default function TactivStudiosPage() {
                 </div>
                 {/* Bank dashboard — left */}
                 <div className="absolute rounded-[3px] overflow-hidden" style={{ left: "3.9%", top: "37.6%", width: "50%", aspectRatio: "230.259 / 143.912" }}>
-                  <Image src="/images/tactiv-studios/homeloan-dashboard.webp" alt="Bank dashboard login" fill className="object-contain" loading="lazy" sizes="(max-width: 768px) 50vw, 25vw" />
+                  <LazyImage src="/images/tactiv-studios/homeloan-dashboard.webp" alt="Bank dashboard login" fill className="object-contain" loading="lazy" sizes="(max-width: 768px) 50vw, 25vw" />
                 </div>
                 {/* Phone 1 — applications list */}
                 <div className="absolute rounded-[5px] overflow-hidden" style={{ left: "56.9%", top: "5.8%", width: "18.4%", aspectRatio: "84.78 / 183.799" }}>
-                  <Image src="/images/tactiv-studios/homeloan-phone1.webp" alt="Applications list screen" fill className="object-contain" loading="lazy" sizes="(max-width: 768px) 19vw, 10vw" />
+                  <LazyImage src="/images/tactiv-studios/homeloan-phone1.webp" alt="Applications list screen" fill className="object-contain" loading="lazy" sizes="(max-width: 768px) 19vw, 10vw" />
                 </div>
                 {/* Phone 2 — income details */}
                 <div className="absolute rounded-[5px] overflow-hidden" style={{ left: "78.3%", top: "5.8%", width: "18.4%", aspectRatio: "84.78 / 183.799" }}>
-                  <Image src="/images/tactiv-studios/homeloan-phone2.webp" alt="Income details screen" fill className="object-contain" loading="lazy" sizes="(max-width: 768px) 19vw, 10vw" />
+                  <LazyImage src="/images/tactiv-studios/homeloan-phone2.webp" alt="Income details screen" fill className="object-contain" loading="lazy" sizes="(max-width: 768px) 19vw, 10vw" />
                 </div>
               </div>
               <div>
@@ -211,11 +211,11 @@ export default function TactivStudiosPage() {
                 </div>
                 {/* People/profiles — left */}
                 <div className="absolute rounded-[3px] overflow-hidden" style={{ left: "4%", top: "38%", width: "50.4%", aspectRatio: "221.711 / 138.57" }}>
-                  <Image src="/images/tactiv-studios/hrms-people-full.webp" alt="HRMS employee profiles" fill className="object-contain" loading="lazy" sizes="(max-width: 768px) 50vw, 25vw" />
+                  <LazyImage src="/images/tactiv-studios/hrms-people-full.webp" alt="HRMS employee profiles" fill className="object-contain" loading="lazy" sizes="(max-width: 768px) 50vw, 25vw" />
                 </div>
                 {/* Detail view — right */}
                 <div className="absolute rounded-[3px] overflow-hidden" style={{ left: "57.2%", top: "8.5%", width: "42.5%", aspectRatio: "187.117 / 116.997" }}>
-                  <Image src="/images/tactiv-studios/hrms-detail.webp" alt="HRMS employee detail" fill className="object-contain" loading="lazy" sizes="(max-width: 768px) 43vw, 22vw" />
+                  <LazyImage src="/images/tactiv-studios/hrms-detail.webp" alt="HRMS employee detail" fill className="object-contain" loading="lazy" sizes="(max-width: 768px) 43vw, 22vw" />
                 </div>
               </div>
               <div className="md:order-1">
@@ -235,11 +235,11 @@ export default function TactivStudiosPage() {
                 </div>
                 {/* Schedule/calendar — left */}
                 <div className="absolute rounded-[3px] overflow-hidden" style={{ left: "3.2%", top: "34.9%", width: "58%", aspectRatio: "2880 / 1640" }}>
-                  <Image src="/images/tactiv-studios/emergency-schedule.webp" alt="Schedule calendar dark UI" fill className="object-contain" loading="lazy" sizes="(max-width: 768px) 58vw, 29vw" />
+                  <LazyImage src="/images/tactiv-studios/emergency-schedule.webp" alt="Schedule calendar dark UI" fill className="object-contain" loading="lazy" sizes="(max-width: 768px) 58vw, 29vw" />
                 </div>
                 {/* Map/satellite — right */}
                 <div className="absolute rounded-[8px] overflow-hidden" style={{ left: "56.6%", top: "9.8%", width: "43%", aspectRatio: "2881 / 1640" }}>
-                  <Image src="/images/tactiv-studios/emergency-map.webp" alt="Satellite map monitoring view" fill className="object-contain" loading="lazy" sizes="(max-width: 768px) 43vw, 22vw" />
+                  <LazyImage src="/images/tactiv-studios/emergency-map.webp" alt="Satellite map monitoring view" fill className="object-contain" loading="lazy" sizes="(max-width: 768px) 43vw, 22vw" />
                 </div>
               </div>
               <div>
@@ -259,11 +259,11 @@ export default function TactivStudiosPage() {
                 </div>
                 {/* Profile/form — left */}
                 <div className="absolute rounded-[3px] overflow-hidden" style={{ left: "4%", top: "15%", width: "42%", aspectRatio: "1292 / 1606" }}>
-                  <Image src="/images/tactiv-studios/wealth-profile.webp" alt="Profile form screenshot" fill className="object-contain" loading="lazy" sizes="(max-width: 768px) 42vw, 21vw" />
+                  <LazyImage src="/images/tactiv-studios/wealth-profile.webp" alt="Profile form screenshot" fill className="object-contain" loading="lazy" sizes="(max-width: 768px) 42vw, 21vw" />
                 </div>
                 {/* KPI donut chart — bottom right */}
                 <div className="absolute rounded-[3px] overflow-hidden" style={{ left: "55%", top: "25%", width: "40%", aspectRatio: "544 / 692" }}>
-                  <Image src="/images/tactiv-studios/wealth-donut.webp" alt="KPI donut chart" fill className="object-contain" loading="lazy" sizes="(max-width: 768px) 40vw, 20vw" />
+                  <LazyImage src="/images/tactiv-studios/wealth-donut.webp" alt="KPI donut chart" fill className="object-contain" loading="lazy" sizes="(max-width: 768px) 40vw, 20vw" />
                 </div>
               </div>
               <div className="md:order-1">
@@ -283,7 +283,7 @@ export default function TactivStudiosPage() {
                 </div>
                 {/* Wireframes — extends past left edge */}
                 <div className="absolute overflow-hidden" style={{ left: "-18%", top: "8%", width: "118%", height: "88%" }}>
-                  <Image src="/images/tactiv-studios/fitness-wireframes.webp" alt="iOS fitness app wireframes" fill className="object-contain object-left" loading="lazy" sizes="(max-width: 768px) 100vw, 55vw" />
+                  <LazyImage src="/images/tactiv-studios/fitness-wireframes.webp" alt="iOS fitness app wireframes" fill className="object-contain object-left" loading="lazy" sizes="(max-width: 768px) 100vw, 55vw" />
                 </div>
               </div>
               <div>
@@ -307,7 +307,7 @@ export default function TactivStudiosPage() {
                 <div className="absolute pointer-events-none rounded-full" style={{ left: "-10%", top: "45%", width: "56%", height: "56%", background: "radial-gradient(circle, rgba(30,20,60,0.5) 0%, transparent 70%)", filter: "blur(40px)" }} />
                 {/* Map — positioned lower, bleeds past bottom */}
                 <div className="absolute rounded-[10px] overflow-hidden" style={{ left: "5.8%", top: "23.8%", width: "82.8%", height: "76.2%" }}>
-                  <Image src="/images/tactiv-studios/rideshare-map.webp" alt="Rideshare map view" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 90vw, 45vw" />
+                  <LazyImage src="/images/tactiv-studios/rideshare-map.webp" alt="Rideshare map view" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 90vw, 45vw" />
                 </div>
                 {/* Route overlay — positioned on map */}
                 <div className="absolute" style={{ left: "46.8%", top: "45%", width: "26.2%", height: "22.1%" }}>

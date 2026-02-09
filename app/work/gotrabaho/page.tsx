@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { LazyImage } from "@/components/ui/LazyImage";
 import { CaseStudyLayout } from "@/components/case-study/CaseStudyLayout";
 import { MoreProjects } from "@/components/case-study/MoreProjects";
 import { TechIcon } from "@/components/case-study/TechIcon";
@@ -49,7 +49,7 @@ export default function GoTrabahoPage() {
               <img src="/images/gotrabaho/swoosh.svg" alt="" className="w-full h-full" />
             </div>
             <div className="relative w-[40%] max-w-[300px]" style={{ aspectRatio: "201 / 233" }}>
-              <Image src="/images/gotrabaho/mockup.webp" alt="GoTrabaho app screens" fill className="object-contain" priority sizes="(max-width: 768px) 80vw, 40vw" />
+              <LazyImage src="/images/gotrabaho/mockup.webp" alt="GoTrabaho app screens" fill className="object-contain" priority sizes="(max-width: 768px) 80vw, 40vw" />
             </div>
           </div>
         </div>
@@ -107,10 +107,10 @@ export default function GoTrabahoPage() {
                     <div className="w-full h-full bg-[#fc8505] blur-[50px] rounded-full rotate-[131deg]" />
                   </div>
                   <div className="absolute z-0" style={{ left: "18.2%", top: "5.6%", width: "63.6%", height: "62.8%" }}>
-                    <Image src="/images/gotrabaho/onboard-back.webp" alt="GoOnboard step 1" fill className="object-cover" loading="lazy" sizes="25vw" />
+                    <LazyImage src="/images/gotrabaho/onboard-back.webp" alt="GoOnboard step 1" fill className="object-cover" loading="lazy" sizes="25vw" />
                   </div>
                   <div className="absolute z-10 shadow-[0px_-10px_33px_rgba(0,0,0,0.25)]" style={{ left: "9.1%", top: "14.4%", width: "81.8%", height: "80.7%" }}>
-                    <Image src="/images/gotrabaho/onboard-front.webp" alt="NBI Clearance verification" fill className="object-cover" loading="lazy" sizes="25vw" />
+                    <LazyImage src="/images/gotrabaho/onboard-front.webp" alt="NBI Clearance verification" fill className="object-cover" loading="lazy" sizes="25vw" />
                   </div>
                 </div>
 
@@ -120,7 +120,7 @@ export default function GoTrabahoPage() {
                     <div className="w-full h-full bg-[#fc8505] blur-[50px] rounded-full rotate-[131deg]" />
                   </div>
                   <div className="absolute z-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" style={{ width: "80%", height: "80%" }}>
-                    <Image src="/images/gotrabaho/profile-portfolio.webp" alt="Verified worker profile with portfolio" fill className="object-cover" loading="lazy" sizes="25vw" />
+                    <LazyImage src="/images/gotrabaho/profile-portfolio.webp" alt="Verified worker profile with portfolio" fill className="object-cover" loading="lazy" sizes="25vw" />
                   </div>
                 </div>
 
@@ -130,7 +130,7 @@ export default function GoTrabahoPage() {
                     <div className="w-full h-full bg-[#fc8505] blur-[50px] rounded-full rotate-[131deg]" />
                   </div>
                   <div className="absolute z-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 border-[5px] border-white/50 rounded-[14px] overflow-hidden" style={{ width: "80%", height: "80%" }}>
-                    <Image src="/images/gotrabaho/profile-reviews.webp" alt="Worker profile with feedback and ratings" fill className="object-cover" loading="lazy" sizes="25vw" />
+                    <LazyImage src="/images/gotrabaho/profile-reviews.webp" alt="Worker profile with feedback and ratings" fill className="object-cover" loading="lazy" sizes="25vw" />
                   </div>
                 </div>
 
@@ -140,7 +140,7 @@ export default function GoTrabahoPage() {
                     <div className="w-full h-full bg-[#fc8505] blur-[50px] rounded-full rotate-[131deg]" />
                   </div>
                   <div className="absolute z-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 border-[5px] border-white/50 rounded-[14px] overflow-hidden" style={{ width: "78%", height: "79%" }}>
-                    <Image src="/images/gotrabaho/jobs-unverified.webp" alt="Jobs listing with unverified warning" fill className="object-cover" loading="lazy" sizes="25vw" />
+                    <LazyImage src="/images/gotrabaho/jobs-unverified.webp" alt="Jobs listing with unverified warning" fill className="object-cover" loading="lazy" sizes="25vw" />
                   </div>
                 </div>
               </div>

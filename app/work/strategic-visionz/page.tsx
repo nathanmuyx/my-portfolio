@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { LazyImage } from "@/components/ui/LazyImage";
 import { CaseStudyLayout } from "@/components/case-study/CaseStudyLayout";
 import { MoreProjects } from "@/components/case-study/MoreProjects";
 import { TechIcon } from "@/components/case-study/TechIcon";
@@ -51,7 +51,7 @@ export default function StrategicVisionzPage() {
               <div className="bg-[#0a4299]/40 blur-[100px] rounded-full w-[500px] h-[500px]" />
             </div>
             <div className="absolute border-[6px] border-white/15 rounded-xl overflow-hidden left-[8%] top-[10%] w-[84%]" style={{ aspectRatio: "576 / 360" }}>
-              <Image src="/images/strategic-visionz/homepage.webp" alt="Strategic Visionz platform" fill className="object-cover object-top" priority sizes="(max-width: 768px) 90vw, 84vw" />
+              <LazyImage src="/images/strategic-visionz/homepage.webp" alt="Strategic Visionz platform" fill className="object-cover object-top" priority sizes="(max-width: 768px) 90vw, 84vw" />
             </div>
           </div>
         </div>
@@ -126,10 +126,10 @@ export default function StrategicVisionzPage() {
               <div className="w-full h-full bg-[#0a4299] blur-[50px] rounded-full rotate-[131deg]" />
             </div>
             <div className="absolute border-[3px] border-white/20 rounded-lg overflow-hidden" style={{ left: "15%", top: "11%", width: "69.5%", aspectRatio: "504 / 282" }}>
-              <Image src="/images/strategic-visionz/valet-waste-back.webp" alt="Valet Waste dashboard overview" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 70vw, 50vw" />
+              <LazyImage src="/images/strategic-visionz/valet-waste-back.webp" alt="Valet Waste dashboard overview" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 70vw, 50vw" />
             </div>
             <div className="absolute border-[3px] border-[#adadad]/40 rounded-lg overflow-hidden shadow-[0px_-10px_27px_rgba(0,0,0,0.25)]" style={{ left: "10%", top: "20.5%", width: "80%", aspectRatio: "581 / 419" }}>
-              <Image src="/images/strategic-visionz/valet-waste-front.webp" alt="Valet Waste community detail page" fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 80vw, 60vw" />
+              <LazyImage src="/images/strategic-visionz/valet-waste-front.webp" alt="Valet Waste community detail page" fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 80vw, 60vw" />
             </div>
           </div>
 
@@ -198,10 +198,10 @@ export default function StrategicVisionzPage() {
               <div className="w-full h-full bg-[#0a4299] blur-[50px] rounded-full rotate-[131deg]" />
             </div>
             <div className="absolute z-10" style={{ left: "11.3%", top: "-1.3%", width: "40.7%", height: "131%" }}>
-              <Image src="/images/strategic-visionz/flex-portrait.webp" alt="Flex app login screen" fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 35vw, 30vw" quality={75} />
+              <LazyImage src="/images/strategic-visionz/flex-portrait.webp" alt="Flex app login screen" fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 35vw, 30vw" quality={75} />
             </div>
             <div className="absolute z-10" style={{ left: "52.8%", top: "-45%", width: "37.1%", height: "119%" }}>
-              <Image src="/images/strategic-visionz/flex-landscape.webp" alt="Flex app social feed" fill className="object-cover object-bottom" loading="lazy" sizes="(max-width: 768px) 30vw, 25vw" quality={75} />
+              <LazyImage src="/images/strategic-visionz/flex-landscape.webp" alt="Flex app social feed" fill className="object-cover object-bottom" loading="lazy" sizes="(max-width: 768px) 30vw, 25vw" quality={75} />
             </div>
           </div>
 
@@ -252,10 +252,10 @@ export default function StrategicVisionzPage() {
               <div className="w-full h-full bg-[#0a4299] blur-[50px] rounded-full rotate-[131deg]" />
             </div>
             <div className="absolute border-[2.5px] border-white/20 rounded-lg overflow-hidden" style={{ left: "3.7%", top: "12%", width: "45.4%", height: "200%" }}>
-              <Image src="/images/strategic-visionz/sv-website.webp" alt="Strategic Visionz website — homepage" fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 45vw, 35vw" />
+              <LazyImage src="/images/strategic-visionz/sv-website.webp" alt="Strategic Visionz website — homepage" fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 45vw, 35vw" />
             </div>
             <div className="absolute border-[2.5px] border-white/20 rounded-[4px] overflow-hidden" style={{ left: "51.1%", top: "-68%", width: "45.4%", height: "200%" }}>
-              <Image src="/images/strategic-visionz/sv-website.webp" alt="Strategic Visionz website — scrolled sections" fill className="object-cover object-bottom" loading="lazy" sizes="(max-width: 768px) 45vw, 35vw" />
+              <LazyImage src="/images/strategic-visionz/sv-website.webp" alt="Strategic Visionz website — scrolled sections" fill className="object-cover object-bottom" loading="lazy" sizes="(max-width: 768px) 45vw, 35vw" />
             </div>
           </div>
 

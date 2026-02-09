@@ -16,31 +16,14 @@ interface CaseStudyLayoutProps {
   children: React.ReactNode;
 }
 
-function isDarkBackground(el: Element | null): boolean {
-  while (el && el !== document.documentElement) {
-    const bg = getComputedStyle(el).backgroundColor;
-    if (bg && bg !== "rgba(0, 0, 0, 0)" && bg !== "transparent") {
-      const match = bg.match(/\d+/g);
-      if (match) {
-        const [r, g, b] = match.map(Number);
-        return r * 0.299 + g * 0.587 + b * 0.114 < 80;
-      }
-    }
-    el = el.parentElement;
-  }
-  return false;
-}
-
 export function CaseStudyLayout({
   sections,
   children,
 }: CaseStudyLayoutProps) {
   const [activeId, setActiveId] = useState<string>("");
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [overDark, setOverDark] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
   const rafRef = useRef<number>(0);
-  const lastDarkCheck = useRef<number>(0);
 
   const handleScroll = useCallback(() => {
     cancelAnimationFrame(rafRef.current);
@@ -48,30 +31,6 @@ export function CaseStudyLayout({
       const scrollTop = window.scrollY;
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       setScrollProgress(docHeight > 0 ? Math.min(scrollTop / docHeight, 1) : 0);
-
-      // Throttle the expensive dark-background check to every 200ms
-      const now = performance.now();
-      if (navRef.current && now - lastDarkCheck.current > 200) {
-        lastDarkCheck.current = now;
-        const rect = navRef.current.getBoundingClientRect();
-        const sampleY = rect.top + rect.height / 2;
-
-        navRef.current.style.pointerEvents = "none";
-        navRef.current.style.visibility = "hidden";
-
-        let darkCount = 0;
-        const offsets = [0.2, 0.5, 0.8];
-        for (const pct of offsets) {
-          const x = rect.left + rect.width * pct;
-          const behind = document.elementFromPoint(x, sampleY);
-          if (isDarkBackground(behind)) darkCount++;
-        }
-
-        navRef.current.style.visibility = "";
-        navRef.current.style.pointerEvents = "";
-
-        setOverDark(darkCount >= 2);
-      }
     });
   }, []);
 
@@ -119,7 +78,6 @@ export function CaseStudyLayout({
         sections={sections}
         activeId={activeId}
         scrollProgress={scrollProgress}
-        overDark={overDark}
       />
 
       {/* Content */}

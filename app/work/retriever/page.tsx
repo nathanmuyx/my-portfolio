@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState, useCallback } from "react";
-import Image from "next/image";
+import { LazyImage } from "@/components/ui/LazyImage";
 import { CaseStudyLayout } from "@/components/case-study/CaseStudyLayout";
 import { MoreProjects } from "@/components/case-study/MoreProjects";
 import { TechIcon } from "@/components/case-study/TechIcon";
@@ -43,7 +43,7 @@ function OldScreensCarousel() {
             <div key={si} className="flex gap-3 justify-center shrink-0 w-full px-3 py-10 md:px-4">
               {slide.map((screen) => (
                 <div key={screen.src} className="relative shrink-0 rounded-sm overflow-hidden" style={{ width: "min(28%, 160px)", aspectRatio: "9 / 16" }}>
-                  <Image src={screen.src} alt={screen.alt} fill className="object-cover" loading="lazy" sizes="160px" />
+                  <LazyImage src={screen.src} alt={screen.alt} fill className="object-cover" loading="lazy" sizes="160px" />
                 </div>
               ))}
             </div>
@@ -123,7 +123,7 @@ export default function RetrieverPage() {
               <div className="bg-[#ff5411]/30 blur-[80px] rounded-full w-[300px] h-[300px]" />
             </div>
             <div className="relative w-[60%] max-w-[500px]" style={{ aspectRatio: "236 / 175" }}>
-              <Image src="/images/retriever/mockup.webp" alt="Retriever app screens" fill className="object-contain" priority sizes="(max-width: 768px) 90vw, 50vw" />
+              <LazyImage src="/images/retriever/mockup.webp" alt="Retriever app screens" fill className="object-contain" priority sizes="(max-width: 768px) 90vw, 50vw" />
             </div>
           </div>
         </div>
@@ -168,7 +168,7 @@ export default function RetrieverPage() {
 
           {/* Annotated Figma screenshot — old file */}
           <div className="relative rounded-2xl overflow-hidden bg-[#0a0a0a] mb-6" style={{ aspectRatio: "2334 / 931" }}>
-            <Image src="/images/retriever/old-figma-file.webp" alt="Previous designer's Figma file showing 1080x1920 frames, confusing flow lines, and no brand guidelines" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 90vw, 1100px" />
+            <LazyImage src="/images/retriever/old-figma-file.webp" alt="Previous designer's Figma file showing 1080x1920 frames, confusing flow lines, and no brand guidelines" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 90vw, 1100px" />
           </div>
           <p className="text-sm text-foreground/50 mb-16">The previous designer&apos;s Figma file: 1080x1920 frames (not a real device), no brand guidelines, tangled prototype connections, and inconsistent layouts across every screen.</p>
 
@@ -225,7 +225,7 @@ export default function RetrieverPage() {
 
           {/* Improved Figma file screenshot */}
           <div className="relative rounded-2xl overflow-hidden bg-[#0a0a0a] mt-16" style={{ aspectRatio: "2334 / 943" }}>
-            <Image src="/images/retriever/new-figma-file.webp" alt="Rebuilt Figma file with Design Guidelines page, organized persona sections, and proper 390x844 frames" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 90vw, 1100px" />
+            <LazyImage src="/images/retriever/new-figma-file.webp" alt="Rebuilt Figma file with Design Guidelines page, organized persona sections, and proper 390x844 frames" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 90vw, 1100px" />
           </div>
           <p className="text-sm text-foreground/50 mt-4">Rebuilt file: Design Guidelines page, organized persona sections (Buyer, Merchant, Rider, Fetch), proper 390x844 frames, and clean layer naming.</p>
         </div>
@@ -243,7 +243,7 @@ export default function RetrieverPage() {
 
           {/* Typography + Colors */}
           <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: "2334 / 1247" }}>
-            <Image src="/images/retriever/typography-colors.webp" alt="Typography specimens (HK RTVR primary, Criteria CF secondary) and color palette with grays, primary orange, secondary peach, and tertiary teal" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 90vw, 1100px" />
+            <LazyImage src="/images/retriever/typography-colors.webp" alt="Typography specimens (HK RTVR primary, Criteria CF secondary) and color palette with grays, primary orange, secondary peach, and tertiary teal" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 90vw, 1100px" />
           </div>
           <p className="text-sm text-foreground/50 mt-4">HK RTVR (primary) and Criteria CF (secondary). Client-specified color palette with proper contrast ratios across all interface elements.</p>
         </div>
@@ -264,7 +264,7 @@ export default function RetrieverPage() {
             <div className="grid md:grid-cols-2 gap-8 items-start">
               <div className="rounded-2xl overflow-hidden bg-[#0a0a0a] p-6 md:p-10">
                 <div className="relative w-full" style={{ aspectRatio: "634 / 625" }}>
-                  <Image src="/images/retriever/screens-signin.webp" alt="Sign In and Create Account screens" fill className="object-contain" loading="lazy" sizes="(max-width: 768px) 90vw, 500px" />
+                  <LazyImage src="/images/retriever/screens-signin.webp" alt="Sign In and Create Account screens" fill className="object-contain" loading="lazy" sizes="(max-width: 768px) 90vw, 500px" />
                 </div>
               </div>
               <div>
@@ -277,7 +277,7 @@ export default function RetrieverPage() {
             <div className="grid md:grid-cols-2 gap-8 items-start">
               <div className="md:order-2 rounded-2xl overflow-hidden bg-[#0a0a0a] p-6 md:p-10">
                 <div className="relative w-full" style={{ aspectRatio: "946 / 933" }}>
-                  <Image src="/images/retriever/screens-dashboard.webp" alt="Food Dashboard and Story preview screens" fill className="object-contain" loading="lazy" sizes="(max-width: 768px) 90vw, 500px" />
+                  <LazyImage src="/images/retriever/screens-dashboard.webp" alt="Food Dashboard and Story preview screens" fill className="object-contain" loading="lazy" sizes="(max-width: 768px) 90vw, 500px" />
                 </div>
               </div>
               <div className="md:order-1">
@@ -290,7 +290,7 @@ export default function RetrieverPage() {
             <div className="grid md:grid-cols-2 gap-8 items-start">
               <div className="rounded-2xl overflow-hidden bg-[#0a0a0a] p-6 md:p-10">
                 <div className="relative w-full" style={{ aspectRatio: "980 / 933" }}>
-                  <Image src="/images/retriever/screens-wallet.webp" alt="Wallet and transaction receipt screens" fill className="object-contain" loading="lazy" sizes="(max-width: 768px) 90vw, 500px" />
+                  <LazyImage src="/images/retriever/screens-wallet.webp" alt="Wallet and transaction receipt screens" fill className="object-contain" loading="lazy" sizes="(max-width: 768px) 90vw, 500px" />
                 </div>
               </div>
               <div>
@@ -303,7 +303,7 @@ export default function RetrieverPage() {
             <div className="grid md:grid-cols-2 gap-8 items-start">
               <div className="md:order-2 rounded-2xl overflow-hidden bg-[#0a0a0a] p-6 md:p-10">
                 <div className="relative w-full" style={{ aspectRatio: "980 / 933" }}>
-                  <Image src="/images/retriever/screens-tracking.webp" alt="Order tracking map and in-app messaging screens" fill className="object-contain" loading="lazy" sizes="(max-width: 768px) 90vw, 500px" />
+                  <LazyImage src="/images/retriever/screens-tracking.webp" alt="Order tracking map and in-app messaging screens" fill className="object-contain" loading="lazy" sizes="(max-width: 768px) 90vw, 500px" />
                 </div>
               </div>
               <div className="md:order-1">

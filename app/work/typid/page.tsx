@@ -1,15 +1,13 @@
 "use client";
 
-import Image from "next/image";
+import { LazyImage } from "@/components/ui/LazyImage";
 import { CaseStudyLayout } from "@/components/case-study/CaseStudyLayout";
 import { MoreProjects } from "@/components/case-study/MoreProjects";
 import { TechIcon } from "@/components/case-study/TechIcon";
 
 const sections = [
   { id: "hero", label: "Hero" },
-  { id: "origin", label: "Origin" },
-  { id: "reality", label: "Reality Check" },
-  { id: "cursor", label: "Cursor" },
+  { id: "origin", label: "The Finance App" },
   { id: "pivot", label: "The Pivot" },
   { id: "system", label: "The System" },
   { id: "result", label: "Result" },
@@ -36,7 +34,7 @@ export default function TypidPage() {
           </div>
 
           <h1 className="text-[clamp(2.5rem,7vw,5rem)] font-medium leading-[0.92] tracking-tight max-w-4xl mb-8">
-            Built a finance app for myself. Ended up fixing event accounting.
+            From personal finance to event ticketing — validating, pivoting, and&nbsp;shipping.
           </h1>
 
           <p className="text-lg md:text-xl text-foreground/70 max-w-2xl leading-relaxed">
@@ -57,13 +55,13 @@ export default function TypidPage() {
             </div>
 
             <div className="absolute border-4 border-white/15 rounded-[12px] overflow-hidden left-[20%] top-[12%] w-[58%]" style={{ aspectRatio: "404 / 226" }}>
-              <Image src="/images/typid/aisen-3.webp" alt="Aisen Fest event page" fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 90vw, 60vw" />
+              <LazyImage src="/images/typid/aisen-3.webp" alt="Aisen Fest event page" fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 90vw, 60vw" />
             </div>
             <div className="absolute border-4 border-white/15 rounded-[12px] overflow-hidden left-[16%] top-[24%] w-[66%]" style={{ aspectRatio: "448 / 250" }}>
-              <Image src="/images/typid/Himaya-2.webp" alt="Himaya event page" fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 90vw, 66vw" />
+              <LazyImage src="/images/typid/Himaya-2.webp" alt="Himaya event page" fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 90vw, 66vw" />
             </div>
             <div className="absolute border-4 border-white/15 rounded-[12px] overflow-hidden left-[12%] top-[38%] w-[74%]" style={{ aspectRatio: "488 / 274" }}>
-              <Image src="/images/typid/homepage-1.webp" alt="Typid homepage" fill className="object-cover object-top" priority sizes="(max-width: 768px) 90vw, 74vw" />
+              <LazyImage src="/images/typid/homepage-1.webp" alt="Typid homepage" fill className="object-cover object-top" priority sizes="(max-width: 768px) 90vw, 74vw" />
             </div>
           </div>
         </div>
@@ -71,32 +69,19 @@ export default function TypidPage() {
 
       <div className="max-w-[1100px] mx-auto px-6 md:px-12"><div className="h-px bg-border" /></div>
 
-      {/* Chapter 01: The Origin */}
+      {/* Chapter 01: The Finance App */}
       <section id="origin" className="px-6 md:px-12 py-24 md:py-32 scroll-mt-24">
         <div className="max-w-[1100px] mx-auto">
           <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-6">Chapter 01</p>
           <h2 className="text-3xl md:text-4xl font-medium leading-tight tracking-tight max-w-2xl mb-6">
-            I didn&apos;t have an emergency fund. So I built an app to fix that.
+            Built a finance app for myself. Shipped to both stores. Nobody came&nbsp;back.
           </h2>
-          <div className="max-w-2xl space-y-5 text-base text-foreground/70 leading-relaxed mb-16">
-            <p>
-              Most finance apps assume you have one bank account. In the Philippines, money is everywhere. Cash in your wallet, BPI savings, GCash for online, Maya for bills. I needed something that showed me the real picture across all of them.
-            </p>
-            <p>
-              Before writing a single line of code, I spent weeks researching the right stack. Firebase was the obvious choice, but the costs would blow up with scale. Supabase gave me auth, database, and real-time for free at the volume I needed. Flutter + Dart let me ship to both app stores from one codebase. I handled everything from the app icon to the store screenshots, and deployed to both Google Play and the App Store.
-            </p>
-          </div>
-
-          {/* Pull quote */}
-          <div className="border-l-2 border-foreground/10 pl-6 md:pl-10 py-2 mb-16 max-w-2xl">
-            <p className="text-lg md:text-xl text-foreground/70 leading-relaxed italic">
-              &ldquo;I wasn&apos;t building for a market. I was building for myself. Someone who splits &#8369;5,000 across four different wallets and loses track by Wednesday.&rdquo;
-            </p>
-          </div>
+          <p className="text-base text-foreground/70 max-w-2xl leading-relaxed mb-16">
+            In the Philippines, money lives everywhere — GCash, Maya, BPI, cash. I built a Flutter app to track it all in one place and shipped to Google Play and the App Store. 70 users signed up. Most never returned. The UI was solid, but I was solving a problem only I had.
+          </p>
 
           {/* Finance App Screens */}
-          <div className="relative w-full rounded-2xl overflow-hidden bg-[#0a0a0a]" style={{ aspectRatio: "860 / 420" }}>
-            {/* Glow effects */}
+          <div className="relative w-full rounded-2xl overflow-hidden bg-[#0a0a0a] mb-8" style={{ aspectRatio: "860 / 420" }}>
             <div className="absolute left-1/2 -translate-x-1/2 top-0 flex items-center justify-center w-[400px] h-[400px] pointer-events-none">
               <div className="rotate-[131deg]">
                 <div className="bg-white blur-[50px] rounded-full w-[280px] h-[280px]" />
@@ -107,7 +92,6 @@ export default function TypidPage() {
                 <div className="bg-[#17bff9] blur-[50px] rounded-full w-[500px] h-[500px]" />
               </div>
             </div>
-            {/* Phone screens */}
             <div className="absolute inset-0 flex items-center justify-center gap-[0.5%] px-[3%] pt-[3%] pb-[1%]">
               {[
                 { src: "/images/typid/phone-home.webp", alt: "Home screen" },
@@ -116,30 +100,10 @@ export default function TypidPage() {
                 { src: "/images/typid/phone-transactions.webp", alt: "Transactions screen" },
               ].map((phone, i) => (
                 <div key={i} className="relative h-full flex-1">
-                  <Image src={phone.src} alt={phone.alt} fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 25vw, 20vw" quality={75} />
+                  <LazyImage src={phone.src} alt={phone.alt} fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 25vw, 20vw" quality={75} />
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      <div className="max-w-[1100px] mx-auto px-6 md:px-12"><div className="h-px bg-border" /></div>
-
-      {/* Chapter 02: The Reality Check */}
-      <section id="reality" className="px-6 md:px-12 py-24 md:py-32 scroll-mt-24">
-        <div className="max-w-[1100px] mx-auto">
-          <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-6">Chapter 02</p>
-          <h2 className="text-3xl md:text-4xl font-medium leading-tight tracking-tight max-w-2xl mb-6">
-            70 users told me everything I needed to hear.
-          </h2>
-          <div className="max-w-2xl space-y-5 text-base text-foreground/70 leading-relaxed mb-16">
-            <p>
-              We launched on both app stores. Got some traction. People said &ldquo;nice UI&rdquo; and then never came back. Most were one-time logins. A few recurring users, but not enough to validate the idea.
-            </p>
-            <p>
-              This wasn&apos;t a UX problem. The flows were clean, the interface was solid. The problem was deeper: I was solving a problem only I had. Personal finance tracking in the Philippines is crowded. GCash, Maya, and every bank already had their own version. &ldquo;Perfect for me&rdquo; doesn&apos;t make a product.
-            </p>
           </div>
 
           {/* App store badges */}
@@ -164,30 +128,12 @@ export default function TypidPage() {
 
       <div className="max-w-[1100px] mx-auto px-6 md:px-12"><div className="h-px bg-border" /></div>
 
-      {/* Interlude: Cursor */}
-      <section id="cursor" className="px-6 md:px-12 py-24 md:py-32 scroll-mt-24 bg-[#0a0a0a]">
-        <div className="max-w-[1100px] mx-auto">
-          <p className="text-[11px] uppercase tracking-wider text-white/50 mb-6">Interlude</p>
-          <h2 className="text-3xl md:text-4xl font-medium leading-tight tracking-tight max-w-2xl mb-6 text-white">
-            Cursor made me feel like a senior programmer.
-          </h2>
-          <div className="max-w-2xl space-y-5 text-base text-white/70 leading-relaxed">
-            <p>
-              Somewhere in the middle of building the finance app, I discovered Cursor. Half coding, half AI. It fundamentally changed how fast I could ship. Logic that used to take me days, I could build in hours.
-            </p>
-            <p>
-              Not by prompting &ldquo;build me a feature.&rdquo; But by working component by component, testing as I went, so I never lost context. This would matter a lot for what came next.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Chapter 04: The Pivot */}
+      {/* Chapter 02: The Pivot */}
       <section id="pivot" className="px-6 md:px-12 py-24 md:py-32 scroll-mt-24">
         <div className="max-w-[1100px] mx-auto">
-          <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-6">Chapter 04</p>
+          <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-6">Chapter 02</p>
           <h2 className="text-3xl md:text-4xl font-medium leading-tight tracking-tight max-w-2xl mb-6">
-            Our church had a money problem. We had the tools to fix it.
+            Our church had a money problem. We had the tools to fix&nbsp;it.
           </h2>
           <div className="max-w-2xl space-y-5 text-base text-foreground/70 leading-relaxed mb-16">
             <p>
@@ -234,10 +180,10 @@ export default function TypidPage() {
                 </div>
               </div>
               <div className="absolute border-[2.5px] border-white/20 rounded-[5px] overflow-hidden left-[7%] top-[9%] w-[67%] h-[55%]">
-                <Image src="/images/typid/dashboard.webp" alt="Typid seller dashboard" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 90vw, 45vw" quality={75} />
+                <LazyImage src="/images/typid/dashboard.webp" alt="Typid seller dashboard" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 90vw, 45vw" quality={75} />
               </div>
               <div className="absolute border-[2.5px] border-white/20 rounded-[5px] overflow-hidden left-[24%] top-[32%] w-[72%] h-[60%]">
-                <Image src="/images/typid/himaya-event.webp" alt="Himaya event page" fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 90vw, 45vw" quality={75} />
+                <LazyImage src="/images/typid/himaya-event.webp" alt="Himaya event page" fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 90vw, 45vw" quality={75} />
               </div>
             </div>
             {/* Attendee list + QR scanner */}
@@ -248,10 +194,10 @@ export default function TypidPage() {
                 </div>
               </div>
               <div className="absolute border-2 border-white/20 rounded-[4px] overflow-hidden left-[9%] top-[18%] w-[80%] h-[62%]">
-                <Image src="/images/typid/attendee-list.webp" alt="Attendee management list" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 90vw, 45vw" quality={75} />
+                <LazyImage src="/images/typid/attendee-list.webp" alt="Attendee management list" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 90vw, 45vw" quality={75} />
               </div>
               <div className="absolute border-2 border-white/20 rounded-[9px] overflow-hidden left-[70%] top-[36%] w-[22%] h-[56%]">
-                <Image src="/images/typid/qr-scanner.webp" alt="QR check-in scanner" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 30vw, 15vw" quality={75} />
+                <LazyImage src="/images/typid/qr-scanner.webp" alt="QR check-in scanner" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 30vw, 15vw" quality={75} />
               </div>
             </div>
           </div>
@@ -260,34 +206,185 @@ export default function TypidPage() {
 
       <div className="max-w-[1100px] mx-auto px-6 md:px-12"><div className="h-px bg-border" /></div>
 
-      {/* Chapter 05: The System */}
+      {/* Chapter 03: The System */}
       <section id="system" className="px-6 md:px-12 py-24 md:py-32 scroll-mt-24">
         <div className="max-w-[1100px] mx-auto">
-          <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-6">Chapter 05</p>
+          <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-6">Chapter 03</p>
           <h2 className="text-3xl md:text-4xl font-medium leading-tight tracking-tight max-w-2xl mb-6">
-            Every ticket tracked. Every peso accounted for.
+            Every ticket tracked. Every peso accounted&nbsp;for.
           </h2>
           <p className="text-base text-foreground/70 max-w-2xl leading-relaxed mb-16">
             Venue staff scan once and get instant validation. The organizer dashboard shows everything in real-time: who bought, who paid, who checked in. No more cross-referencing spreadsheets at 2 AM after an event.
           </p>
 
-          {/* Feature screenshots */}
+          {/* Feature mockups */}
           <div className="grid md:grid-cols-2 gap-4">
-            {[
-              { title: "Event creation", desc: "Custom branding, ticket tiers, pricing, capacity limits" },
-              { title: "Custom QR payments", desc: "Upload GCash or bank transfer QR, displayed in payment settings" },
-              { title: "QR check-in", desc: "Unique QR per ticket, handles refunds and duplicates" },
-              { title: "Organizer dashboard", desc: "Real-time buyer, payment, and check-in tracking" },
-            ].map((feature) => (
-              <div key={feature.title} className="rounded-2xl bg-[#0a0a0a] overflow-hidden">
-                <div className="flex items-center justify-center" style={{ aspectRatio: "16 / 10" }}>
-                </div>
-                <div className="p-5">
-                  <h3 className="text-sm font-medium mb-1 text-white">{feature.title}</h3>
-                  <p className="text-sm text-white/70">{feature.desc}</p>
+
+            {/* Event creation */}
+            <div className="rounded-2xl bg-[#0a0a0a] overflow-hidden">
+              <div className="p-5 pointer-events-none select-none" style={{ aspectRatio: "16 / 10" }}>
+                <div className="h-full flex flex-col">
+                  <div className="flex items-center justify-between mb-4">
+                    <p className="text-xs font-medium text-white">New Event</p>
+                    <span className="rounded-md bg-[#f59e0b] px-3 py-1 text-[10px] font-medium text-black">Publish</span>
+                  </div>
+                  <div className="space-y-2.5 flex-1">
+                    <div className="rounded-lg bg-white/[0.04] border border-white/[0.06] px-3 py-2">
+                      <span className="text-[10px] text-white/60">Himaya Worship Night</span>
+                    </div>
+                    <div className="grid grid-cols-2 gap-2">
+                      <div className="rounded-lg bg-white/[0.04] border border-white/[0.06] px-3 py-2">
+                        <span className="text-[10px] text-white/30">Dec 15, 2025</span>
+                      </div>
+                      <div className="rounded-lg bg-white/[0.04] border border-white/[0.06] px-3 py-2">
+                        <span className="text-[10px] text-white/30">Cebu City</span>
+                      </div>
+                    </div>
+                    <div className="h-px bg-white/[0.06] my-1" />
+                    <p className="text-[10px] text-white/30 mb-1">Ticket Tiers</p>
+                    <div className="space-y-1.5">
+                      {[
+                        { tier: "General", price: "₱150", cap: "200 seats" },
+                        { tier: "VIP", price: "₱350", cap: "50 seats" },
+                      ].map((t) => (
+                        <div key={t.tier} className="flex items-center justify-between rounded-lg bg-white/[0.04] border border-white/[0.06] px-3 py-1.5">
+                          <span className="text-[10px] font-medium text-white/60">{t.tier}</span>
+                          <div className="flex items-center gap-3">
+                            <span className="text-[10px] text-white/40">{t.cap}</span>
+                            <span className="text-[10px] font-medium text-[#f59e0b]">{t.price}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
-            ))}
+              <div className="px-5 pb-5">
+                <h3 className="text-sm font-medium mb-1 text-white">Event creation</h3>
+                <p className="text-sm text-white/70">Custom branding, ticket tiers, pricing, capacity limits</p>
+              </div>
+            </div>
+
+            {/* Custom QR payments */}
+            <div className="rounded-2xl bg-[#0a0a0a] overflow-hidden">
+              <div className="p-5 pointer-events-none select-none" style={{ aspectRatio: "16 / 10" }}>
+                <div className="h-full flex flex-col">
+                  <p className="text-xs font-medium text-white mb-4">Payment Settings</p>
+                  <div className="flex-1 grid grid-cols-2 gap-3">
+                    {/* QR preview */}
+                    <div className="rounded-xl bg-white/[0.04] border border-white/[0.06] p-3 flex flex-col items-center justify-center">
+                      <div className="w-16 h-16 md:w-20 md:h-20 rounded-lg bg-white/[0.08] border border-white/[0.06] mb-2 grid grid-cols-5 grid-rows-5 gap-[2px] p-1.5">
+                        {Array.from({ length: 25 }).map((_, i) => (
+                          <div key={i} className={`rounded-[1px] ${[0,1,2,4,5,6,10,12,14,18,20,21,22,24].includes(i) ? "bg-white/40" : "bg-white/10"}`} />
+                        ))}
+                      </div>
+                      <span className="text-[9px] text-white/30">GCash QR</span>
+                    </div>
+                    {/* Payment methods */}
+                    <div className="space-y-2">
+                      {[
+                        { name: "GCash", status: "Connected", active: true },
+                        { name: "Maya", status: "Connected", active: true },
+                        { name: "Bank Transfer", status: "Add account", active: false },
+                      ].map((pm) => (
+                        <div key={pm.name} className="rounded-lg bg-white/[0.04] border border-white/[0.06] px-3 py-2 flex items-center justify-between">
+                          <span className="text-[10px] font-medium text-white/60">{pm.name}</span>
+                          <span className={`text-[9px] ${pm.active ? "text-[#22C55E]" : "text-white/30"}`}>{pm.status}</span>
+                        </div>
+                      ))}
+                      <div className="h-px bg-white/[0.06]" />
+                      <div className="rounded-lg bg-white/[0.04] border border-dashed border-white/10 px-3 py-2 text-center">
+                        <span className="text-[10px] text-white/30">Upload new QR</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="px-5 pb-5">
+                <h3 className="text-sm font-medium mb-1 text-white">Custom QR payments</h3>
+                <p className="text-sm text-white/70">Upload GCash or bank transfer QR, displayed in payment settings</p>
+              </div>
+            </div>
+
+            {/* QR check-in */}
+            <div className="rounded-2xl bg-[#0a0a0a] overflow-hidden">
+              <div className="p-5 pointer-events-none select-none" style={{ aspectRatio: "16 / 10" }}>
+                <div className="h-full flex flex-col items-center justify-center">
+                  <div className="rounded-xl bg-white/[0.04] border border-white/[0.06] p-4 w-full max-w-[220px]">
+                    {/* Ticket stub */}
+                    <div className="flex items-center justify-between mb-3">
+                      <div>
+                        <p className="text-[10px] font-medium text-white">Himaya Night</p>
+                        <p className="text-[9px] text-white/30">VIP — Seat 14</p>
+                      </div>
+                      <span className="rounded-full bg-[#22C55E]/20 px-2 py-0.5 text-[9px] font-medium text-[#22C55E]">Verified</span>
+                    </div>
+                    {/* QR */}
+                    <div className="w-full aspect-square rounded-lg bg-white/[0.06] grid grid-cols-7 grid-rows-7 gap-[2px] p-2 mb-3">
+                      {Array.from({ length: 49 }).map((_, i) => (
+                        <div key={i} className={`rounded-[1px] ${[0,1,2,4,5,6,7,13,14,16,18,20,21,22,23,24,27,28,30,34,35,36,38,40,42,43,44,46,47,48].includes(i) ? "bg-white/30" : "bg-white/8"}`} />
+                      ))}
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-[9px] font-mono text-white/20">TYP-2025-0847</span>
+                      <span className="text-[9px] text-white/30">Dec 15</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="px-5 pb-5">
+                <h3 className="text-sm font-medium mb-1 text-white">QR check-in</h3>
+                <p className="text-sm text-white/70">Unique QR per ticket, handles refunds and duplicates</p>
+              </div>
+            </div>
+
+            {/* Organizer dashboard */}
+            <div className="rounded-2xl bg-[#0a0a0a] overflow-hidden">
+              <div className="p-5 pointer-events-none select-none" style={{ aspectRatio: "16 / 10" }}>
+                <div className="h-full flex flex-col">
+                  <div className="flex items-center justify-between mb-4">
+                    <p className="text-xs font-medium text-white">Himaya Worship Night</p>
+                    <span className="rounded-full bg-[#22C55E]/20 px-2 py-0.5 text-[9px] font-medium text-[#22C55E]">Live</span>
+                  </div>
+                  {/* Stats row */}
+                  <div className="grid grid-cols-3 gap-2 mb-4">
+                    {[
+                      { value: "187", label: "Sold", sub: "/ 250" },
+                      { value: "₱34,200", label: "Revenue", sub: "" },
+                      { value: "142", label: "Checked in", sub: "/ 187" },
+                    ].map((s) => (
+                      <div key={s.label} className="rounded-lg bg-white/[0.04] border border-white/[0.06] p-2.5">
+                        <p className="text-sm font-semibold text-white leading-none mb-1">{s.value}<span className="text-[10px] text-white/30 font-normal">{s.sub}</span></p>
+                        <p className="text-[9px] text-white/40">{s.label}</p>
+                      </div>
+                    ))}
+                  </div>
+                  {/* Recent activity */}
+                  <p className="text-[10px] text-white/30 mb-2">Recent</p>
+                  <div className="space-y-1.5 flex-1">
+                    {[
+                      { name: "Maria C.", action: "checked in", time: "2m ago", color: "text-[#22C55E]" },
+                      { name: "Juan D.", action: "purchased VIP", time: "5m ago", color: "text-[#f59e0b]" },
+                      { name: "Ana R.", action: "checked in", time: "8m ago", color: "text-[#22C55E]" },
+                    ].map((a) => (
+                      <div key={a.name} className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <div className="w-4 h-4 rounded-full bg-white/[0.08]" />
+                          <span className="text-[10px] text-white/50">{a.name}</span>
+                          <span className={`text-[10px] ${a.color}`}>{a.action}</span>
+                        </div>
+                        <span className="text-[9px] text-white/20">{a.time}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div className="px-5 pb-5">
+                <h3 className="text-sm font-medium mb-1 text-white">Organizer dashboard</h3>
+                <p className="text-sm text-white/70">Real-time buyer, payment, and check-in tracking</p>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -297,7 +394,7 @@ export default function TypidPage() {
       {/* Chapter 06: The Result */}
       <section id="result" className="px-6 md:px-12 py-24 md:py-32 scroll-mt-24">
         <div className="max-w-[1100px] mx-auto">
-          <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-6">Chapter 06</p>
+          <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-6">Chapter 04</p>
           <h2 className="text-[clamp(2.5rem,7vw,5rem)] font-medium leading-[0.92] tracking-tight max-w-3xl mb-10">
             Zero discrepancy.
           </h2>
@@ -332,7 +429,7 @@ export default function TypidPage() {
         <div className="max-w-[1100px] mx-auto">
           <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-6">Stack</p>
           <h2 className="text-3xl md:text-4xl font-medium leading-tight tracking-tight max-w-2xl mb-16">
-            Technical decisions
+            Technical&nbsp;decisions
           </h2>
 
           <div className="grid md:grid-cols-2 gap-16">
@@ -343,6 +440,7 @@ export default function TypidPage() {
                   { name: "Flutter", role: "Cross-platform UI" },
                   { name: "Dart", role: "Application logic" },
                   { name: "Supabase", role: "Database, auth, real-time" },
+                  { name: "Cursor", role: "IDE" },
                   { name: "Claude Code", role: "AI-assisted development" },
                 ].map((tech) => (
                   <div key={tech.name} className="flex items-center justify-between pb-4 border-b border-border">
@@ -356,6 +454,7 @@ export default function TypidPage() {
               <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-6">Events Platform</p>
               <div className="space-y-4">
                 {[
+                  { name: "Cursor", role: "IDE" },
                   { name: "Claude Code", role: "AI-assisted development" },
                   { name: "GitHub", role: "Version control" },
                   { name: "Next.js 14", role: "React framework" },
@@ -379,9 +478,9 @@ export default function TypidPage() {
       {/* Reflection */}
       <section id="reflection" className="px-6 md:px-12 py-24 md:py-32 scroll-mt-24">
         <div className="max-w-[1100px] mx-auto">
-          <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-6">Chapter 07</p>
+          <p className="text-[11px] uppercase tracking-wider text-foreground/60 mb-6">Chapter 05</p>
           <h2 className="text-3xl md:text-4xl font-medium leading-tight tracking-tight max-w-2xl mb-10">
-            What I&apos;d tell myself in 2022.
+            What I&apos;d tell myself in&nbsp;2022.
           </h2>
 
           <div className="space-y-10 max-w-2xl">
