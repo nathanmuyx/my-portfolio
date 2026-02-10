@@ -240,8 +240,8 @@ export default function TypidPage() {
                   </div>
                 </div>
                 <div
-                  className="absolute border-[clamp(1.5px,0.25vw,3px)] border-white/20 rounded-[clamp(4px,0.5vw,7px)] overflow-hidden left-[5%] top-[12%] origin-top-left"
-                  style={{ width: 1100, transform: "scale(var(--mockup-scale))", ["--mockup-scale" as string]: "calc((430 * 0.88) / 1100)" }}
+                  className="absolute border-[clamp(1.5px,0.25vw,3px)] border-white/20 rounded-[clamp(4px,0.5vw,7px)] overflow-hidden"
+                  style={{ width: 1100, left: "50%", top: "12%", transform: "translateX(-50%) scale(0.46)", transformOrigin: "top center" }}
                 >
                   <AttendeeListMockup />
                 </div>
