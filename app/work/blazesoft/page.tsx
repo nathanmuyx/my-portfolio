@@ -140,8 +140,8 @@ export default function BlazesoftPage() {
               {/* File cards grid */}
               <div className="p-4 grid grid-cols-2 gap-3">
                 {[
-                  { name: "Sportzino", edited: "Edited 2h ago", thumb: "/images/blazesoft/screenshot-1.webp" },
-                  { name: "YeyCasino", edited: "Edited today", thumb: "/images/blazesoft/yaycasino.webp" },
+                  { name: "Sportzino", edited: "Edited 2h ago", thumb: "/images/blazesoft/thumb-sportzino.webp" },
+                  { name: "YeyCasino", edited: "Edited today", thumb: "/images/blazesoft/thumb-yaycasino.webp" },
                 ].map((file) => (
                   <div key={file.name} className="rounded-lg overflow-hidden bg-white/[0.04] border border-white/[0.06]">
                     {/* Thumbnail */}
