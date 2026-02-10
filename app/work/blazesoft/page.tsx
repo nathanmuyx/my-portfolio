@@ -80,8 +80,9 @@ export default function BlazesoftPage() {
           <div className="grid md:grid-cols-2 gap-4 mb-16 pointer-events-none select-none">
 
             {/* BEFORE — Google Drive with XD files */}
-            <div className="rounded-2xl overflow-hidden border border-[#e0e0e0]">
-              <p className="text-[11px] uppercase tracking-wider text-foreground/40 px-6 pt-5 pb-3">Before</p>
+            <div className="rounded-2xl overflow-hidden bg-[#0a0a0a] p-5 md:p-8 flex flex-col">
+              <p className="text-[11px] uppercase tracking-wider text-white/40 mb-3">Before</p>
+              <div className="rounded-xl overflow-hidden border border-[#e0e0e0] flex-1">
               {/* Drive header */}
               <div className="bg-white px-4 pt-3 pb-2 flex items-center gap-3 border-b border-[#e0e0e0]">
                 {/* Drive logo */}
@@ -126,11 +127,13 @@ export default function BlazesoftPage() {
               <div className="bg-[#f8f9fa] px-4 py-2.5 border-t border-[#e0e0e0]">
                 <span className="text-[10px] text-[#80868b]">Download .xd to view — no preview, no version history</span>
               </div>
+              </div>
             </div>
 
             {/* AFTER — Figma file browser */}
-            <div className="rounded-2xl overflow-hidden bg-[#1e1e1e]">
-              <p className="text-[11px] uppercase tracking-wider text-white/40 px-6 pt-5 pb-3">After</p>
+            <div className="rounded-2xl overflow-hidden bg-[#0a0a0a] p-5 md:p-8 flex flex-col">
+              <p className="text-[11px] uppercase tracking-wider text-white/40 mb-3">After</p>
+              <div className="rounded-xl overflow-hidden bg-[#1e1e1e] flex-1">
               {/* Figma header bar */}
               <div className="px-4 pt-2 pb-3 flex items-center gap-2.5 border-b border-white/[0.06]">
                 <TechIcon name="Figma" className="w-4 h-4" />
@@ -174,6 +177,7 @@ export default function BlazesoftPage() {
                 {["Components", "Variants", "Auto layout"].map((tag) => (
                   <span key={tag} className="text-[9px] px-2 py-0.5 rounded-full bg-white/[0.06] text-white/30">{tag}</span>
                 ))}
+              </div>
               </div>
             </div>
           </div>

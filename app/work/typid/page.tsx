@@ -5,6 +5,8 @@ import { CaseStudyLayout } from "@/components/case-study/CaseStudyLayout";
 import { MoreProjects } from "@/components/case-study/MoreProjects";
 import { TechIcon } from "@/components/case-study/TechIcon";
 import { SkeletonCard } from "@/components/ui/SkeletonCard";
+import { QRScannerMockup } from "@/components/case-study/typid/QRScannerMockup";
+import { AttendeeListMockup } from "@/components/case-study/typid/AttendeeListMockup";
 
 const sections = [
   { id: "hero", label: "Hero" },
@@ -171,37 +173,6 @@ export default function TypidPage() {
             </div>
           </div>
 
-          {/* Build process screenshots */}
-          <div className="grid md:grid-cols-2 gap-4">
-            {/* Dashboard + Himaya event page */}
-            <SkeletonCard className="relative rounded-2xl overflow-hidden bg-[#0a0a0a]" style={{ aspectRatio: "4 / 3" }}>
-              <div className="absolute left-[-8%] top-[-1%] w-[120%] h-[120%] flex items-center justify-center pointer-events-none">
-                <div className="rotate-[131deg]">
-                  <div className="bg-[#17bff9] blur-[50px] rounded-full w-[360px] h-[360px]" />
-                </div>
-              </div>
-              <div className="absolute border-[clamp(1.5px,0.25vw,3px)] border-white/20 rounded-[clamp(3px,0.4vw,6px)] overflow-hidden left-[7%] top-[9%] w-[67%]" style={{ aspectRatio: "1400 / 788" }}>
-                <LazyImage src="/images/typid/dashboard.webp" alt="Typid seller dashboard" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 90vw, 45vw" quality={75} />
-              </div>
-              <div className="absolute border-[clamp(1.5px,0.25vw,3px)] border-white/20 rounded-[clamp(3px,0.4vw,6px)] overflow-hidden left-[24%] top-[32%] w-[72%]" style={{ aspectRatio: "1400 / 851" }}>
-                <LazyImage src="/images/typid/himaya-event.webp" alt="Himaya event page" fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 90vw, 45vw" quality={75} />
-              </div>
-            </SkeletonCard>
-            {/* Attendee list + QR scanner */}
-            <SkeletonCard className="relative rounded-2xl overflow-hidden bg-[#0a0a0a]" style={{ aspectRatio: "4 / 3" }}>
-              <div className="absolute left-[-8%] top-[-1%] w-[120%] h-[120%] flex items-center justify-center pointer-events-none">
-                <div className="rotate-[131deg]">
-                  <div className="bg-[#17bff9] blur-[50px] rounded-full w-[360px] h-[360px]" />
-                </div>
-              </div>
-              <div className="absolute border-[clamp(1.5px,0.2vw,2.5px)] border-white/20 rounded-[clamp(3px,0.35vw,5px)] overflow-hidden left-[9%] top-[18%] w-[80%]" style={{ aspectRatio: "1400 / 723" }}>
-                <LazyImage src="/images/typid/attendee-list.webp" alt="Attendee management list" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 90vw, 45vw" quality={75} />
-              </div>
-              <div className="absolute border-[clamp(1.5px,0.2vw,2.5px)] border-white/20 rounded-[clamp(4px,0.7vw,9px)] overflow-hidden left-[70%] top-[36%] w-[22%]" style={{ aspectRatio: "992 / 1642" }}>
-                <LazyImage src="/images/typid/qr-scanner.webp" alt="QR check-in scanner" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 30vw, 15vw" quality={75} />
-              </div>
-            </SkeletonCard>
-          </div>
         </div>
       </section>
 
@@ -221,166 +192,79 @@ export default function TypidPage() {
           {/* Feature mockups */}
           <div className="grid md:grid-cols-2 gap-4">
 
-            {/* Event creation */}
+            {/* Event creation — Figma: image left=10.7% top=13.9% w=78.4%, overflows bottom */}
             <div className="rounded-2xl bg-[#0a0a0a] overflow-hidden">
-              <div className="p-5 pointer-events-none select-none" style={{ aspectRatio: "16 / 10" }}>
-                <div className="h-full flex flex-col">
-                  <div className="flex items-center justify-between mb-4">
-                    <p className="text-xs font-medium text-white">New Event</p>
-                    <span className="rounded-md bg-[#f59e0b] px-3 py-1 text-[10px] font-medium text-black">Publish</span>
-                  </div>
-                  <div className="space-y-2.5 flex-1">
-                    <div className="rounded-lg bg-white/[0.04] border border-white/[0.06] px-3 py-2">
-                      <span className="text-[10px] text-white/60">Himaya Worship Night</span>
-                    </div>
-                    <div className="grid grid-cols-2 gap-2">
-                      <div className="rounded-lg bg-white/[0.04] border border-white/[0.06] px-3 py-2">
-                        <span className="text-[10px] text-white/30">Dec 15, 2025</span>
-                      </div>
-                      <div className="rounded-lg bg-white/[0.04] border border-white/[0.06] px-3 py-2">
-                        <span className="text-[10px] text-white/30">Cebu City</span>
-                      </div>
-                    </div>
-                    <div className="h-px bg-white/[0.06] my-1" />
-                    <p className="text-[10px] text-white/30 mb-1">Ticket Tiers</p>
-                    <div className="space-y-1.5">
-                      {[
-                        { tier: "General", price: "₱150", cap: "200 seats" },
-                        { tier: "VIP", price: "₱350", cap: "50 seats" },
-                      ].map((t) => (
-                        <div key={t.tier} className="flex items-center justify-between rounded-lg bg-white/[0.04] border border-white/[0.06] px-3 py-1.5">
-                          <span className="text-[10px] font-medium text-white/60">{t.tier}</span>
-                          <div className="flex items-center gap-3">
-                            <span className="text-[10px] text-white/40">{t.cap}</span>
-                            <span className="text-[10px] font-medium text-[#f59e0b]">{t.price}</span>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
+              <SkeletonCard className="relative" style={{ aspectRatio: "430 / 280" }}>
+                <div className="absolute left-[-8%] top-[-1%] w-[120%] h-[120%] flex items-center justify-center pointer-events-none">
+                  <div className="rotate-[131deg]">
+                    <div className="bg-[#17bff9] blur-[50px] rounded-full w-[360px] h-[360px]" />
                   </div>
                 </div>
-              </div>
-              <div className="px-5 pb-5">
+                <div className="absolute border-[clamp(1.5px,0.25vw,3px)] border-white/20 rounded-[clamp(6px,0.8vw,12px)] overflow-hidden left-[10.7%] top-[13.9%] w-[78.4%]" style={{ aspectRatio: "2050 / 1920" }}>
+                  <LazyImage src="/images/typid/ch3-event-creation.webp" alt="Event creation flow" fill className="object-cover object-top" loading="lazy" sizes="(max-width: 768px) 90vw, 45vw" quality={75} />
+                </div>
+              </SkeletonCard>
+              <div className="relative z-10 bg-[#0a0a0a] px-5 pb-5 pt-3">
                 <h3 className="text-sm font-medium mb-1 text-white">Event creation</h3>
                 <p className="text-sm text-white/70">Custom branding, ticket tiers, pricing, capacity limits</p>
               </div>
             </div>
 
-            {/* Custom QR payments */}
+            {/* QR check-in scanner — coded mockup, centered + zoomed to show top half */}
             <div className="rounded-2xl bg-[#0a0a0a] overflow-hidden">
-              <div className="p-5 pointer-events-none select-none" style={{ aspectRatio: "16 / 10" }}>
-                <div className="h-full flex flex-col">
-                  <p className="text-xs font-medium text-white mb-4">Payment Settings</p>
-                  <div className="flex-1 grid grid-cols-2 gap-3">
-                    {/* QR preview */}
-                    <div className="rounded-xl bg-white/[0.04] border border-white/[0.06] p-3 flex flex-col items-center justify-center">
-                      <div className="w-16 h-16 md:w-20 md:h-20 rounded-lg bg-white/[0.08] border border-white/[0.06] mb-2 grid grid-cols-5 grid-rows-5 gap-[2px] p-1.5">
-                        {Array.from({ length: 25 }).map((_, i) => (
-                          <div key={i} className={`rounded-[1px] ${[0,1,2,4,5,6,10,12,14,18,20,21,22,24].includes(i) ? "bg-white/40" : "bg-white/10"}`} />
-                        ))}
-                      </div>
-                      <span className="text-[9px] text-white/30">GCash QR</span>
-                    </div>
-                    {/* Payment methods */}
-                    <div className="space-y-2">
-                      {[
-                        { name: "GCash", status: "Connected", active: true },
-                        { name: "Maya", status: "Connected", active: true },
-                        { name: "Bank Transfer", status: "Add account", active: false },
-                      ].map((pm) => (
-                        <div key={pm.name} className="rounded-lg bg-white/[0.04] border border-white/[0.06] px-3 py-2 flex items-center justify-between">
-                          <span className="text-[10px] font-medium text-white/60">{pm.name}</span>
-                          <span className={`text-[9px] ${pm.active ? "text-[#22C55E]" : "text-white/30"}`}>{pm.status}</span>
-                        </div>
-                      ))}
-                      <div className="h-px bg-white/[0.06]" />
-                      <div className="rounded-lg bg-white/[0.04] border border-dashed border-white/10 px-3 py-2 text-center">
-                        <span className="text-[10px] text-white/30">Upload new QR</span>
-                      </div>
-                    </div>
+              <div className="relative overflow-hidden" style={{ aspectRatio: "430 / 280" }}>
+                <div className="absolute left-[-8%] top-[-1%] w-[120%] h-[120%] flex items-center justify-center pointer-events-none">
+                  <div className="rotate-[131deg]">
+                    <div className="bg-[#17bff9] blur-[50px] rounded-full w-[360px] h-[360px]" />
                   </div>
                 </div>
-              </div>
-              <div className="px-5 pb-5">
-                <h3 className="text-sm font-medium mb-1 text-white">Custom QR payments</h3>
-                <p className="text-sm text-white/70">Upload GCash or bank transfer QR, displayed in payment settings</p>
-              </div>
-            </div>
-
-            {/* QR check-in */}
-            <div className="rounded-2xl bg-[#0a0a0a] overflow-hidden">
-              <div className="p-5 pointer-events-none select-none" style={{ aspectRatio: "16 / 10" }}>
-                <div className="h-full flex flex-col items-center justify-center">
-                  <div className="rounded-xl bg-white/[0.04] border border-white/[0.06] p-4 w-full max-w-[220px]">
-                    {/* Ticket stub */}
-                    <div className="flex items-center justify-between mb-3">
-                      <div>
-                        <p className="text-[10px] font-medium text-white">Himaya Night</p>
-                        <p className="text-[9px] text-white/30">VIP — Seat 14</p>
-                      </div>
-                      <span className="rounded-full bg-[#22C55E]/20 px-2 py-0.5 text-[9px] font-medium text-[#22C55E]">Verified</span>
-                    </div>
-                    {/* QR */}
-                    <div className="w-full aspect-square rounded-lg bg-white/[0.06] grid grid-cols-7 grid-rows-7 gap-[2px] p-2 mb-3">
-                      {Array.from({ length: 49 }).map((_, i) => (
-                        <div key={i} className={`rounded-[1px] ${[0,1,2,4,5,6,7,13,14,16,18,20,21,22,23,24,27,28,30,34,35,36,38,40,42,43,44,46,47,48].includes(i) ? "bg-white/30" : "bg-white/8"}`} />
-                      ))}
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-[9px] font-mono text-white/20">TYP-2025-0847</span>
-                      <span className="text-[9px] text-white/30">Dec 15</span>
-                    </div>
-                  </div>
+                <div
+                  className="absolute border-[clamp(1.5px,0.25vw,3px)] border-white/20 rounded-[clamp(6px,0.8vw,12px)] overflow-hidden left-0 right-0 mx-auto top-[8%]"
+                  style={{ width: 375, transform: "scale(0.8)", transformOrigin: "top center" }}
+                >
+                  <QRScannerMockup />
                 </div>
               </div>
-              <div className="px-5 pb-5">
+              <div className="relative z-10 bg-[#0a0a0a] px-5 pb-5 pt-3">
                 <h3 className="text-sm font-medium mb-1 text-white">QR check-in</h3>
                 <p className="text-sm text-white/70">Unique QR per ticket, handles refunds and duplicates</p>
               </div>
             </div>
 
-            {/* Organizer dashboard */}
+            {/* Attendee list — coded mockup, absolute + scale zoom */}
             <div className="rounded-2xl bg-[#0a0a0a] overflow-hidden">
-              <div className="p-5 pointer-events-none select-none" style={{ aspectRatio: "16 / 10" }}>
-                <div className="h-full flex flex-col">
-                  <div className="flex items-center justify-between mb-4">
-                    <p className="text-xs font-medium text-white">Himaya Worship Night</p>
-                    <span className="rounded-full bg-[#22C55E]/20 px-2 py-0.5 text-[9px] font-medium text-[#22C55E]">Live</span>
-                  </div>
-                  {/* Stats row */}
-                  <div className="grid grid-cols-3 gap-2 mb-4">
-                    {[
-                      { value: "187", label: "Sold", sub: "/ 250" },
-                      { value: "₱34,200", label: "Revenue", sub: "" },
-                      { value: "142", label: "Checked in", sub: "/ 187" },
-                    ].map((s) => (
-                      <div key={s.label} className="rounded-lg bg-white/[0.04] border border-white/[0.06] p-2.5">
-                        <p className="text-sm font-semibold text-white leading-none mb-1">{s.value}<span className="text-[10px] text-white/30 font-normal">{s.sub}</span></p>
-                        <p className="text-[9px] text-white/40">{s.label}</p>
-                      </div>
-                    ))}
-                  </div>
-                  {/* Recent activity */}
-                  <p className="text-[10px] text-white/30 mb-2">Recent</p>
-                  <div className="space-y-1.5 flex-1">
-                    {[
-                      { name: "Maria C.", action: "checked in", time: "2m ago", color: "text-[#22C55E]" },
-                      { name: "Juan D.", action: "purchased VIP", time: "5m ago", color: "text-[#f59e0b]" },
-                      { name: "Ana R.", action: "checked in", time: "8m ago", color: "text-[#22C55E]" },
-                    ].map((a) => (
-                      <div key={a.name} className="flex items-center justify-between">
-                        <div className="flex items-center gap-2">
-                          <div className="w-4 h-4 rounded-full bg-white/[0.08]" />
-                          <span className="text-[10px] text-white/50">{a.name}</span>
-                          <span className={`text-[10px] ${a.color}`}>{a.action}</span>
-                        </div>
-                        <span className="text-[9px] text-white/20">{a.time}</span>
-                      </div>
-                    ))}
+              <div className="relative overflow-hidden" style={{ aspectRatio: "430 / 280" }}>
+                <div className="absolute left-[-8%] top-[-1%] w-[120%] h-[120%] flex items-center justify-center pointer-events-none">
+                  <div className="rotate-[131deg]">
+                    <div className="bg-[#17bff9] blur-[50px] rounded-full w-[360px] h-[360px]" />
                   </div>
                 </div>
+                <div
+                  className="absolute border-[clamp(1.5px,0.25vw,3px)] border-white/20 rounded-[clamp(4px,0.5vw,7px)] overflow-hidden left-[5%] top-[12%] origin-top-left"
+                  style={{ width: 1100, transform: "scale(var(--mockup-scale))", ["--mockup-scale" as string]: "calc((430 * 0.88) / 1100)" }}
+                >
+                  <AttendeeListMockup />
+                </div>
               </div>
-              <div className="px-5 pb-5">
+              <div className="relative z-10 bg-[#0a0a0a] px-5 pb-5 pt-3">
+                <h3 className="text-sm font-medium mb-1 text-white">Attendee list</h3>
+                <p className="text-sm text-white/70">Real-time buyer, payment, and check-in tracking</p>
+              </div>
+            </div>
+
+            {/* Organizer dashboard — Figma image, centered like 807:1777 */}
+            <div className="rounded-2xl bg-[#0a0a0a] overflow-hidden">
+              <SkeletonCard className="relative" style={{ aspectRatio: "430 / 280" }}>
+                <div className="absolute left-[-8%] top-[-1%] w-[120%] h-[120%] flex items-center justify-center pointer-events-none">
+                  <div className="rotate-[131deg]">
+                    <div className="bg-[#17bff9] blur-[50px] rounded-full w-[360px] h-[360px]" />
+                  </div>
+                </div>
+                <div className="absolute border-[clamp(2px,0.3vw,4px)] border-white/20 rounded-[clamp(4px,0.5vw,7px)] overflow-hidden left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[85.5%]" style={{ aspectRatio: "2952 / 1662" }}>
+                  <LazyImage src="/images/typid/ch3-dashboard.webp" alt="Organizer dashboard" fill className="object-cover" loading="lazy" sizes="(max-width: 768px) 90vw, 45vw" quality={75} />
+                </div>
+              </SkeletonCard>
+              <div className="relative z-10 bg-[#0a0a0a] px-5 pb-5 pt-3">
                 <h3 className="text-sm font-medium mb-1 text-white">Organizer dashboard</h3>
                 <p className="text-sm text-white/70">Real-time buyer, payment, and check-in tracking</p>
               </div>
