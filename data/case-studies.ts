@@ -134,7 +134,7 @@ export const caseStudies: Record<string, CaseStudy> = {
         { value: "100+", label: "Components built" },
       ],
     },
-    tools: ["Figma", "Design Tokens", "Documentation", "React"],
+    tools: ["Figma", "Design Tokens", "Documentation"],
     nextProject: {
       slug: "typid-events",
       title: "Typid Events",

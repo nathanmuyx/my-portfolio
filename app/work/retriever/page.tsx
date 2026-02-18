@@ -350,8 +350,6 @@ export default function RetrieverPage() {
           <div className="space-y-4 max-w-md">
             {[
               { name: "Figma", role: "Design & prototyping" },
-              { name: "React", role: "React Native (mobile)" },
-              { name: "Firebase", role: "Backend services" },
             ].map((tech) => (
               <div key={tech.name} className="flex items-center justify-between pb-4 border-b border-border">
                 <span className="text-sm font-medium flex items-center gap-2"><TechIcon name={tech.name} />{tech.name}</span>
